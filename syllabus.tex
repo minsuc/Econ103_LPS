@@ -1,0 +1,323 @@
+\documentclass[11pt, letterpaper]{article}
+\usepackage{geometry}
+\geometry{margin=1in} 
+\usepackage{setspace}
+\linespread{1}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{fancybox}
+\usepackage{amsmath, amssymb}
+
+
+
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} 
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0.4pt} % customise the layout...
+\rhead{\footnotesize Chang -- Summer 2017}
+\lhead{\footnotesize Econ 103 Syllabus}
+\renewcommand\footrulewidth{0pt}
+
+
+\begin{document}
+
+
+\thispagestyle{plain}
+
+\begin{center}
+\Large
+\sc
+\textbf{ECON 103 - Statistics for Economists}\\
+\large
+\textbf{Summer 2017}
+\end{center}
+
+\normalsize
+\bigskip
+
+\begin{center}
+\small
+GENERAL INFORMATION
+\end{center}
+
+\noindent \textbf{Instructor:} Minsu Chang 
+
+\medskip
+
+\noindent \textbf{Class Times:} MTWRF 9:00-10:45 am, McNeil room 103
+
+\medskip
+
+
+\noindent \textbf{Office Hours:} These will be two days a week, 10:45-11:45 am, McNeil room 363.
+
+
+\medskip
+
+ 
+\noindent \textbf{Course Website:} \url{http://ditraglia.com/Econ103Public} At this url you can view the semester calendar and download all lecture slides, problem sets, etc.
+You can view your grades and log-on to the course discussion forum, Piazza, at \url{https://canvas.upenn.edu}.
+
+\medskip
+
+\noindent \textbf{Email:} minsuc@sas.upenn.edu
+
+
+\vspace{0.2in}
+
+\begin{center}
+\small
+COURSE DESCRIPTION AND PREREQUISITES
+\end{center}
+
+
+\noindent \textbf{Course Description:} 
+This course will teach you how to learn from data and understand uncertainty using the ideas of probability theory and statistics. 
+After completing this course you will be able to carry out simple statistical analyses of your own using the computer package R.
+
+
+\medskip
+
+%\noindent \textbf{Lecture Recordings:} 
+%Audio and screen captures of the lectures for this course will be recorded and posted on \href{http://upenn.instructure.com}{Canvas}. 
+%This is a great way to get caught up if you miss a lecture.
+%Be aware, however, that the lecture recording system is not 100\% reliable and the instructors have no direct control over it: in a typical semester one or two lectures will fail to be recorded due to technical problems.
+%If you encounter any problems with the recordings, please contact \texttt{mms-help@sas.upenn.edu} directly.
+%\medskip
+
+\noindent \textbf{Prerequisites:} The prerequisite for this course is multivariate calculus (Math 104 followed by
+114 or 115). To do well in this course you will need to be comfortable with algebra, manipulating
+sums, differentiation and partial differentiation, solving unconstrained optimization problems, and
+integration. 
+%To help you gauge your level of mathematical preparation, I will administer a short
+%math diagnostic quiz early in the Course. This will not count towards your grade. It is primarily
+%intended to indicate to you where your mathematical strengths and weaknesses are, and where you
+%need to brush up on your math to do well in this course.
+
+
+\vspace{0.2in}
+
+\begin{center}
+\small
+TEXTBOOK AND SOFTWARE
+\end{center}
+
+\noindent \textbf{Required Text:} 
+The textbook for this course is \emph{Introductory Statistics for Business and Economics}, 4\textsuperscript{th} Edition by Thomas H.\ and Ronald J.\ Wonnacott (WW4). This book is ancient, so cheap used copies are plentiful. While I suggest that you complete
+the assigned readings, my lecture slides, which will be posted online at the start of each week, are
+the final authority on course material. In particular, you are not responsible for material in the
+textbook unless it is also covered in lecture, but you are responsible for material from lecture even
+if it is not covered in the textbook.
+
+\medskip
+
+
+%\noindent \textbf{Required Technology: } 
+%We will be using the ``clickers'' for experiments and class participation exercises during the semester.
+%Both the ResponseCard NXT and the ResponseCard QT are fully compatible with the exercises we will complete this semester.
+%Other ResponseCard models will only work for some of the exercises so to make sure you get full participation credit (see below) make sure you have the right model.
+%You can buy or rent a clicker from the Penn Bookstore.
+%As clicker participation will make up 5\% of your course grade it is important that you bring your clicker to each lecture. 
+%I fully understand, however, that things can go wrong: your clicker might stop working or you might forget to bring it after pulling an all-nighter.
+%For this reason you will \emph{automatically} be excused from clicker participation for four lectures: there is no need to inform us in advance or after the fact. There will, however, be no further exceptions. 
+%I will begin keeping track of clicker participation in our second lecture. For more details, see ``Participation'' below. 
+%Because clickers will determine a portion of your grade, their use is subject to the code of academic integrity, as explained below under ``Academic Integrity.'' 
+%
+
+
+\noindent \textbf{Required Software:} 
+We will use the statistical package R via a front-end called RStudio throughout the course. 
+Both R and RStudio are free and open source. Installation instructions appear on the last page of this syllabus.
+RStudio is also available in the Undergraduate Data Analysis Lab (UDAL) in McNeil rooms 104 and 108--9. 
+You will be taught to use R in lecture and through as series of tutorials that I will assign as homework. (See ``Homework'' below.)  
+Additional R resources are listed on the last page of this syllabus.
+
+\medskip
+
+\noindent \textbf{Recommended Texts:} 
+I will not use these explicitly, but in the past instructors have recommended two
+supplementary texts for students who feel they may need extra help with the course material. First is the \emph{Student Workbook to accompany Introductory Statistics for Business and Economics 4\textsuperscript{th} Edition}. 
+Used copies are available on \href{http://www.amazon.com/gp/offer-listing/0471508993/sr=/qid=/ref=olp_page_2?ie=UTF8&colid=&coliid=&condition=all&me=&qid=&shipPromoFilter=0&sort=sip&sr=&startIndex=10}{Amazon}. 
+The workbook contains fully worked out solutions to all odd-numbered problems from the textbook along with additional practice problems and solutions.
+If you're having trouble with R and prefer a printed book to the free online resources listed below, I suggest consulting \emph{The R Student Companion} by Brian Dennis.
+
+
+\newpage
+
+%\noindent \textbf{Departmental Course Policies: } 
+%All Economics Department course policies are in force in Econ 103 even if not explicitly listed on this syllabus. 
+%See: \url{http://economics.sas.upenn.edu/undergraduate-program/course-information/guidelines/policies} for full details. 
+
+%\noindent \textbf{Academic Integrity: } 
+%All suspected violations of the code of academic integrity as set forth in the Pennbook will be reported to the Office of Student Conduct. 
+%Confirmed violations will result in a failing grade for the course. 
+%We will check identification cards at exams so please to bring yours.
+
+
+\begin{center}
+\small
+GRADING
+\end{center}
+
+\noindent \textbf{Two Options:}
+	\begin{equation*}
+	\begin{split}
+		\mbox{Overall Score} = (20\% \times \mbox{Quizzes})  + (40\% \times \mbox{Midterm}) + (40\% \times \mbox{Final})
+	\end{split}
+	\end{equation*}
+
+OR
+
+	\begin{equation*}
+	\begin{split}
+		\mbox{Overall Score} =
+(10\% \times \mbox{Participation})  + 
+		 (10\% \times \mbox{Homeworks})  \\
+		 + (20\% \times \mbox{Quizzes}) 
+		 + (30\% \times \mbox{Midterm}) + (30\% \times \mbox{Final})
+	\end{split}
+	\end{equation*}
+\medskip
+
+After the first week of class, I will ask each of you whether or not you want to opt out of your
+participation and homework contributing towards your final grade. In the past, we have had some
+students state that they would prefer to be judged only on their performance in tests, as their
+learning style does not favor daily homework assignments and regular participation. However,
+I encourage you to include your homework and participation grades in your final grade for two
+reasons. First, these categories will be the easiest ones in which to score close to 100\%. Second, to
+do well in ECON 103 requires consistent work every day, to make sure you are keeping up with the
+material and are practicing solving questions. By including participation and homeworks in your
+final grade, you are committing yourself to keeping up with the material. %I will not curve grades in this class.
+
+
+\medskip
+
+%\noindent \textbf{Piazza:} 
+%We will be using an online discussion forum called Piazza, accessible via \href{http://upenn.instructure.com}{Canvas}, for all written communication in this course.
+%We will use Piazza to make course announcements, answer questions about course material and respond to private messages from individual students regarding personal issues.
+%By asking your question and getting an answer on Piazza, you create a positive externality: other students benefit from your questions and you benefit from theirs.
+%You can even post anonymously if asking questions publicly makes you uncomfortable. I will actively moderate Piazza both to answer questions and approve
+%(or correct) answers written by your fellow-students. Posting on Piazza will count towards your participation score (an optional 10\% of the overall grade). See “Participation” below for more details.
+
+%\medskip
+
+\noindent \textbf{Participation:} Each lecture will feature activities in which you can earn participation credit
+through in-class discussion. You will earn further participation credit based on the frequency and
+quality of your contributions on Piazza, including questions, answers, and follow-ups. If your
+attendance is high, and you participate actively in class and online, you will receive 100\%: these
+are essentially “free points.” However, spamming Piazza with unhelpful contributions will not gain
+you credit. Simply reading posts on Piazza is not sufficient to earn participation points: you must
+contribute through questions, answers, and follow-ups.
+
+\medskip
+
+\noindent \textbf{Homeworks and R tutorials:} There will be a series of short daily homeworks, to make sure
+you are keeping up with the material and know how to solve problems. I will set a few questions
+related to the material covered each day (except for Thursday, when you should prepare for the
+quiz on Friday). We will go through some of these the next day in class, after the lecture. These
+will be posted on Piazza (with solutions) as the class progresses, and will include problems from
+the textbook as well as some additional questions.\\
+\indent There will also be weekly R Tutorials (with full solutions and code) posted on Piazza. R material will account for approximately 25\% of the points available on each midterm and final, as well
+as occasional questions on the quizzes. It is therefore very important that you keep up with the R material by completing these tutorials, though I will not collect these assignments.\\
+\indent You can opt for your homeworks (excluding R tutorials) to count for 10\% of your final grade,
+and if you do, you should submit your answers to questions from that week each Thursday. I will
+not be able to grade these all in detail, so as long as you have made good, honest attempts to solve
+the majority of questions, you will receive full marks on the homeworks. Regardless of whether you
+opt for these to count towards your grade, you should aim to complete the homework every day.
+You may work in groups for these problems, if this helps you. If you work in groups and use the solution keys, do so responsibly: you gain nothing by simply
+copying others or reading the solutions before you have made a good attempt at the problem.\\
+
+\medskip
+
+
+
+\noindent \textbf{Quizzes:} There will be 5 weekly quizzes, administered at the beginning of class every Friday. Each
+quiz will cover basic material from the classes that week, since the last quiz. When calculating your
+quiz average, I will drop your lowest score and weight the remaining quizzes evenly. No makeup
+quizzes will be given. Quizzes will not be returned and answers will not be posted but I will go
+over the solutions in class.
+
+\medskip
+
+\noindent \textbf{Exams:} There will be one 90-minute in-class midterm and a 90 minute final in the last class. Dates
+for these can be found in the course calendar below. The midterm and final are weighted equally
+for your final grade. The midterm covers material up to Lecture 9, but the final is comprehensive:
+it will focus on the second half of the course but include several questions on earlier material.
+To give you a sense of the style and level of difficulty to expect, I have posted all of my past exams with full solutions on the \href{http://ditraglia.com/Econ103Public}{course website}. Attendance at
+all exams is mandatory. In exceptional circumstances, e.g. a death in the family or a documented illness, please contact me in advance, using a private message in Piazza or Canvas. Exam regrade
+requests must be made within three days of receiving your graded exam. As I re-grade the entire
+exam, your score could rise or fall. Exams will be photocopied before being returned and you may
+write in pencil or pen. Scientific calculators are permitted, graphing calculators are not.
+
+\medskip
+
+\begin{center}
+\small
+TENTATIVE SCHEDULE
+\end{center}
+
+\begin{table}[htbp]\centering
+\small
+\begin{tabular}{l c c c c c c}
+\hline
+\hline
+Day & Date & Lecture & OH & Quiz & Exam & R tutorial \\
+\hline
+Mon & 22-May & 1: Descriptive Stats \& Graphics I & & & &\\
+Tue & 23-May & 2: Description States \& Graphics II & & & & Try R\\
+Wed & 24-May & 3: Regression I & Yes & & &\\
+Thu & 25-May & 4: Basic Probability I &  Yes & && 1\\
+Fri & 26-May & 5: Basic Probability II & & Quiz 1 (L1-4) & & \\
+\hline
+Mon & 29-May & 6: Basic Probability III  & & &\\
+Tue & 30-May & No Class (Memorial Day)\\
+Wed & 31-May & 7: Discrete Random Variables I & & & \\
+Thu & 1-Jun & 8: Discrete Random Variables II & Yes& &\\
+Fri & 2-Jun & 9: Discrete Random Variables III & Yes& Quiz 2 (L5-8)& &2\\
+\hline
+Mon & 5-Jun & & & & Midterm &\\
+Tue& 6-Jun & 10: Continuous Random Variables I &&&\\
+Wed & 7-Jun & 11: Continuous Random Variables II & Yes&&\\
+Thu & 8-Jun & 12: Sampling Distributions I & Yes &&&\\
+Fri & 9-Jun & 13: Sampling Distributions II & & Quiz 3 (L9-L12) &  &3\\
+\hline
+Mon & 12-Jun & 14: Confidence Intervals I &&&&\\
+Tue & 13-Jun & 15: Confidence Intervals II &&&&\\
+Wed & 14-Jun & 16: Confidence Intervals III & Yes &&\\
+Thu & 15-Jun & No Class &\\
+Fri & 16-Jun & 17: Confidence Intervals IV & Yes & Quiz 4 (L13-16) & & 4 \\ 
+\hline
+Mon & 19-Jun & 18: Hypothesis Testing I & & &\\
+Tue & 20-Jun & 19: Hypothesis Testing II &\\
+Wed & 21-Jun & 20: Hypothesis Testing III& Yes\\
+Thu & 22-Jun & 21: Hypothesis Testing IV& Yes\\
+Fri & 23-Jun & 22: Regression II& & Quiz 5 (L17-21) &&5\\
+\hline 
+Mon & 26-Jun & 23: Regression III & Yes &\\
+Tue & 27-Jun & 24: Review & Yes&\\
+Wed & 28-Jun & && &Final &\\
+\hline
+\hline
+\end{tabular}
+%\caption{Summary Statistics}
+\end{table}
+
+\newpage
+
+\begin{center}
+\small
+INSTALLING R AND RSTUDIO
+\end{center}
+
+First, download and install R from \url{http://cran.r-project.org/}. Second, download and install RStudio by visiting \url{http://rstudio.org/download/desktop} and clicking the link listed under ``Recommended for Your System.'' 
+Here are links to some additional free resources to help you learn R:
+\begin{itemize}
+		       \item \url{http://cran.r-project.org/other-docs.html}
+\item \url{http://www.twotorials.com/}
+			\item \url{http://www.r-bloggers.com/google-developers-r-programming-video-lectures/}
+		 	\item \url{http://cran.r-project.org/doc/contrib/Farnsworth-EconometricsInR.pdf}
+ 			\item \url{http://www.ats.ucla.edu/stat/R/}
+\end{itemize}
+
+\end{document}
