@@ -10,6 +10,9 @@
 \usepackage{econ103slides} 
 
 \date{Lecture \# 1}
+
+%\input{Penn_Colors.tex}
+
 \begin{document} 
 
 
@@ -18,7 +21,7 @@
 \begin{frame}[plain]
 	\titlepage 
 	
-\small{Note) This slide is heavily indebted to the material by Francis J. DiTraglia.}
+%\small{Note) This slide is heavily indebted to the material by Francis J. DiTraglia.}
 \end{frame} 
 
 
@@ -98,19 +101,19 @@
 %\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
+%\begin{frame}
 
-\frametitle{\includegraphics[scale = 0.05]{./images/clicker} \hfill  Racial Bias in Criminal Sentencing}
+%\frametitle{\includegraphics[scale = 0.05]{./images/clicker} \hfill  Racial Bias in Criminal Sentencing}
 
-Do you think there is racial bias in criminal sentencing? That is, do you think that judges may assign different sentences purely based on the race of the defendant?
+%Do you think there is racial bias in criminal sentencing? That is, do you think that judges may assign different sentences purely based on the race of the defendant?
 
-\begin{enumerate}[(a)]
-	\item Yes
-	\item No
-\end{enumerate}
+%\begin{enumerate}[(a)]
+%	\item Yes
+	%\item No
+%\end{enumerate}
 %Please respond using your remote.
 
-\end{frame}
+%\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -339,31 +342,65 @@ Each member of population is chosen strictly by chance, so that: (1) selection o
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
-\frametitle{``Americans Divided on Outlook for Next Generation''}
-\framesubtitle{Source: \href{http://www.gallup.com/poll/159737/americans-divided-outlook-next-generation.aspx}{\fbox{Gallup}}}
-\vspace{1em}
-\begin{quote}
-PRINCETON, NJ -- Americans are evenly divided about whether it is likely (49\%) or unlikely (50\%) that the next generation of youth in the country will have a better life than their parents. That is a slightly more positive assessment than in early 2011, when the slight majority, 55\%, thought it was unlikely the next generation would achieve this goal.
-\end{quote}
-\end{frame}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-\frametitle{Example of Sampling Error}
-``...evenly divided about whether it is likely (49\%) or unlikely (50\%) that the next generation of youth in the country will have a better life...''
-
-\vspace{2em}
-\begin{quote}
-Results for this USA Today/Gallup poll are based on telephone interviews conducted Dec. 14-17, 2012, with a \alert{random sample of 1025 adults}, aged 18 and older, living in all 50 U.S. states and the District of Columbia. For results based on the total sample of national adults, one can say with \alert{95\% confidence that the maximum margin of sampling error is ±4 percentage points}.
-\end{quote}
+  \frametitle{``Negative Views of Trump's Transition''}
+  \framesubtitle{Source: \href{http://www.people-press.org/2017/01/10/negative-views-of-trumps-transition-amid-concerns-about-conflicts-tax-returns/}{\fbox{Pew Research Center}}}
+  \begin{quote}
+Ahead of Donald Trump's scheduled press conference in New York City on Wednesday, the public continues to give the president-elect low marks for how he is handling the transition process\dots 
+The latest national survey by Pew Research Center, conducted Jan. 4-9 among 1,502 adults, finds that 39\% approve of the job President-elect Trump has done so far explaining his policies and plans for the future to the American people, while a larger share (55\%) say they disapprove.
+  \end{quote}
 \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\begin{frame}
+%\frametitle{``Americans Divided on Outlook for Next Generation''}
+%\framesubtitle{Source: \href{http://www.gallup.com/poll/159737/americans-divided-outlook-next-generation.aspx}{\fbox{Gallup}}}
+%\vspace{1em}
+%\begin{quote}
+%PRINCETON, NJ -- Americans are evenly divided about whether it is likely (49\%) or unlikely (50\%) that the next generation of youth in the country will have a better life than their parents. That is a slightly more positive assessment than in early 2011, when the slight majority, 55\%, thought it was unlikely the next generation would achieve this goal.
+%\end{quote}
+%\end{frame}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}
+%\frametitle{Example of Sampling Error}
+%``...evenly divided about whether it is likely (49\%) or unlikely (50\%) that the next generation of youth in the country will have a better life...''
+%
+%\vspace{2em}
+%\begin{quote}
+%Results for this USA Today/Gallup poll are based on telephone interviews conducted Dec. 14-17, 2012, with a \alert{random sample of 1025 adults}, aged 18 and older, living in all 50 U.S. states and the District of Columbia. For results based on the total sample of national adults, one can say with \alert{95\% confidence that the maximum margin of sampling error is ±4 percentage points}.
+%\end{quote}
+%\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Quantifying Sampling Error}
 \framesubtitle{95\% Confidence Interval for Poll Based on Random Sample}
-	$$Margin of Error (ME) \approx 2 \sqrt{P(1-P)/n}$$
-	We Report: $P \pm ME$
+
+\begin{block}{Margin of Error a.k.a.\ ME}
+  We report $P \pm \mbox{ME}$ where $\mbox{ME} \approx 2 \sqrt{P(1-P)/n}$
+\end{block}
+
+\begin{block}{Trump Transition Approval Rate}
+$P = 0.39$ and $n = 1502$ so $\mbox{ME} \approx 0.013$.  We'd report $39\%$ plus or minus $1.3\%$ if the poll were based on a simple random sample\dots
+\end{block}
+
+\vspace{1em}
+
+\alert{But Pew Reports an ME of 2.9\% -- more than twice as large as the one we calculated! What's going on here?!}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Non-response bias is a huge problem\dots}
+  \framesubtitle{Source: \href{http://www.people-press.org/2012/05/15/assessing-the-representativeness-of-public-opinion-surveys}{\fbox{Pew Research Center}}}
+
+  \begin{figure}
+    \centering
+\includegraphics[scale = 0.3]{./images/pew_nonresponse_2012.png}
+\end{figure}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -463,28 +500,7 @@ Random assignment \emph{neutralizes} effect of all confounding factors: since gr
 
 
 \begin{frame}
-\frametitle{\includegraphics[scale = 0.05]{./images/clicker} \hfill Racial Bias in Sentencing}
-Could we use a randomized experiment to learn whether there is racial discrimination in criminal sentencing?
-
-	\begin{enumerate}[(a)]
-		\item Yes
-		\item No
-	\end{enumerate}
-%Please respond using your remote.
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
 \frametitle{Randomization is not always possible, practical, or ethical.}
-
-
-\end{frame}
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
 
 \begin{block}{Observational Data}
 Data that do not come from a randomized experiment.
@@ -494,9 +510,7 @@ Data that do not come from a randomized experiment.
 \begin{alertblock}{It is very difficult to untangle cause and effect using observational data because of confounders.}
 \end{alertblock}
 
-
 \end{frame}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
