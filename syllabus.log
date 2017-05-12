@@ -1,14 +1,21 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  11 MAY 2017 17:30
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.8.28)  12 MAY 2017 15:19
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
 **syllabus.tex
-(./syllabus.tex
-LaTeX2e <2014/05/01>
-Babel <3.9k> and hyphenation patterns for 78 languages loaded.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
+("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\syllabus.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/size11.clo
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size11.clo"
 File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -23,22 +30,22 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/geometry/geometry.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count87
@@ -53,20 +60,21 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen109
 \Gm@layoutvoffset=\dimen110
 \Gm@dimlist=\toks15
-)
-(/usr/local/texlive/2014/texmf-dist/tex/latex/setspace/setspace.sty
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hyperref.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
-Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
 
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
-Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
@@ -95,7 +103,7 @@ Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
 )
 Package hobsub Info: Skipping package `hobsub' (already loaded).
 Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
-Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
 Package: xcolor-patch 2011/01/30 xcolor patch
 Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
@@ -103,22 +111,22 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/auxhook.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen111
 \Hy@linkcounter=\count90
 \Hy@pagecounter=\count91
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/pd1enc.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count92
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4443.
@@ -130,7 +138,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count93
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/url/url.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -155,23 +163,23 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hpdftex.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count98
 \c@bookmark@seq@number=\count99
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip43
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/enumerate.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\enumerate.sty"
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \@enLab=\toks16
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/fancybox/fancybox.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\fancybox\fancybox.sty"
 Package: fancybox 2010/05/15 1.4
 
 Style option: `fancybox' v1.4 <2010/05/15> (tvz)
@@ -184,24 +192,24 @@ Style option: `fancybox' v1.4 <2010/05/15> (tvz)
 \EndVerbatimTokens=\toks20
 \Verbatim@Outfile=\write3
 \Verbatim@Infile=\read1
-) (/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsmath.sty
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip44
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amstext.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsgen.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks21
 \ex@=\dimen116
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsbsy.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen117
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsopn.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count100
@@ -242,17 +250,17 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amssymb.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
 \fancy@headwidth=\skip47
 \f@ncyO@elh=\skip48
 \f@ncyO@erh=\skip49
@@ -263,9 +271,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 \f@ncyO@olf=\skip54
 \f@ncyO@orf=\skip55
 )
-(./syllabus.aux)
-\openout1 = `syllabus.aux'.
-
+("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\syllabus.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
@@ -317,10 +323,10 @@ LaTeX Font Info:    ... okay on input line 23.
 
 \AtBeginShipoutBox=\box30
 Package hyperref Info: Link coloring OFF on input line 23.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count112
@@ -329,26 +335,25 @@ LaTeX Info: Redefining \ref on input line 23.
 LaTeX Info: Redefining \pageref on input line 23.
 LaTeX Info: Redefining \nameref on input line 23.
 
-(./syllabus.out) (./syllabus.out)
+("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\syllabus.out")
+("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\syllabus.out")
 \@outlinefile=\write4
-\openout4 = `syllabus.out'.
-
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
 (Font)              using `OT1/cmr/bx/n' instead on input line 31.
 
 LaTeX Font Info:    Try loading font information for U+msa on input line 60.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 60.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no œ in font cmr10!
@@ -363,7 +368,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 215--230
 [2] [3]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 317.
 
- (/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
@@ -372,7 +377,7 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 324.
  [4]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 324.
 
-(./syllabus.aux)
+("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\syllabus.aux")
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 324.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 324.
 Package rerunfilecheck Info: File `syllabus.out' has not changed.
@@ -384,26 +389,25 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 324.
  ) 
 Here is how much of TeX's memory you used:
- 5941 strings out of 493117
- 85313 string characters out of 6135433
- 179385 words of memory out of 5000000
- 9355 multiletter control sequences out of 15000+600000
- 12974 words of font info for 50 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 29i,15n,43p,292b,328s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr
-/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/lo
-cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
-al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/
-texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on syllabus.pdf (4 pages, 125712 bytes).
+ 5946 strings out of 493921
+ 85401 string characters out of 3147264
+ 174849 words of memory out of 3000000
+ 9188 multiletter control sequences out of 15000+200000
+ 12974 words of font info for 50 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 29i,15n,43p,292b,328s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmti8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.p
+fb>
+Output written on syllabus.pdf (4 pages, 134154 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 68 PDF objects out of 1000 (max. 8388607)
  5 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
