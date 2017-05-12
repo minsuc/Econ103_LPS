@@ -1,0 +1,20 @@
+\frametitle{Which Gives Better Predictions: Sex (a) or Handspan (b)?}
+\footnotesize
+\begin{verbatim}
+lm(formula = height ~ sex, data = student.data)
+            coef.est coef.se
+(Intercept) 64.46     0.56
+sexMale      6.10     0.76
+---
+n = 80, k = 2
+residual sd = 3.38, R-Squared = 0.45
+
+lm(formula = height ~ handspan, data = student.data)
+            coef.est coef.se
+(Intercept) 39.60     3.96
+handspan     1.36     0.19
+---
+n = 80, k = 2
+residual sd = 3.56, R-Squared = 0.40
+\end{verbatim}
+
