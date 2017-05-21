@@ -1,0 +1,148 @@
+\documentclass[addpoints,10pt]{exam}
+\usepackage{amsmath, amssymb}
+\usepackage{ifthen}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{units}
+\usepackage[top=0.6in, left=0.6in, right=0.6in, bottom=0.6in]{geometry}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------SHOWTO COMMAND-------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%This is a convenience command for conditional compilation that controls which questions are shown to a particular recitation section on the quiz. Any question not enclosed by \showto is shown to all recitation sections. The first argument to \showto is the desired section number. The second argument is the question body
+\newcommand{\showto}[2]
+{
+\ifthenelse{
+	 \equal{\RecitationSection}{#1}\OR\equal{\RecitationSection}{MASTER}
+	}{#2}{}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-----------END SHOWTO COMMAND------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------OPTIONS------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\boxedpoints
+%\pointsinmargin
+
+%Show or hide answers
+\printanswers
+%\noprintanswers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%---------------END OPTIONS-----------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------ SELECT SECTION-----------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%To switch between different versions of the quiz for different recitation sections, change the final argument as needed to 201, 202, 203, 204, etc. If you instead enter MASTER you'll get a document with all quiz questions.
+\newcommand{\RecitationSection}{201}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------END SELECT SECTION--------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%---------------QUIZ HEADER-----------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\thispagestyle{empty}
+
+\noindent \textbf{Econ 103 -- Quiz 2}
+
+\vspace{15pt}
+\noindent
+\makebox[0.45\textwidth]{Name:\enspace\hrulefill}
+
+\paragraph{Instructions: } This is closed-book, closed-notes quiz. Please write your answers in the blanks provided. Each question is worth one point but no partial credit will be awarded. Non-programmable calculators are permitted.
+
+\vspace{5pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------END QUIZ HEADER----------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength\answerlinelength{2in}
+
+\begin{questions}
+
+
+%%%%%%%%%%%%%%%% Question 1
+
+\showto{201}{\question Let $X$ be a discrete random variable denoting the number of days it will rain within a 2 day interval and $Y$ denotes the number of days it will snow. The following table represents the joint PMF of $X$ and $Y$ denoted by $P(X,Y)$. 
+\\[0.2in]
+\begin{table}[htbp]
+\begin{center}
+\begin{Large}
+  \centering
+    \begin{tabular}{rr|rrr}
+    \hline
+          &       & \multicolumn{3}{c}{Y} \\
+    
+          &       & \multicolumn{1}{c}{0} & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{2} \\
+          \hline
+    \multicolumn{1}{c}{\multirow{3}[2]{*}{X}} & 0     &  $\nicefrac{1}{20}$     &  $\nicefrac{2}{20}$     & \nicefrac{4}{20}  \\
+    \multicolumn{1}{c}{} & 1    &    $\nicefrac{5}{20}$   &   $\nicefrac{1}{20}$    & $\nicefrac{3}{20}$ \\
+    \multicolumn{1}{c}{} & 2     &  $\nicefrac{1}{20}$     & $\nicefrac{2}{20}$      & $\nicefrac{1}{20}$  \\
+    \hline
+    \end{tabular}%
+  \label{tab:addlabel}%
+  \end{Large}
+  \end{center}
+\end{table}%
+
+Calculate (1 point each):
+
+\begin{enumerate}
+\item The probability that it will rain on one day only. 
+\item The probability that it will snow on one day only.
+\item The probability that it will rain on one day only and it will snow on one day only. 
+\item The probability that it will rain on one day only, given that it will snow on one day only. 
+\item Are the random variables X and Y independent?
+\answerline[]
+\end{enumerate}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%% Question 2
+
+\showto{201}{\question Let X be a random variable with support set \{2,3,-1\} where $p(2)=p(3)=p(-1)$. Calculate $E[X^2]$ \answerline[]}
+
+
+
+%%%%%%%%%%%%%%%% Question 6
+\showto{201}{\question X and Y are random variables. Write $Var(aX+bY)$ in terms of $Var(X), Var(Y)$ and $Cov(X,Y)$.  \answerline[]}
+
+
+\showto{201}{\question An employer uses a lie detector test to try and figure out which of her employees may be thieves. She knows that 1\% of her workers steal from her supply closet. The lie detector test is 90\% effective -- if a thief takes it, 90\% of the time they will fail the test, and if an honest employee takes it, they will \textit{pass} 90\% of the time. An employee failed the test. What is the probability that they are a thief?  \answerline[]}
+
+\showto{201}{\question A six sided fair die is randomly rolled 3 times. What is the probability \textbf{in fraction} that you get at least one 6?
+\answerline[]}
+
+
+
+%%%%%%%%%%%%%%%% Question 8
+
+\showto{201}{\question $A$ and $A^C$ are mutually exclusive and collectively exhaustive. True or false?  \answerline[]}
+
+
+
+\showto{201}{\question $P(A \cap A^C) = 1$. True or false?  \answerline[]}
+
+\end{questions}
+
+\end{document}  

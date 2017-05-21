@@ -1,0 +1,88 @@
+%%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Change the font size of your document - 10pt, 12.1pt, etc.
+\documentclass[letterpaper,11pt,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{hyperref}
+
+\usepackage{graphicx}
+\graphicspath{ {images/}} %upload your signature to this file
+%Change the margins to fit your CV/resume content
+\usepackage[left=0.7in, right=0.7in, bottom=1.25in, top=1.25in]{geometry}
+
+%Skype information - include your Skype name for a link to add you on Skype
+\newcommand*{\Skype}{\href{skype:minsu.chang1111?add}{minsu.chang1111}} 
+\newcommand{\Absender}[1][\normalsize]{\Skype} 
+
+%Changes the page numbers - {arabic}=arabic numerals, {gobble}=no page numbers, {roman}=Roman numerals
+\pagenumbering{gobble}
+
+%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%% NAME OF APPLICANT %%%%%%%%%%%%%%%%%%%
+
+\noindent  \LARGE{\textbf{Minsu Chang}}  \\
+\vspace{-1ex}
+\hrule
+\normalsize
+
+%%%%%%%%%%%%%%%%% CONTACT INFORMATION %%%%%%%%%%%%%%%%%
+% Your email address, website, and Skype name are links to send email, open your website and add you on Skype. 
+
+\begin{center}
+\begin{tabular}{l l}
+ University of Pennsylvania    & \hspace{1in} \href{mailto:minsuc@sas.upenn.edu}{minsuc@sas.upenn.edu} \\
+ Department of Economics    & \hspace{1in}  \href{www.minsuchang.com}{www.minsuchang.com}   \\
+ 3718 Locust Walk, 160 McNeil Building             & \hspace{1in} Skype: minsu.chang1111 \\%\Absender  \\
+ Philadelphia, PA 19104 &\\% \hspace{1in} Phone: +1 (123) 456-7899 \\
+\end{tabular}
+\end{center}
+
+\vspace{1em}
+
+%%%%%%%%%%%%%%%%% MAIN BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The main body is contained in a tabular environment. To move sections onto the next page, simply end the tabular environment and begin a new tabular environment.
+
+\noindent \begin{tabular}{@{} l l}
+ \Large{Education} 
+    & \textbf{University of Pennsylvania (Penn)} \\
+     & Ph.D., Economics, degree expected May 2019. \\
+     & Fields: Bayesian econometrics, Household finance, Computational economics \\
+     & M.A., Economics, May 2016. \\
+     & \\
+     & \textbf{Seoul National Univeristy (SNU)} \\
+          & M.A., Economics, Aug 2013. \\
+     & B.A., \textit{Summa Cum Laude}, Economics, Aug 2011. \\
+     \vspace{0.1in} \\
+      \Large{Publication}    & ``Nonparametric Tests of Conditional Treatment Effects with an Application\\
+ & to Single-Sex Schooling on Academic Achievements," with Sokbae (Simon) Lee\\
+ & and Yoon-Jae Whang, \textit{The Econometrics Journal}, 2015, Vol 18, pp.307-346. \\
+     \vspace{0.1in} \\
+ \Large{Working Papers}    & ``A Generalized Focused Information Criterion for GMM with Applications to \\
+ &Panel Data Models," with Francis J. DiTraglia, submitted. \\
+     \vspace{0.1in} \\
+  \Large{Teaching}    & Instructor, Statistics for Economists (Undergraduate), Penn, Summer 2017\\
+  \Large{Experience} &  Instructor, PIER Workshop on Quantitative Tools for Macroeconomics, Penn, 2017\\% Policy Analysis \\
+      & Teaching Assistant, Econometrics I (Ph.D.), Penn, Fall 2014/Fall 2015 \\
+     & Teaching Assistant, Econometrics (Undergraduate), Penn, Spring 2015\\
+     & Teaching Assistant, Econometrics (Undergraduate), SNU, Fall 2011/Spring 2012\\
+     \vspace{0.1in} \\
+       \Large{Other}   & Dissertation Fellow, Federal Reserve Bank of Richmond, Summer 2016\\
+     \Large{Experience}  & Research Assistant to Professor Frank Schorfheide (Penn), Jan 2016 - Present \\
+     & Research Assistant to Professor Frank Schorfheide (Penn), July 2015 - Aug 2015\\
+     & Research Assistant to Professor Yoon-Jae Whang (SNU), Aug 2011 - Aug 2013\\
+     \vspace{0.1in} \\
+ \Large{Awards and }    & Maloof Family Dissertation Fellowship, University of Pennsylvania, 2017-2018   \\
+  \Large{Fellowships}   & University Fellowship, University of Pennsylvania, 2013-2014  \\
+     & BK21 Scholarship, National Research Foundation of Korea, 2011-2012\\
+     & Graduate of Highest Honor, Seoul National University, Aug 2011 \\
+     \vspace{0.1in} \\
+  \Large{Languages}   & English (fluent), Korean (native), French (reading knowledge) \\
+\Large{and Skills}    & MATLAB, Julia, Python, R (Rcpp), Stata, \LaTeX \\
+\end{tabular}
+
+
+\end{document}
+

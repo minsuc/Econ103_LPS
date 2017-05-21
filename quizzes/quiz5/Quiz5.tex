@@ -1,0 +1,144 @@
+\documentclass[addpoints,10pt]{exam}
+\usepackage{amsmath, amssymb}
+\usepackage{ifthen}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{units}
+\usepackage[top=0.6in, left=0.6in, right=0.6in, bottom=0.6in]{geometry}
+\usepackage{enumerate} %allows lettered lists in enumerate
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------SHOWTO COMMAND-------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%This is a convenience command for conditional compilation that controls which questions are shown to a particular recitation section on the quiz. Any question not enclosed by \showto is shown to all recitation sections. The first argument to \showto is the desired section number. The second argument is the question body
+\newcommand{\showto}[2]
+{
+\ifthenelse{
+	 \equal{\RecitationSection}{#1}\OR\equal{\RecitationSection}{MASTER}
+	}{#2}{}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-----------END SHOWTO COMMAND------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------OPTIONS------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\boxedpoints
+%\pointsinmargin
+
+%Show or hide answers
+\printanswers
+%\noprintanswers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%---------------END OPTIONS-----------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------ SELECT SECTION-----------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%To switch between different versions of the quiz for different recitation sections, change the final argument as needed to 201, 202, 203, 204, etc. If you instead enter MASTER you'll get a document with all quiz questions.
+\newcommand{\RecitationSection}{205}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------END SELECT SECTION--------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%---------------QUIZ HEADER-----------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\thispagestyle{empty}
+
+\noindent \textbf{Econ 103 -- Quiz 5}
+
+\vspace{15pt}
+\noindent
+\makebox[0.45\textwidth]{Name:\enspace\hrulefill}\hfill 
+\paragraph{Instructions: } This is closed-book, closed-notes quiz. Please write your answers in the blanks provided. Each question is worth one point but no partial credit will be awarded. Non-programmable calculators are permitted.
+
+\vspace{5pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------END QUIZ HEADER----------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength\answerlinelength{6in}
+
+\begin{questions}
+
+
+%%%%%%%%%%%%%%%% Question 2
+
+\showto{205}{\question True or false: a Type I error is when you fail to reject a null that is false \answerline[]}
+
+
+
+%%%%%%%%%%%%%%%% Question 4
+
+
+\showto{205}{\question Steve wants to test the null hypothesis that freshman students weigh on average 170 pounds against the two-sided alternative. Write down the null hypothesis and alternative hypothesis, where $\mu$ is the true average weight in the population.
+\answerline[]}
+
+%%%%%%%%%%%%%%%% Question 5
+
+
+\showto{205}{\question Following on from the previous question, to test this hypothesis Steve gathered data on 9 students. We assume that the weights collected come from a normal distribution: $X_1...X_9\sim iid N(\mu,\sigma^2)$. He calculates the sample mean weight, $\bar{X}$. We assume that he knows the variance $\sigma^2$. Write down an expression for an appropriate test statistic  if he wants to test the null hypothesis $\mu=\mu_0$.
+\answerline[]  
+}
+
+
+%%%%%% Question 6 %%%%%%%
+
+
+\showto{205}{\question Suppose you are testing $\mu=\mu_0$ when $X_1,...X_n \sim N(\mu,\sigma^2)$. Which of the following will be our rejection criterion if we are testing against the two sided alternative hypothesis $\mu\neq \mu_0$ with a significance level of $\alpha$?
+\begin{enumerate}
+	\item $\left| \frac{\bar X_n-\mu_0}{\sigma/\sqrt{n}}\right|>\mbox{qnorm}(1-\alpha/2)$. 
+	\item $\frac{\bar X_n-\mu_0}{\sigma/\sqrt{n}}>\mbox{qnorm}(\alpha)$. 
+	\item $\frac{\bar X_n-\mu_0}{\sigma/\sqrt{n}}<\mbox{qnorm}(1-\alpha)$. 
+	\item $\frac{\bar X_n-\mu_0}{\sigma/\sqrt{n}}>\mbox{qnorm}(\alpha/2)$. 
+\end{enumerate}
+\answerline[]  
+}
+
+%%%%%% Question 7 %%%%%%%
+
+
+\showto{205}{\question Which of the following is true about $p$ values?
+\\[0.1in]
+a. The $p$ value gives the probability that the null hypothesis is true.\\[0.1in]
+b. The $p$ value is the probability under the null hypothesis of observing a test statistic at least as aberrant as the one actually obtained.\\[0.1in]
+c. The $p$ value gives us reliable results in the sense that, if we could repeat the experiment a great number of times, we would obtain a significant results on $100p$\% of those occasions. \\[0.1in]
+d. The $p$ value can be used to disprove the null hypothesis.\\[0.1in]
+\answerline[]}
+
+
+%%%%%%%%%%%%%%%%% Questions 5, 6
+
+
+\showto{205}{\question Suppose that we observe a sample proportion of $\widehat{p} = 0.6$ with a sample size of $100$ and want to test $H_0\colon p = 0.5$ against the one-sided alternative that $p < 0.5$ at the 5\% significance level. Calculate the value of the test statistic, fully imposing the null (i.e. using the value of $p$ from our null hypothesis wherever possible)? \vspace{0.5in} \answerline[]}
+
+\showto{205}{\question Following on from the previous question, should we reject the null hypothesis?\answerline[]}
+
+
+%%%%%%%%%%%%%%% Q8
+
+
+\showto{205}{\question Kevin and Sara poll a random sample of 100 Penn Undergraduates to find out the proportion who prefer Coke to Pepsi. Unbeknownst to them, the true proportion is exactly 65\%. Using the \emph{exact same} dataset, both Kevin and Sara carry out two-sided hypothesis tests of the null hypothesis $H_0\colon p = 0.5$. Whereas Sara uses a 5\% significance level for her test, Kevin uses a 1\% significance level. Whose test has more power?\\
+	\begin{oneparchoices}
+		\choice Kevin's Test
+		\choice Sara's Test 
+		\choice Both have Equal Power
+		\choice Not Enough Information to Determine
+	\end{oneparchoices}\answerline[]}	
+%%%%%%%%%%%%%%%
+\end{questions}
+
+\end{document}  
