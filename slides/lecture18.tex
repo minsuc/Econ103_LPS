@@ -34,13 +34,13 @@
 \end{center}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-\frametitle{Today: Confidence Interval ``Roundup''}
+\frametitle{Confidence Interval ``Roundup''}
 
 \begin{enumerate}
 	\item Values near the middle of a CI are ``more plausible.''
 	\item CI for Difference of Means using the CLT
+	%\vspace{0.2in}
 	\item Independent Samples versus Matched Pairs
 	%\item Refined CIs for Population Proportion
 	%\item Percentile Bootstrap CIs
@@ -49,6 +49,122 @@
 \alert{Note that we are no longer assuming that the population is normal. Instead, we are constructing confidence intervals based on a large sample approximation using the CLT.}
 
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Are Republicans Better Informed Than Democrats?}
+\framesubtitle{\fbox{\href{http://www.people-press.org/files/2012/08/8-10-12-Knowledge-release.pdf}{Pew: ``What Voters Know About Campaign 2012''}}}
+Of the 239 Republicans surveyed, 47\% correctly identified John Roberts as the current chief justice. Only 31\% of the 238 Democrats surveyed correctly identified him. Is this difference meaningful or just sampling variation?
+
+\vspace{2em}
+\alert{Again, assume random sampling.}
+
+
+%Might be better to make a confidence interval for the proportion MINUS 0.25 to account for random guessing.
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Confidence Interval for a Difference of Proportions}
+	\begin{block}{What is the appropriate probability model for the sample?} 
+$X_1, \hdots, X_n \sim \mbox{ iid Bernoulli}(p)$ independently  of $Y_1, \hdots, Y_m \sim \mbox{ iid Bernoulli}(q)$
+\end{block}
+	\begin{block}{What is the parameter of interest?}
+The difference of population proportions $p - q$
+\end{block}
+
+\begin{block}{What is our estimator?}
+The difference of sample proportions: $\widehat{p} - \widehat{q}$ where:
+	$$\widehat{p} = \frac{1}{n}\sum_{i=1}^n X_i \quad \quad \quad	\widehat{q} = \frac{1}{m}\sum_{i=1}^m Y_i$$
+\end{block}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}
+\frametitle{Difference of Sample Proportions $\widehat{p}-\widehat{q}$ and the CLT}
+\begin{block}{What We Have}
+Approx.\ sampling dist.\ for \emph{individual} sample proportions from CLT:
+\alert{$\widehat{p} \approx N\left(p, \widehat{SE}(\widehat{p})^2\right), \quad \widehat{q} \approx N\left(q, \widehat{SE}(\widehat{q})^2\right)$}
+\end{block}\pause
+
+\begin{block}{What We Want}
+Sampling Distribution of the \emph{difference} $\widehat{p} - \widehat{q}$
+\end{block}\pause
+
+\begin{block}{Use Independence of the Two Samples}
+\alert{$\widehat{p} - \widehat{q} \approx N\left( p - q, \widehat{SE}(\widehat{p})^2 +\widehat{SE}(\widehat{q})^2\right)$} \pause
+$$\implies \widehat{SE}(\widehat{p} - \widehat{q}) = \pause \sqrt{\widehat{SE}(\widehat{p})^2 +\widehat{SE}(\widehat{q})^2}  = \pause  \sqrt{\frac{\widehat{p}(1-\widehat{p})}{n} + \frac{\widehat{q}(1-\widehat{q})}{m}}$$
+\end{block}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Approx.\ 95\% CI for Difference of Population Proportions}
+
+
+$$\frac{(\widehat{p} - \widehat{q}) - (p - q)}{\sqrt{\frac{\widehat{p}(1-\widehat{p})}{n} + \frac{\widehat{q}(1-\widehat{q})}{m}}} \approx N(0,1)$$
+ 
+
+ 
+
+\begin{eqnarray*}
+	P\left( -2 \leq  \frac{(\widehat{p} - \widehat{q}) - (p - q)}{\sqrt{\frac{\widehat{p}(1-\widehat{p})}{n} + \frac{\widehat{q}(1-\widehat{q})}{m}}}\leq 2\right) \approx 0.95 \\ \\ \\ 
+	(\widehat{p} - \widehat{q}) \pm \texttt{qnorm}(1-\alpha/2) \sqrt{\frac{\widehat{p}(1-\widehat{p})}{n} + \frac{\widehat{q}(1-\widehat{q})}{m}}
+\end{eqnarray*}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{$100\times(1-\alpha)$ CI for Diff.\ of Popn.\ Proportions $(p-q)$}
+$X_1, \hdots, X_n \sim \mbox{iid Bernoulli}(p)$ indep.\ $Y_1, \hdots, Y_n \sim \mbox{iid Bernoulli}(q)$
+	$$(\widehat{p} - \widehat{q}) \pm \texttt{qnorm}(1-\alpha/2) \sqrt{\frac{\widehat{p}(1-\widehat{p})}{n} + \frac{\widehat{q}(1-\widehat{q})}{m}}$$
+	\alert{Approximation based on the CLT. Works well provided $n,m$ large and $p,q$ aren't too close to zero or one.}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}
+\frametitle{ME for approx.\ 95\% for Difference of Proportions}
+
+\footnotesize
+\fbox{47\% of 239 Republicans vs.\ 31\% of 238 Democrats identified Roberts}
+\singlespacing
+\begin{columns} 
+	\column{0.5\textwidth}
+	\begin{block}{Republicans}
+		\begin{eqnarray*}
+			\widehat{p} &=& 0.47\\
+			n &=& 239\\  \pause
+			\widehat{SE}(\widehat{p}) &=&\sqrt{ \frac{\widehat{p}(1-\widehat{p})}{n}} \approx 0.032 \\ \pause
+		\end{eqnarray*}
+	\end{block}
+	
+	\column{0.5\textwidth}
+		\begin{block}{Democrats}
+		\begin{eqnarray*}
+			\widehat{q} &=& 0.31\\
+			m &=& 238\\  \pause
+			\widehat{SE}(\widehat{q}) &=& \sqrt{\frac{\widehat{q}(1-\widehat{q})}{m}} \approx 0.030\\ \pause
+		\end{eqnarray*}
+	\end{block}
+\end{columns}
+
+\begin{block}{Difference: (Republicans - Democrats)}
+	\begin{eqnarray*}
+		\widehat{p} - \widehat{q} &=& 0.47 - 0.31 = 0.16\\ \pause
+		\widehat{SE}(\widehat{p} - \widehat{q}) &=& \sqrt{\widehat{SE}(\widehat{p})^2 + \widehat{SE}(\widehat{q})^2} \approx 0.044  \pause \implies ME \approx 0.09 \pause 
+	\end{eqnarray*}
+	$$\alert{\boxed{\mbox{Approximate 95\% CI} \quad (0.07, 0.25)}} \quad \mbox{What can we conclude?}$$
+\end{block}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{How Much Narrower is a 68\% CI? \hfill \includegraphics[scale = 0.05]{./images/clicker}}
@@ -109,7 +225,7 @@ $$}
 \begin{frame}
 \frametitle{CI for Difference of Population Means Using CLT}
 
-\begin{block}{Last Time}
+\begin{block}{Previous Example}
 Used CLT to get CI for difference of population proportions based on independent samples.
 \end{block}
 
@@ -192,18 +308,18 @@ At the beginning of the last semester, students were each shown a ``random numbe
 \frametitle{Anchoring Experiment}
 \small
 \singlespacing
-\begin{block}{From what population is the sample drawn?} 
-US College Students? Penn Students? Penn Econ Majors? 
-\end{block}
+%\begin{block}{From what population is the sample drawn?} 
+%US College Students? Penn Students? Penn Econ Majors? 
+%\end{block}
 
 \begin{block}{Do We Have a Random Sample?} 
 Definitely not a random sample of US College Students. Possibly a random sample of Penn Econ Majors since Econ 103 is required. 
 \end{block}
 
 
-\begin{block}{Observational or Experimental Data?} 
-Randomized Experiment drew from a bag of ``random'' numbers 
-\end{block}
+%\begin{block}{Observational or Experimental Data?} 
+%Randomized Experiment drew from a bag of ``random'' numbers 
+%\end{block}
 
 \begin{block}{Are the two samples independent?}
 Yes: Students were told not to show their number to any other students or consult with them in any way. 
@@ -529,7 +645,7 @@ Sample Corr.& \multicolumn{2}{c}{0.54}&\\
 
 $$117 + 151 - 2 \times 0.54 \times \sqrt{117 \times 151} \approx 124   \;\alert{\checkmark}$$
 
-\alert{This agrees with what we got when we did calculations directly for the differences!}
+%\alert{This agrees with what we got when we did calculations directly for the differences!}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}

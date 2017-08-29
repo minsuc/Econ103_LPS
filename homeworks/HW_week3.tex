@@ -1,0 +1,149 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath, amssymb}
+\linespread{1.1}
+\usepackage{hyperref}
+\usepackage{enumerate}
+
+
+%To include the answers use:
+%	pdflatex "\def\showanswers{1} \input{thisfile.tex}"
+%\ifdefined\showanswers
+  \printanswers
+%\else
+ % \noprintanswers
+%\fi
+
+\title{Problem Set (Week 3)}
+\author{Econ 103}
+\date{}
+\begin{document}
+\maketitle
+
+
+
+
+\begin{questions}
+\section*{Lecture 10}
+
+
+\question Suppose that $X$ is a random variable with the following PDF
+	$$f(x)=\left\{\begin{array}{ll}x & 0\leq x\leq1 \\ 2-x  & 1 \leq x \leq 2\\ 0  & \mbox{otherwise}\end{array}\right. $$	
+	\begin{parts}
+		\part Graph the PDF of $X$.
+			\begin{solution}
+				It's an isosceles triangle with base from (0,0) to (2,0) and height 1. 
+			\end{solution}
+		\part Show that $\int_{-\infty}^\infty f(x)\; dx = 1$.
+			\begin{solution}
+				\begin{eqnarray*}
+				\int_{-\infty}^\infty f(x)\; dx &=& \int_0^1 x\; dx + \int_1^2 (2-x)\; dx = \left.\frac{x^2}{2} \right|_0^1 + \left. \left(2x - \frac{x^2}{2}\right) \right|_1^2 \\ \\
+					&=& 1/2 +( 4 - 2) - (2 - 1/2) = 1
+				\end{eqnarray*}
+			\end{solution}
+		\part What is $P(0.5 < X<1.5)$?
+			\begin{solution}
+				\begin{eqnarray*}
+					P(0.5 < X<1.5) &=& \int_{0.5}^{1.5} f(x) \; dx = \int_{0.5}^1 x\; dx + \int_1^{1.5} (2-x)\; dx\\\\
+						&=& \left.\frac{x^2}{2} \right|_{0.5}^1 + \left. \left(2x - \frac{x^2}{2}\right) \right|_1^{1.5}\\ \\
+			& =& (1/2 - 1/8) + (3 - 9/8) - (2  - 1/2) \\
+			&=& 3/8 + 15/8 - 2 + 1/2 =  18/8 - 16/8  + 4/8\\ 
+			&=& 6/8 = 3/4 = 0.75
+				\end{eqnarray*}
+			\end{solution}
+	\end{parts}
+	
+	
+
+\question A random variable is said to follow a Uniform$(a,b)$ distribution if it is equally likely to take on any value in the range $[a,b]$ and never takes a value outside this range. Suppose that $X$ is such a random variable, i.e.\ $X \sim \mbox{Uniform}(a,b)$.
+	\begin{parts}
+		\part What is the support of $X$?
+			\begin{solution}
+				$[a,b]$
+			\end{solution}
+		\part Explain why the PDF of $X$ is $f(x) = 1/(b-a)$ for $a\leq x \leq b$, zero elsewhere.
+			\begin{solution}
+				This simply generalizes the Uniform$(0,1)$ random variable from class. To capture the idea that $X$ is equally likely to take on any value in the range $[a,b]$, the PDF must be constant. To ensure that it integrates to 1, the denominator must be $b-a$. 
+			\end{solution}
+		\part Using the PDF from part (b), calculate the CDF of $X$.
+		\begin{solution}
+		 \begin{eqnarray*}
+		 	F(x_0) &=&\int_{-\infty}^{x_0} f(x)\; dx = \int_{a}^{x_0} \frac{dx}{b-a} = \left.\frac{x}{b-a}\right|_a^{x_0} =  \frac{x_0-a}{b-a} 
+		\end{eqnarray*}
+		 \end{solution}
+		\part Verify that $f(x) = F'(x)$ for the present example.	
+		\begin{solution}
+			\begin{eqnarray*}
+				F'(x) = \frac{d}{dx} \left(\frac{x - a}{b-a}\right) = \frac{1}{b-a} = f(x)
+			\end{eqnarray*}
+		\end{solution}
+		\part Calculate $E[X]$.
+			\begin{solution}
+			\begin{eqnarray*}
+				E[X] &=& \int_{-\infty}^\infty xf(x)\; dx = \int_a^b \frac{x}{b-a}\; dx = \left.\frac{x^2}{2(b-a)}\right|_a^b =  \frac{b^2 - a^2}{2(b-a)} = \frac{a+b}{2}
+			\end{eqnarray*}
+			\end{solution}
+		\part Calculate $E[X^2]$. \emph{Hint:} recall that $b^3-a^3$ can be factorized as $(b-a)(b^2 + a^2 + ab)$.
+			\begin{solution}
+				\begin{eqnarray*}
+					E[X^2]& =& \int_{-\infty}^\infty x^2 f(x) \; dx = \int_a^b \frac{x^2}{b-a} = \left. \frac{x^3}{3(b-a)}\right|_a^b = \frac{b^3 - a^3}{3(b-a)}\\ \\
+					&=& \frac{(b-a)(b^2 + a^2 + ab)}{3(b-a)} = \frac{b^2 + a^2 + ab}{3}
+				\end{eqnarray*}
+			\end{solution}
+		\part Using the shortcut formula and parts (e) and (f),  show that $Var(X) = (b-a)^2/12$.
+			\begin{solution}
+				\begin{eqnarray*}
+					Var(X) &=& E[X^2] - \left(E[X]\right)^2 = \frac{b^2 + a^2 + ab}{3} - \left(\frac{a+b}{2}\right)^2\\\\
+					&=& \frac{b^2 + a^2 + ab}{3} -\frac{a^2 + 2ab + b^2}{4}\\\\
+					&=& \frac{4b^2 + 4a^2 + 4ab - 3a^2 - 6ab - 3b^2}{12}\\\\
+					&=& \frac{b^2 + a^2 - 2ab}{12} = \frac{(b-a)^2}{12}
+				\end{eqnarray*}
+			\end{solution}
+	\end{parts}
+
+\section*{Lecture 11}
+	
+\question Suppose that $X\sim N(0, 16)$ independent of $Y\sim N(2, 4)$. Recall that our convention is to express the normal distribution in terms of its mean and variance, i.e.\ $N(\mu, \sigma^2)$. Hence, $X$ has a mean of zero and variance of 16, while $Y$ has a mean of 2 and a variance of 4. In completing some parts of this question you will need to use the R function \texttt{pnorm} described in class. In this case, please write down the command you used as well as the numeric result.
+	\begin{parts}
+		\part Calculate $P( -8\leq X \leq 8)$.
+			\begin{solution}
+				\begin{eqnarray*}
+				P( -8\leq X \leq 8) = P( -8/4\leq X/4 \leq 8/4) = P( -2\leq Z \leq 	2)\approx 0.95
+				\end{eqnarray*}
+where $Z$ is a standard normal random variable.
+			\end{solution}
+		\part Calculate $P(0 \leq Y \leq 4)$.
+					\begin{solution}
+			\begin{eqnarray*}
+				P(0 \leq Y \leq 4) = P\left(\frac{0-2}{2} \leq \frac{Y-2}{2}\leq \frac{4-2}{2}\right) = P(-1 \leq Z \leq 1) \approx 0.68
+			\end{eqnarray*}
+			where $Z$ is a standard normal random variable.
+			\end{solution}
+		\part Calculate $P( -1\leq Y \leq 6)$.
+					\begin{solution}
+				\begin{eqnarray*}
+					P( -1\leq Y \leq 6) &=& P\left( \frac{-1 -2}{2}\leq \frac{Y - 2}{2} \leq \frac{6-2}{2}\right)\\\\
+					&=& P(-1.5 \leq Z \leq 2)\\
+					&=& \Phi(2) - \Phi(-1.5)\\
+					&=& \mbox{\texttt{pnorm(2) - pnorm(-1.5)}}\\
+					&\approx& 0.91
+				\end{eqnarray*}
+				where $Z$ is a standard normal random variable.
+			\end{solution}
+		\part Calculate $P(X \geq 10)$.
+					\begin{solution}
+			\begin{eqnarray*}
+				P(X \geq 10) &=& 1 - P(X \leq 10) = 1 - P(X /4\leq 10/4) = 1 - P(Z\leq 2.5) \\
+				&=& 1 - \Phi(2.5) = 1 - \mbox{\texttt{pnorm(2.5)}}\\
+				&\approx& 0.006
+			\end{eqnarray*}
+			\end{solution}
+	\end{parts}	
+	
+
+
+
+\end{questions}
+
+
+
+\end{document}

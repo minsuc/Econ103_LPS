@@ -466,12 +466,13 @@ $\texttt{2 * (1 - pnorm(1.36))} =  \texttt{2 * pnorm(-1.36)} \approx 0.18$
 	\frametitle{One-Sample Example $H_0\colon p = 0.5$}
 	\fbox{\footnotesize 54\% of a random sample of 771 registered voters knew Mitt Romney is Pro-Life.}
 
-\vspace{1em}
+%\vspace{1em}
 
 	\begin{eqnarray*}
 		T_n &=& \frac{\widehat{p} - p_0}{\sqrt{\displaystyle \frac{p_0(1 - p_0)}{n}}} = 2 \sqrt{771}(0.54 - 0.5)\\ \\
 		&=& 0.08 \times \sqrt{771} \approx 2.2
 	\end{eqnarray*}
+	\vspace{-0.2in}
 	\begin{block}
 		{One-Sided p-value}
 		\texttt{1 - pnorm(2.2)} $\approx 0.014$
@@ -507,7 +508,7 @@ $\texttt{2 * (1 - pnorm(1.36))} =  \texttt{2 * pnorm(-1.36)} \approx 0.18$
 	\frametitle{A More Efficient Estimator of the SE Under $H_0$}
 	\begin{alertblock}
 		{Don't Forget!}
-		Standard Error (SE) means ``std.\ dev.\ of sampling distribution'' so you should know how to prove that:
+		Standard Error (SE) means ``std.\ dev.\ of sampling distribution'' so you should know that:
 	$$SE(\widehat{p} - \widehat{q}) = \sqrt{\frac{p(1-p)}{n} + \frac{q(1-q)}{m}}$$
 	\end{alertblock}
 

@@ -1,0 +1,305 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath, amssymb}
+\linespread{1.1}
+\usepackage{hyperref}
+\usepackage{enumerate}
+
+
+%To include the answers use:
+%	pdflatex "\def\showanswers{1} \input{thisfile.tex}"
+%\ifdefined\showanswers
+  \printanswers
+%\else
+ % \noprintanswers
+%\fi
+
+\title{Problem Set (Week 2)}
+\author{Econ 103}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{questions}
+\section*{Lecture 4 - 6}
+
+\question Suppose you flip a fair coin twice.
+	\begin{parts}
+		\part List all the basic outcomes in the sample space.
+		\begin{solution}
+			$S = \{HH, HT, TT, TH\}$
+		\end{solution}
+		\part Let $A$ be the event that you get at least one head. List all the basic outcomes in $A$.
+		\begin{solution}
+			$A = \{HH, HT, TH\}$
+		\end{solution}
+		\part What is the probability of $A$?
+		\begin{solution}
+			$P(A) = 3/4 = 0.75$
+		\end{solution}
+%		\part List all the basic outcomes in $A^c$. 
+%		\begin{solution}
+%			$A^c = \{TT\}$
+%		\end{solution}
+		\part What is the probability of $A^c$?
+		\begin{solution}
+			$P(A^c) = 1/4$
+		\end{solution}
+	\end{parts}
+
+\question Suppose I deal two cards at random from a well-shuffled deck of 52 playing cards. What is the probability that I get a pair of aces? 
+	\begin{solution}
+	You can either solve this assuming that order doesn't matter:
+		$$\frac{\binom{4}{2}}{\binom{52}{2}} = \frac{4!/(2!\times 2!)}{52!/(50!  \times 2!)} = \frac{6}{(52\times 51)/2}= 6/1326 = 1/221$$
+		or that it does:
+		$$\frac{P^4_2}{P^{52}_2} = \frac{4!/2!}{52!/50!} =\frac{(4\times 3)}{(52\times 51)} = 12/2652 = 1/221$$
+		In either case, the answer is the same: $1/221  \approx 0.005$
+	\end{solution}
+
+
+
+\question (Adapted from Mosteller, 1965) A jury has three members: the first flips a coin for each decision, and each of the remaining two independently has probability $p$ of reaching the correct decision. Call these two the ``serious'' jurors and the other the ``flippant'' juror (pun intended).
+	\begin{parts}
+		\part What is the probability that the serious jurors both reach the same decision?
+			\begin{solution}
+				There are two ways for them to agree: they can either make the right decision, $p^2$, or the wrong decision, $(1-p)^2$. These are mutually exclusive, so we sum the probabilities for a total of $p^2 + (1-p)^2$
+			\end{solution}
+		\part What is the probability that the serious jurors each reach different decisions?
+			\begin{solution}
+			There are two ways for them to disagree: either the first makes the wrong decision, $p(1-p)$, or the second makes the wrong decision, $(1-p)p$. These are mutually exclusive, so we sum the probabilities for a total of $2p(1-p)$.
+			\end{solution}
+	\part What is the probability that the jury reaches the correct decision? Majority rules.
+	\begin{solution}
+	 With probability $p^2$ the serious jurors agree and make the correct decision so the flippant juror is irrelevant. With probability $2p(1-p)$ they disagree. In half of these cases the flippant juror makes the correct decision. Thus, the overall probability is $p^2 + p(1-p) = p$.
+	\end{solution}
+	\end{parts}
+
+\question This question refers to the prediction market example from lecture. Imagine it is October 2012. Let $O$ be a contract paying \$10 if Obama wins the election, zero otherwise, and $R$ be a contract paying \$10 if Romney wins the election, zero otherwise. Let $\mbox{Price}(O)$ and $\mbox{Price}(R)$ be the respective prices of these contracts. (Assumption: The only possible outcomes are Obama or Romney winning the election.)
+	\begin{parts}
+	\part Suppose you \emph{buy} one of each contract. What is your profit?
+		\begin{solution}
+			Regardless of whether Romney or Obama wins, you get \$10. Thus, your profit is $$10 - \mbox{Price}(O) - \mbox{Price}(R)$$
+		\end{solution}
+	\part Suppose you \emph{sell} one of each contract. What is your profit?
+		\begin{solution}
+			Regardless of whether Romney or Obama wins, you have to pay out \$10. Thus, your profit is $$\mbox{Price}(O) + \mbox{Price}(R) - 10$$
+		\end{solution}
+	 \part What must be true about $\mbox{Price}(O)$ and $\mbox{Price}(R)$, to prevent an opportunity for statistical arbitrage? 
+	 \begin{solution}
+	  From (a) we see that you can earn a guaranteed, risk-free profit from \emph{buying} one of each contract whenever $10 > \mbox{Price}(O) +\mbox{Price}(R)$. From (b) we see that you can earn a guaranteeed, risk-free profit by \emph{selling} one of each contract whenever $ \mbox{Price}(O) +\mbox{Price}(R) > 10$. Therefore, the only way to prevent statistical arbitrage is to have $\mbox{Price}(O) +\mbox{Price}(R) = 10$.
+	 \end{solution}
+	 \part How is your answer to part (c) related to the Complement Rule?
+	 	\begin{solution}
+	 	In class we discussed how the market price of a prediction contract can be viewed as a subjective probability assessment. To find the implied probability we divide the price of the contract by the amount that is pays out, in this case \$10. Hence, dividing through by \$10, we see that the condition from part (b) when stated in probability terms is
+	 	$$P(O) = 1 - P(R)$$
+	 	This is precisely the Complement Rule because $R = O^c$.
+	 	\end{solution}
+	
+	 \end{parts}
+
+%\end{questions}	 
+
+\section*{Lecture 7 - 9}
+
+%\begin{questions}
+
+\question Suppose $X$ is a random variable with support $\{-1, 0, 1\}$ where $p(-1)=q$ and $p(1) = p$.
+	\begin{parts}
+		\part What is $p(0)$?
+			\begin{solution}
+				By the complement rule $p(0) = 1 - p - q$.
+			\end{solution}
+		\part Calculate the CDF, $F(x_0)$, of X.
+			\begin{solution}
+			$$F(x_0)=\left\{\begin{array}{l} 0, \;x_0 < -1\\ q, \;-1\leq x_0 < 0 \\ 1-p, \; 0\leq x_0 < 1 \\ 1, \; x_0\geq 1\end{array} \right.$$
+			\end{solution}
+		\part Calculate $E[X]$.
+		\begin{solution}$E[X] = -1 \cdot q + 0 \cdot (1-p-q) + p\cdot 1 = p-q$ \end{solution}
+		\part What relationship must hold between $p$ and $q$ to ensure $E[X]=0$?
+		\begin{solution}$p=q$\end{solution}
+	\end{parts}
+
+%\question Fill in the missing details from class to calculate the variance of a Bernoulli Random Variable \emph{directly}, that is \emph{without} using the shortcut formula.
+%	\begin{solution} 
+%	\begin{eqnarray*}
+%	\sigma^2 &=& Var(X) = \sum_{x \in \{0,1\}} (x - \mu)^2 p(x)\\ 
+%	&=& \sum_{x \in \{0,1\}} (x - p)^2 p(x)\\
+%	 &=& (0 - p)^2 (1-p) + (1-p)^2 p \\
+%	 &=& p^2(1-p) + (1-p)^2 p\\ 
+%	 &=& p^2 - p^3 + p - 2p^2 +p^3 \\
+%	 &=& p - p^2\\ 
+%	 &=&p(1-p)
+%\end{eqnarray*}
+%	\end{solution}
+
+%\question Prove that the Bernoulli Random Variable is a special case of the Binomial Random variable for which $n = 1$.	 (Hint: compare pmfs.)
+	%\begin{solution}
+	%	The pmf for a Binomial$(n,p)$ random variable is
+	%	$$p(x) = {n \choose x} p^x (1-p)^{n-x}$$
+	%	with support $\{0, 1, 2\hdots, n\}$. Setting $n=1$ gives,
+	%	$$p(x) = p(x) = {1 \choose x} p^x (1-p)^{1-x}$$
+	%	with support $\{0,1\}$. Plugging in each realization in the support, and recalling that $0! = 1$, we have
+	%		$$p(0) = \frac{1!}{0!(1-0)!} p^0 (1-p)^{1-0} = 1 - p$$
+	%	and
+	%	$$p(1) = \frac{1!}{1!(1-1)!} p^1 (1-p)^0 = p$$
+	%	which is exactly how we defined the Bernoulli Random Variable.
+	%\end{solution}
+	
+\question Suppose that $X$ is a random variable with support $\{1,2\}$ and $Y$ is a random variable with support $\{0,1\}$ where $X$ and $Y$ have the following joint distribution:
+			\begin{eqnarray*}
+				p_{XY}(1,0) = 0.20, && p_{XY}(1,1) = 0.30 \\
+				p_{XY}(2,0) = 0.25, && p_{XY}(2,1) = 0.25
+			\end{eqnarray*}
+	\begin{parts}
+		\item Express the joint distribution in a $2\times 2$ table.
+			\begin{solution}
+			\begin{center}
+\begin{tabular}{|cc|cc|}
+\hline
+&&\multicolumn{2}{c|}{$X$}\\
+&&1 & 2\\
+\hline
+%\multirow{2}{*}{$Y$}
+&0& \multicolumn{1}{|c}{0.20} & 0.25\\
+&1& \multicolumn{1}{|c}{0.30} & 0.25\\
+\hline
+\end{tabular}
+\end{center}
+			\end{solution}
+		\item Using the table, calculate the marginal probability distributions of $X$ and $Y$.
+			\begin{solution}
+				\begin{eqnarray*}
+					p_X(1) &=&p_{XY}(1,0) + p_{XY}(1,1)=0.20+0.30 = 0.50 \\
+					p_X(2) &=&p_{XY}(2,0) + p_{XY}(2,1)=0.25 + 0.25 = 0.50 \\
+					p_Y(0) &=&p_{XY}(1,0) + p_{XY}(2,0) = 0.20 + 0.25 = 0.45 \\
+					p_Y(1) &=& p_{XY}(1,1) + p_{XY}(2,1) = 0.30 + 0.25 = 0.55
+				\end{eqnarray*}
+			\end{solution}
+		\item Calculate the conditional probability distribution of $Y|X=1$ and $Y|X=2$.
+			\begin{solution}
+			The distribution of $Y|X = 1$ is
+				\begin{eqnarray*}
+					P(Y = 0|X = 1) &=&\frac{p_{XY}(1,0)}{p_X(1)} = \frac{0.2}{0.5}=0.4\\\\
+					P(Y = 1|X= 1) &=&\frac{p_{XY}(1,1)}{p_X(1)} = \frac{0.3}{0.5} = 0.6
+				\end{eqnarray*}
+				while the distribution of $Y|X = 2$ is
+				\begin{eqnarray*}
+					P(Y = 0|X = 2) &=&\frac{p_{XY}(2,0)}{p_X(2)} = \frac{0.25}{0.5} = 0.5\\\\
+					P(Y = 1|X= 2) &=&\frac{p_{XY}(2,1)}{p_X(2)} = \frac{0.25}{0.5} = 0.5
+				\end{eqnarray*}
+			\end{solution}
+		\item Calculate $E[Y|X]$.
+			\begin{solution}
+			\begin{eqnarray*}
+				E[Y | X =1 ] &=& 0 \times 0.4 + 1 \times 0.6 = 0.6\\
+				E[Y | X =2 ] &=& 0 \times 0.5 + 1 \times 0.5 = 0.5
+			\end{eqnarray*}
+			Hence, 
+				$$E[Y|X] = \left\{ \begin{array}{ll} 0.6  & \mbox{with probability } 0.5\\ 0.5& \mbox{with probability } 0.5\end{array} \right.$$
+				since $p_X(1) = 0.5$ and $p_X(2) = 0.5$.
+			\end{solution}
+		\item What is $E[E[Y|X]]$?
+			\begin{solution}
+			$E[E[Y|X]] = 0.5 \times 0.6 + 0.5 \times 0.5 = 0.3 + 0.25 = 0.55$. Note that this equals the expectation of $Y$ calculated from its marginal distribution, since $E[Y] = 0 \times 0.45 + 1 \times 0.55$. This illustrates the so-called ``Law of Iterated Expectations.''
+			\end{solution}
+		\item Calculate the covariance between $X$ and $Y$ using the shortcut formula.
+		\begin{solution}
+		First, from the marginal distributions, $E[X] = 1\cdot 0.5 + 2 \cdot 0.5 = 1.5$ and $E[Y]=0 \cdot 0.45 + 1 \cdot 0.55 = 0.55$. Hence $E[X]E[Y] = 1.5 \cdot 0.55 = 0.825$. Second,
+			\begin{eqnarray*}
+				E[XY] &=& (0\cdot 1) \cdot 0.2 + (0\cdot 2)\cdot 0.25 + (1\cdot 1) \cdot 0.3 + (1\cdot 2) 0.25\\
+						&=& 0.3 + 0.5 = 0.8
+			\end{eqnarray*}
+			Finally $Cov(X,Y) = E[XY] - E[X]E[Y] = 0.8 - 0.825 = -0.025$
+		\end{solution}
+	\end{parts}
+
+\question Let $X$ and $Y$ be discrete random variables and $a,b,c,d$ be constants. Prove the following:
+	\begin{parts}
+		\part $Cov(a+bX, c + dY) = bd Cov(X,Y)$
+		\begin{solution}
+		Let $\mu_X = E[X]$ and $\mu_Y = E[Y]$. By the linearity of expectation,
+			\begin{eqnarray*}
+				E[a + bX] &=& a + b\mu_X\\
+				E[c + dY] &=& c + d\mu_Y
+			\end{eqnarray*}
+	Thus, we have
+			\begin{eqnarray*}
+				(a+bx) - E[a + bX]&=& b(x - \mu_X)\\
+				(c + dy) - E[c + dY]&=& d(y-\mu_Y)
+			\end{eqnarray*}
+	Substituting these into the formula for the covariance between two discrete random variables,
+			\begin{eqnarray*}
+				Cov(a+bX, c+dY) &=& \sum_{x} \sum_{y} \left[b(x - \mu_X)\right]\left[d(y-\mu_Y)\right]p(x,y)\\
+					&=&bd\sum_{x} \sum_{y} (x - \mu_X)(y-\mu_Y)p(x,y)\\
+					&=&bd Cov(X,Y)
+			\end{eqnarray*}
+		\end{solution}
+		\part $Corr(a+bX, c + dY) = Corr(X,Y)$
+		\begin{solution}
+			\begin{eqnarray*}
+				Corr(a+bX, c + dY) &=& \frac{Cov(a+bX, c+dY)}{\sqrt{Var(a+bX)Var(c+dY)}}\\
+				&=& \frac{bd Cov(X,Y)}{\sqrt{b^2Var(X)d^2Var(Y)}}\\
+				&=&\frac{ Cov(X,Y)}{\sqrt{Var(X)Var(Y)}}\\
+				&=& Corr(X,Y)
+			\end{eqnarray*}
+		\end{solution}
+	\end{parts}
+
+
+
+
+
+\question Let $X_1$ be a random variable denoting the returns of stock 1, and $X_2$ be a random variable denoting the returns of stock 2. Accordingly let $\mu_1 = E[X_1]$, $\mu_2 = E[X_2]$, $\sigma_1^2 = Var(X_1)$, $\sigma_2^2 = Var(X_2)$ and $\rho = Corr(X_1, X_2)$. A \emph{portfolio}, $\Pi$,  is a linear combination of $X_1$ and $X_2$ with weights that sum to one, that is $\Pi(\omega) = \omega X_1 + (1-\omega)X_2$, indicating the proportions of stock 1 and stock 2 that an investor holds. In this example, we require $\omega \in [0,1]$, so that \emph{negative} weights are not allowed. (This rules out short-selling.) 
+	\begin{parts}
+		\part Calculate $E[\Pi(\omega)]$ in terms of $\omega$, $\mu_1$ and $\mu_2$.
+			\begin{solution}
+				\begin{eqnarray*}
+					E[\Pi(\omega)] &=& E[\omega X_1 + (1-\omega) X_2] = \omega E[X_1] + (1-\omega) E[X_2]\\
+						&=& \omega \mu_1 + (1-\omega) \mu_2
+				\end{eqnarray*}
+			\end{solution}
+		\part If $\omega \in [0,1]$ is it possible to have $E[\Pi(\omega)]>\mu_1$ \emph{and} $E[\Pi(\omega)]>\mu_2$? What about $E[\Pi(\omega)]<\mu_1$ and $E[\Pi(\omega)]<\mu_2$? Explain.
+			\begin{solution}
+			No. If short-selling is disallowed, the portfolio expected return must be between $\mu_1$ and $\mu_2$.
+			\end{solution}
+		\part Express $Cov(X_1, X_2)$ in terms of $\rho$ and $\sigma_1$, $\sigma_2$.
+			\begin{solution}
+				$Cov(X,Y) = \rho \sigma_1 \sigma_2$
+			\end{solution}
+		\part What is $Var[\Pi(\omega)]$? (Your answer should be in terms of $\rho$, $\sigma_1^2$ and $\sigma_2^2$.)
+			\begin{solution}
+				\begin{eqnarray*}
+					Var[\Pi(\omega)] &=& Var[\omega X_1 + (1-\omega) X_2]\\
+					& =& \omega^2 Var(X_1) + (1-\omega)^2 Var(X_2) + 2\omega (1-\omega) Cov(X_1, X_2)\\
+					&=&\omega^2 \sigma_1^2 + (1-\omega)^2\sigma_2^2 + 2\omega (1-\omega)\rho \sigma_1 \sigma_2 
+				\end{eqnarray*}
+			\end{solution}
+		\part Using part (d) show that the value of $\omega$ that minimizes $Var[\Pi(\omega)]$ is
+			$$\omega^* = \frac{\sigma_2^2 - \rho\sigma_1\sigma_2}{\sigma_1^2 + \sigma_2^2 -2\rho\sigma_1\sigma_2}$$
+			In other words, $\Pi(\omega^*)$ is the \emph{minimum variance portfolio}. 
+		\begin{solution}
+			The First Order Condition is:
+				$$2\omega \sigma_1^2 - 2(1-\omega)\sigma_2^2 + (2 - 4\omega)\rho \sigma_1\sigma_2=0$$
+				Dividing both sides by two and rearranging:
+				\begin{eqnarray*}
+				\omega \sigma_1^2 - (1-\omega)\sigma_2^2 + (1-2\omega)\rho\sigma_1 \sigma_2&=&0\\
+				\omega\sigma_1^2 - \sigma_2^2 + \omega \sigma_2^2 + \rho \sigma_1\sigma_2 - 2\omega \rho \sigma_1\sigma_2 &=& 0\\
+				\omega(\sigma_1^2 + \sigma_2^2 -2\rho\sigma_1\sigma_2) &=& \sigma_2^2 - \rho\sigma_1\sigma_2
+				\end{eqnarray*}
+				So we have
+					$$\omega^* = \frac{\sigma_2^2 - \rho\sigma_1\sigma_2}{\sigma_1^2 + \sigma_2^2 -2\rho\sigma_1\sigma_2}$$
+		\end{solution}
+	%	\part If you want a challenge, check the second order condition from part (e).
+		%	\begin{solution}
+		%					The second derivative is
+		%		$$2\sigma_1^2 - 2\sigma_2^2 - 4\rho \sigma_1\sigma_2$$
+		%		and, since $\rho=1$ is the largest possible value for $\rho$,
+		%		$$2\sigma_1^2 - 2\sigma_2^2 - 4\rho \sigma_1\sigma_2 \geq 2\sigma_1^2 - 2\sigma_2^2 - 4\sigma_1\sigma_2 = 2(\sigma_1 - \sigma_2)^2 \geq 0$$
+		%		so the second derivative is positive, indicating a minimum. This is a global minimum since the problem is quadratic in $\omega$.
+		%	\end{solution}
+	\end{parts}
+
+\end{questions}
+
+
+
+\end{document}

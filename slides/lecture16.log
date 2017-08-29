@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.8.28)  12 MAY 2017 14:30
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.8.28)  7 JUN 2017 17:58
 entering extended mode
 **lecture16.tex
-("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\slides_fin\lecture16.tex"
+("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\slides\lecture16.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -709,8 +709,8 @@ Package: beamerinnerthemedefault 2014/06/30  (rcs-revision 580088513a67)
 medefault.sty"
 Package: beamerouterthemedefault 2012/12/19  (rcs-revision 1686da3db3c9)
 )))
-("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\slides_fin\econ103slides.
-sty" ("C:\Program Files\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\slides\econ103slides.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\rotating\rotating.sty"
@@ -928,8 +928,7 @@ File: tikzlibrarybackgrounds.code.tex 2013/07/18 v3.0.1 (rcs-revision 1.3)
 librarytrees.code.tex"
 File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1 (rcs-revision 1.2)
 ))
-("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\slides_fin\lecture16.aux"
-)
+("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\slides\lecture16.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
@@ -1008,9 +1007,8 @@ LaTeX Info: Redefining \ref on input line 15.
 LaTeX Info: Redefining \pageref on input line 15.
 LaTeX Info: Redefining \nameref on input line 15.
 
-("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\slides_fin\lecture16.out"
-) ("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\slides_fin\lecture16.ou
-t")
+("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\slides\lecture16.out")
+("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\slides\lecture16.out")
 \@outlinefile=\write6
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 15.
@@ -1091,8 +1089,8 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 LaTeX Info: Redefining \includegraphics on input line 15.
 
-("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\slides_fin\lecture16.nav"
-) [1
+("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\slides\lecture16.nav")
+[1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
 
@@ -1132,8 +1130,8 @@ Package pdftex.def Info: ./images/clicker.png used on input line 92.
 (pdftex.def)             Requested size: 20.07617pt x 20.07617pt.
  [6
 
- <C:/Users/Minsu Chang/Dropbox/miscelanea/Econ103_LPS/slides_fin/images/clicker
-.png>] [7
+ <C:/Users/Minsu Chang/Dropbox/miscelanea/Econ103_LPS/slides/images/clicker.png
+>] [7
 
 ] [8
 
@@ -1149,10 +1147,10 @@ Package pdftex.def Info: ./images/clicker.png used on input line 92.
 
 ] [14
 
-]
-[15
+] [15
 
-] [16
+]
+[16
 
 ] <./images/chisq_tails.pdf, id=110, 433.62pt x 361.35pt>
 File: ./images/chisq_tails.pdf Graphic file (type pdf)
@@ -1162,18 +1160,18 @@ Package pdftex.def Info: ./images/chisq_tails.pdf used on input line 135.
 (pdftex.def)             Requested size: 281.84966pt x 234.87471pt.
  [17
 
- <C:/Users/Minsu Chang/Dropbox/miscelanea/Econ103_LPS/slides_fin/images/chisq_t
-ails.pdf>]
+ <C:/Users/Minsu Chang/Dropbox/miscelanea/Econ103_LPS/slides/images/chisq_tails
+.pdf>]
 File: ./images/clicker.png Graphic file (type png)
  <use ./images/clicker.png>
 Package pdftex.def Info: ./images/clicker.png used on input line 147.
 (pdftex.def)             Requested size: 20.07617pt x 20.07617pt.
-
-[18
+ [18
 
 ]
 File: ./images/clicker.png Graphic file (type png)
- <use ./images/clicker.png>
+
+<use ./images/clicker.png>
 Package pdftex.def Info: ./images/clicker.png used on input line 159.
 (pdftex.def)             Requested size: 20.07617pt x 20.07617pt.
  [19
@@ -1185,10 +1183,10 @@ Package pdftex.def Info: ./images/chisq_tails.pdf used on input line 170.
 (pdftex.def)             Requested size: 238.49173pt x 198.74312pt.
  [20
 
-]
-[21
+] [21
 
-] [22
+]
+[22
 
 ] [23
 
@@ -1214,8 +1212,6 @@ Package pdftex.def Info: ./images/chisq_tails.pdf used on input line 170.
 
 ] [34
 
-] [35
-
 ]
 File: ./images/chisq_tails.pdf Graphic file (type pdf)
 
@@ -1226,13 +1222,19 @@ Package pdftex.def Info: ./images/chisq_tails.pdf used on input line 213.
 Overfull \vbox (6.03116pt too high) detected at line 213
  []
 
-[36
+[35
+
+] [36
 
 ] [37
 
 ] [38
 
-] [39
+]
+Overfull \vbox (11.35963pt too high) detected at line 256
+ []
+
+[39
 
 ]
 Overfull \vbox (11.35963pt too high) detected at line 256
@@ -1271,24 +1273,18 @@ Overfull \vbox (11.35963pt too high) detected at line 256
 [45
 
 ]
-Overfull \vbox (11.35963pt too high) detected at line 256
- []
-
-[46
-
-]
 File: ./images/clicker.png Graphic file (type png)
  <use ./images/clicker.png>
 Package pdftex.def Info: ./images/clicker.png used on input line 274.
 (pdftex.def)             Requested size: 20.07617pt x 20.07617pt.
- [47
+ [46
 
 ]
 File: ./images/clicker.png Graphic file (type png)
  <use ./images/clicker.png>
 Package pdftex.def Info: ./images/clicker.png used on input line 292.
 (pdftex.def)             Requested size: 20.07617pt x 20.07617pt.
- [48
+ [47
 
 ]
 File: ./images/clicker.png Graphic file (type png)
@@ -1296,7 +1292,9 @@ File: ./images/clicker.png Graphic file (type png)
 <use ./images/clicker.png>
 Package pdftex.def Info: ./images/clicker.png used on input line 313.
 (pdftex.def)             Requested size: 20.07617pt x 20.07617pt.
- [49
+ [48
+
+] [49
 
 ] [50
 
@@ -1306,16 +1304,14 @@ Package pdftex.def Info: ./images/clicker.png used on input line 313.
 
 ] [53
 
-] [54
-
 ]
-<./images/gosset.jpg, id=315, 1405.25pt x 1766.6pt>
+<./images/gosset.jpg, id=310, 1405.25pt x 1766.6pt>
 File: ./images/gosset.jpg Graphic file (type jpg)
  <use ./images/gosset.jpg>
 Package pdftex.def Info: ./images/gosset.jpg used on input line 357.
 (pdftex.def)             Requested size: 70.26662pt x 88.33517pt.
 
-<./images/guinness.jpg, id=316, 401.5pt x 600.2425pt>
+<./images/guinness.jpg, id=311, 401.5pt x 600.2425pt>
 File: ./images/guinness.jpg Graphic file (type jpg)
 
 <use ./images/guinness.jpg>
@@ -1328,11 +1324,13 @@ Missing character: There is no ™ in font cmssi9!
 Overfull \vbox (9.9466pt too high) detected at line 357
  []
 
-[55
+[54
 
- <C:/Users/Minsu Chang/Dropbox/miscelanea/Econ103_LPS/slides_fin/images/gosset.
-jpg> <C:/Users/Minsu Chang/Dropbox/miscelanea/Econ103_LPS/slides_fin/images/gui
-nness.jpg>] [56
+ <C:/Users/Minsu Chang/Dropbox/miscelanea/Econ103_LPS/slides/images/gosset.jpg>
+ <C:/Users/Minsu Chang/Dropbox/miscelanea/Econ103_LPS/slides/images/guinness.jp
+g>] [55
+
+] [56
 
 ] [57
 
@@ -1340,69 +1338,16 @@ nness.jpg>] [56
 
 ] [59
 
-] [60
-
-] [61
-
-]
-Overfull \hbox (4.60321pt too wide) in paragraph at lines 504--504
-[][]  
- []
-
-
-Overfull \hbox (1.52898pt too wide) in paragraph at lines 504--504
-[]$[]$  
- []
-
-[62
-
-]
-Overfull \hbox (4.60321pt too wide) in paragraph at lines 504--504
-[][]  
- []
-
-
-Overfull \hbox (1.52898pt too wide) in paragraph at lines 504--504
-[]$[]$  
- []
-
-[63
-
-]
-Overfull \hbox (4.60321pt too wide) in paragraph at lines 504--504
-[][]  
- []
-
-
-Overfull \hbox (1.52898pt too wide) in paragraph at lines 504--504
-[]$[]$  
- []
-
-[64
-
-]
-Overfull \hbox (4.60321pt too wide) in paragraph at lines 504--504
-[][]  
- []
-
-
-Overfull \hbox (1.52898pt too wide) in paragraph at lines 504--504
-[]$[]$  
- []
-
-[65
-
 ]
 \tf@nav=\write7
 \tf@toc=\write8
 \tf@snm=\write9
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 507.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 507.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 436.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 436.
 
-("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\slides_fin\lecture16.aux"
-)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 507.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 507.
+("C:\Users\Minsu Chang\Dropbox\miscelanea\Econ103_LPS\slides\lecture16.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 436.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 436.
 Package rerunfilecheck Info: File `lecture16.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1410,37 +1355,36 @@ Package rerunfilecheck Info: File `lecture16.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 507.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 436.
  ) 
 Here is how much of TeX's memory you used:
- 22070 strings out of 493921
- 452579 string characters out of 3147264
+ 22028 strings out of 493921
+ 451816 string characters out of 3147264
  551485 words of memory out of 3000000
- 24712 multiletter control sequences out of 15000+200000
- 21471 words of font info for 80 fonts, out of 3000000 for 9000
+ 24682 multiletter control sequences out of 15000+200000
+ 20967 words of font info for 77 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  58i,13n,71p,405b,575s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmss10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmss12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmss17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmssi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmt
-t10.pfb>
-Output written on lecture16.pdf (65 pages, 633073 bytes).
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmss10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmss17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss
+8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmssi9.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmtt10.pfb>
+Output written on lecture16.pdf (59 pages, 603724 bytes).
 PDF statistics:
- 476 PDF objects out of 1000 (max. 8388607)
- 131 named destinations out of 1000 (max. 500000)
+ 433 PDF objects out of 1000 (max. 8388607)
+ 119 named destinations out of 1000 (max. 500000)
  63 words of extra memory for PDF output out of 10000 (max. 10000000)
 

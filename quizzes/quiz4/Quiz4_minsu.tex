@@ -1,0 +1,195 @@
+\documentclass[addpoints,10pt]{exam}
+\usepackage{amsmath, amssymb}
+\usepackage{ifthen}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{units}
+\usepackage[top=0.6in, left=0.6in, right=0.6in, bottom=0.6in]{geometry}
+\usepackage{enumerate} %allows lettered lists in enumerate
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------SHOWTO COMMAND-------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%This is a convenience command for conditional compilation that controls which questions are shown to a particular recitation section on the quiz. Any question not enclosed by \showto is shown to all recitation sections. The first argument to \showto is the desired section number. The second argument is the question body
+\newcommand{\showto}[2]
+{
+\ifthenelse{
+	 \equal{\RecitationSection}{#1}\OR\equal{\RecitationSection}{MASTER}
+	}{#2}{}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-----------END SHOWTO COMMAND------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------OPTIONS------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\boxedpoints
+%\pointsinmargin
+
+%Show or hide answers
+\printanswers
+%\noprintanswers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%---------------END OPTIONS-----------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------ SELECT SECTION-----------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%To switch between different versions of the quiz for different recitation sections, change the final argument as needed to 201, 202, 203, 204, etc. If you instead enter MASTER you'll get a document with all quiz questions.
+\newcommand{\RecitationSection}{MASTER}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------END SELECT SECTION--------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%---------------QUIZ HEADER-----------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\thispagestyle{empty}
+
+\noindent \textbf{Econ 103 -- Quiz 4}
+
+\vspace{15pt}
+\noindent
+\makebox[0.45\textwidth]{Name:\enspace\hrulefill}\hfill 
+
+\paragraph{Instructions: } This is closed-book, closed-notes quiz. Please write your answers in the blanks provided. Non-programmable calculators are permitted.
+
+\vspace{5pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------END QUIZ HEADER----------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength\answerlinelength{6in}
+
+\vspace{0.2in}
+
+\begin{questions}
+
+%%%%%%%%%%%%%%%% Question 1: easy intro question
+\showto{201}{\question (2 points) What is the bias of the estimator $\widehat{\sigma}^2 = \frac{1}{n}\sum_{i=1}^n (X_i - \bar{X})^2$? Note that it is an estimator for population variance $\sigma^2$. (Hint: $E[\sum_{i=1}^n (X_i -\bar{X})^2] = (n-1)\sigma^2$.)
+\\[2.5in]
+%a. Normal distribution\\[0.1in]
+%b. t-Distribution\\[0.1in]
+%c. $\chi^2$ distribution\\[0.1in]
+%d. F-distribution
+%\answerline[]
+}
+
+
+
+%%%%%%%%%%%%%%%% Question 2
+%\showto{201}{\question (1 points) True or false? The central limit theorem says that sample means are approximately normally distributed if the sample size is large enough, even if the population is distributed chi-squared.\answerline[]}
+
+
+\showto{203}{\question (1 points) True or false? Consistency of an estimator is related to mean-squared error when the sample size is fixed.\vspace{0.3in} 
+%\answerline[]
+}
+
+\showto{203}{\question (4 points) Let $X_1, X_2, \ldots, X_n \sim i.i.d. $ with mean $\mu$ and variance $\sigma^2$. You have two estimators of population mean $\mu$. The first estimator is $\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i$. The other estimator is $X_{max}$, which is the maximum value of the sample. Which estimator do you prefer according to mean-squared error (MSE)? (Hint: The maximum value is one data point in the sample.) \vspace{4in} 
+%\answerline[]
+}
+
+
+%%%%%%%%%%%%%%%% Question 2
+
+\showto{201}{\question (13 points) Assume that we have a random i.i.d. sample from a normal distribution with unknown mean but \textit{known} variance. Suppose that we have 100 observations, the sample mean is 5, and the population variance is 16. (If necessary, use R command in your answer.)\vspace{0.3in}
+\\
+a. (2 points) Construct a 95\% confidence interval.\\[1.3in]
+b. (2 points) Compute the margin of error (ME) of the above CI.\\[1.3in]
+c. (2 points) Compute the length of the above CI.\\[1.3in]
+d. (2 points) Construct a 80\% confidence interval.\\[1.3in]
+e. (2 points) What happens to the confidence interval if the sample size increases? (Does CI become wider or tighter?)\\[1in]
+f. (3 points) Consider the same setup as above except that we \textit{do not know} the population variance. Instead, the sample standard deviation is 5. Construct a 95\% confidence interval in this case.
+\vspace{0.5in}}
+%\answerline[]}
+
+
+
+%\showto{204}{\question (2 points) Suppose you have $W_1,...W_{12} \sim iid\, N(3,1)$   independently of $V_1,...V_{6}\sim iid\, N(2,1)$. \\[0.1in] The random variable $\frac{\left(\bar W_{12}-\bar V_{6}-(3-2) \right)}{\sqrt{\frac{1}{12}+\frac{1}{6}}}$ follows a: 
+%\\
+%a. Standard Normal distribution\\[0.1in]
+%b. Normal distribution $N(\mu=1,\sigma^2=1)$\\[0.1in]
+%c. $\chi^2$ distribution\\[0.1in]
+%d. F-distribution
+%\vspace{0.35in}
+%\answerline[]}
+
+%%%%%%%%%%%%%%%% Question 3
+
+
+%\showto{202}{\question (3 points) The results of a recent survey suggests that 25\% of Americans  are able to hold a conversation in a second language. For this survey 1,000 people were polled. Use the Central Limit Theorem to construct an approximate 95\% confidence interval for the actual proportion of Americans that are able to hold a conversation in a second language. \\ \\ \\ \\ 
+%\vspace{0.5in}
+%\answerline[]}
+
+
+%%%%%%%%%%%%%%%% Question 4
+%
+%\showto{201}{\question The Central Limit Theorem states that if $X_1,...X_n$ are a random sample from a population with unknown mean $\mu$ then, for large $n$ the distribution of $\frac{\bar X_n-\mu}{\hat{SE}(\bar X_n)}$ is approximately a standard normal distribution. True or false?
+%
+%\answerline[True]}
+%
+%\showto{202}{\question The Central Limit Theorem states that if $X_1,...X_n$ are a random sample from a population with unknown mean $\mu$ then, for $n$ large $\bar X_n$ follows a standard normal distribution . True or False?
+%\answerline[False]}
+%
+%\showto{203}{\question The Central Limit Theorem states that if $X_1,...X_n$ are a random sample from a population with unknown mean $\mu$ then, for $n$ large $\bar X_n$ is a consistent estimator of $\mu$?
+%\answerline[False]}
+%
+%\showto{204}{\question The Central Limit Theorem states that if $X_1,...X_n$ are a random sample from a population with unknown mean $\mu$ then, for $n$ large $\frac{\bar X_n-\mu}{\hat{SE}(\bar X_n)}$ Is an unbiased estimator of $\mu$  True or false?
+%\answerline[False]}
+%%%%%%%%%%%%%%%% Question 5
+
+
+%\showto{201}{\question True or false: Suppose we have two individual samples $X_1,...,X_n \sim iid$ with mean $\mu_X$ and variance $\sigma^2_X$ and $Y_1,...,Y_m \sim iid$ with mean $\mu_Y$ and variance $\sigma^2_Y$, where $corr(X,Y) = 0.5$. Then a 68\% confidence interval of the difference of population means is given by $(\bar{X}_n-\bar{Y}_m) \pm \sqrt{\frac{S^2_x}{n} + \frac{S^2_y}{m}} $
+%\vspace{0.3in}
+%\answerline[]}
+
+
+%%%%%%%%%%%%%%%% Question 6
+%\showto{204}{\question True or false: Suppose we take the mean of a random sample. The 95\% confidence interval for the population mean is roughly $\frac{1}{2}$ as wide as the 68\% confidence interval \answerline[]}
+
+
+%%%%%%%%%%%%%%%% Question 7 & 8
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
+%\begin{table}[htbp]
+ % \centering
+ % \caption{Fictional summary statistics for midterms this semester}
+ %   \begin{tabular}{rrrr}
+   % \toprule
+  %      & \textbf{Midterm 1} & \textbf{Midterm 2} & \textbf{Difference} \\
+   % \midrule
+  %  Sample size & 100 & 100 & 100 \\
+   % Sample mean & 110 & 100 & 10 \\
+    %Sample standard deviation & 20  & 25  &  \\
+  %  Sample variance & 400 & 625 &  \\
+   % Sample correlation & \multicolumn{2}{c}{0.5} &  \\
+   % \bottomrule
+   % \end{tabular}%
+%  \label{tab:addlabel}%
+%\end{table}%
+
+
+%\showto{201}{\question Calculate the variance of differences between midterm 1 and midterm 2 scores \\ \\ \answerline[]}
+
+%\showto{201}{\question Suppose we want to know whether midterm 2 was `harder' than midterm 1. Using your answer to the previous question, and the numbers in the table, write down an expression for the 95\% confidence interval for the difference between scores on the midterm. (Note - you can leave your answer in terms of a square root) \\ \\ \answerline[]}
+
+
+
+\end{questions}
+
+\end{document}  

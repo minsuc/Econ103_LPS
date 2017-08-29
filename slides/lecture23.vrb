@@ -1,22 +1,20 @@
-\frametitle{I just did 134 Hypothesis Tests...}
-
- \begin{block}
-  {... and 11 of them were significant at the 5\% level.}
- \end{block}
-
+\frametitle{Which Gives Better Predictions: Sex (a) or Handspan (b)?}
 \footnotesize
-
 \begin{verbatim}
-         group sign p.value x.bar N.x  s.x y.bar N.y  s.y
-26  first1 = P    1   0.000  93.8   3  2.9  75.5 101 20.4
-70     id2 = 7    1   0.000  94.6   5  3.3  75.1  99 20.4
-134    id8 = 0    1   0.000  92.6   7  4.9  74.8  97 20.5
-5    Nlast = 4    1   0.001  88.9  12 10.4  74.4  92 20.7
-90     id4 = 8    1   0.003  87.7   9  9.0  74.9  95 20.7
-105    id6 = 8    1   0.003  88.1   5  5.8  75.4  99 20.6
-109    id6 = 2    1   0.007  88.9   8 10.7  75.0  96 20.6
-9    Nlast = 2    1   0.016  90.4   5  9.3  75.3  99 20.5
-49   last1 = P   -1   0.036  65.2   6  9.9  76.7  98 20.6
-65     id2 = 1    1   0.038  84.3   9 10.1  75.3  95 20.9
-117    id7 = 8    1   0.041  83.4  13 11.6  75.0  91 21.1
+lm(formula = height ~ sex, data = student.data)
+            coef.est coef.se
+(Intercept) 64.46     0.56
+sexMale      6.10     0.76
+---
+n = 80, k = 2
+residual sd = 3.38, R-Squared = 0.45
+
+lm(formula = height ~ handspan, data = student.data)
+            coef.est coef.se
+(Intercept) 39.60     3.96
+handspan     1.36     0.19
+---
+n = 80, k = 2
+residual sd = 3.56, R-Squared = 0.40
 \end{verbatim}
+

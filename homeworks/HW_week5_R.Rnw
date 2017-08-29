@@ -1,0 +1,336 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath, amssymb}
+\linespread{1.1}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{multirow}
+
+
+\newcommand{\p}{\mathbb{P}}
+\newcommand{\expect}{\mathbb{E}}
+\newcommand{\var}{\mathbb{V}}
+\newcommand{\cov}{Cov}
+\newcommand{\slfrac}[2]{\left.#1\right/#2}
+
+
+
+
+%-------------------DON'T CHANGE---------------------%
+%The following is needed to prevent a conflict between knitr and the exam class involving the package ``framed.''
+<<cache=FALSE,include=FALSE,purl=FALSE>>= 
+knit_hooks$set(document=function(x){ 
+  sub('\\usepackage{framed}', '', x, fixed=TRUE) 
+}) 
+@ 
+
+
+%This keeps images from being too big, centers them, and makes sure we use pdf images
+<<cache=FALSE,include=FALSE,purl=FALSE>>= 
+opts_chunk$set(fig.width=4, fig.height=4, fig.align='center',dev='pdf')
+@
+
+
+%Change the default width of the output to fit within the solution boxes
+<<cache=FALSE,include=FALSE,purl=FALSE>>= 
+options(width = 60)
+@
+%-------------------DON'T CHANGE---------------------%
+
+
+%To include the answers use:
+%  pdflatex "\def\showanswers{1} \input{thisfile.tex}"
+%\ifdefined\showanswers
+  \printanswers
+%\else
+%  \noprintanswers
+%\fi
+
+\title{Problem Set (Week 5)}
+\author{Econ 103}
+\date{}
+\begin{document}
+\maketitle
+
+
+
+
+
+%\noindent For all of the questions on this section, assume the data are a random sample from a normal population, that is $X_1, \hdots, X_n \sim \mbox{iid } N(\mu, \sigma^2)$. Depending on the specifics of the question, $\sigma$ may be known or unknown. I'd recommend that you use R for any problems in which you need to calculate sample means or variances from a dataset.
+
+\begin{questions}
+\section*{Lecture 16 - 17}
+
+\vspace{0.2in}
+
+\question Oranges sold at Iovine Brothers Produce in Reading Terminal Market have weights that follow a normal distribution with a mean of 12 ounces and standard deviation of 2 ounces. 
+	\begin{parts}
+		\part If we choose an orange at random, what is the probability that it will weigh less than 10 ounces?
+			\begin{solution}
+<<>>=
+pnorm(10, mean = 12, sd = 2)
+@
+			\end{solution}
+		\part If we choose 25 oranges at random, what is the probability that they will have a total weight of less than 250 ounces?
+			\begin{solution}
+			Since the weight of any individual orange is an independent draw from a normal distribution with mean 12 ounces and standard deviation 2 ounces, the weight of \emph{25} oranges can be represented as a draw from a normal distribution with mean $25 \times 12 = 300$ and variance $25 \times 4 = 100$. Hence, the standard deviation is 10. Plugging this into R:
+<<>>=
+pnorm(250, mean = 300, sd = 10)
+@
+			\end{solution}
+	\end{parts}
+
+\question All other things equal, how would the following change the width of a confidence interval for the mean of a normal population? Explain.
+	\begin{solution}
+	All answers below are based on the following expression for a $(1-\alpha)\times 100\%$ confidence interval for the mean of a normal population when the population standard deviation is unknown:
+		$$\bar{X}_n \pm \texttt{qt}(1 - \alpha/2, df = n-1) \times \frac{S}{\sqrt{n}}$$
+		The width of this interval is
+		$$\mbox{Width} = 2 \times \texttt{qt}(1 - \alpha/2, df = n-1) \times \frac{S}{\sqrt{n}}$$
+	\end{solution}
+	\begin{parts}
+		\part The sample mean is smaller.
+			\begin{solution}
+				No effect: width doesn't involve the sample mean.
+			\end{solution}
+		\part The population mean is smaller.
+			\begin{solution}
+				No effect: width doesn't involve the population mean.
+			\end{solution}
+		\part The sample standard deviation is smaller.
+			\begin{solution}
+				If $S$ decreases, all other things constant, the width decreases.
+			\end{solution}
+		\part The sample size is smaller.
+			\begin{solution}
+			 Changing sample size has two effects but they both go in the same direction. First, if $n$ gets smaller, \texttt{qt}$(1 - \alpha/2, df = n-1)$ gets larger as we can see from the table presented in the lecture slides. Second, as $n$ gets smaller holding all other things fixed, $S/\sqrt{n}$ gets larger. Hence, decreasing sample size, all other things equal, increases the width.
+			\end{solution}
+	\end{parts}
+	
+
+
+
+
+
+\question Researchers asked a random sample of college students how many hours they sleep every night. The data can be imported directly into R using the following codes:
+\begin{verbatim}
+data.url <- "http://www.ditraglia.com/econ103/sleep.csv"
+sleep <- read.csv(data.url, header = FALSE)
+sleep <- sleep[,1]
+\end{verbatim}
+The second command is simply a quick way to tell R to store \texttt{sleep} as a vector rather than a dataframe since it only contains one column. You may assume that the data represent a random sample from a normal population.
+  \begin{solution}
+  First, read in the data and make sure they look reasonable:
+<<>>=
+data.url <- "http://www.ditraglia.com/econ103/sleep.csv"
+sleep.data <- read.csv(data.url, header = FALSE)
+sleep.data <- sleep.data[,1]
+head(sleep.data)
+@
+  \end{solution}
+\begin{parts}
+	\part Construct a 95\% confidence interval for the population mean.
+  \begin{solution}
+<<>>=
+n.sleep <- length(sleep.data)
+SE.sleep <- sd(sleep.data)/sqrt(n.sleep)
+ME.sleep <- qt(1 - 0.05/2, df = n.sleep - 1) * SE.sleep
+LCL <- mean(sleep.data) - ME.sleep
+UCL <- mean(sleep.data) + ME.sleep
+c(LCL, UCL)
+@
+  \end{solution}
+	\part Construct a 95\% confidence interval for the population variance.
+  \begin{solution}
+<<>>=
+a.sleep <- qchisq(0.05/2, df = n.sleep - 1)
+b.sleep <- qchisq(1 - 0.05/2, df = n.sleep - 1)
+LCL <- (n.sleep - 1) * var(sleep.data)/b.sleep
+UCL <- (n.sleep - 1) * var(sleep.data)/a.sleep
+c(LCL, UCL)
+@
+  \end{solution}
+\end{parts}
+
+
+
+
+\section*{Lecture 18}
+
+
+\question This problem uses a dataset that investigates the relationship between schizophrenia and the volume (in cm$^3$) of a particular region of the brain (the left hippocampus) measured using an MRI machine. The dataset contains 15 sets of monozygotic (i.e.\ identical) twins, one of whom has schizophrenia (``Affected'') and the other who does not (``Unaffected''). The idea of using identical twins is to hold constant unobserved genetic and socioeconomic confounding variables that might influence whether someone develops schizophrenia. You can download the data using the following codes:
+<<>>=
+data.url <- "http://www.ditraglia.com/econ103/case0202.csv"
+twins <- read.csv(data.url)
+head(twins)
+@
+	\begin{parts}
+		\part Should these data be analyzed as independent samples or matched pairs?
+      \begin{solution}
+      This is matched pairs data. We would expect the size of the left hippocampus to be very similar for identical twins!
+      \end{solution}
+		\part Construct an approximate 95\% confidence interval for the difference of means using the CLT and treating the data as two independent samples.
+    \begin{solution}
+<<>>=
+mean.affected <- mean(twins$Affected)
+var.affected <- var(twins$Affected)
+n.affected <- length(twins$Affected)
+mean.unaffected <- mean(twins$Unaffected)
+var.unaffected <- var(twins$Unaffected)
+n.unaffected <- length(twins$Unaffected)
+diff.means <- mean.unaffected - mean.affected
+SE.indep <- sqrt(
+    var.affected/n.affected 
+    + var.unaffected/n.unaffected)
+ME.indep <- qnorm(1 - 0.05/2) * SE.indep
+CI.indep <- c(diff.means - ME.indep, diff.means + ME.indep)
+round(CI.indep, 3)
+@
+  \end{solution}
+		\part Construct an approximate 95\% confidence interval for the difference of means using the CLT and treating the data as matched pairs.
+    \begin{solution}
+<<>>=
+twin.diff <- twins$Unaffected - twins$Affected
+n.twins <- length(twin.diff)
+SE.paired <- sqrt(var(twin.diff)/n.twins)
+ME.paired <- qnorm(1 - 0.05/2) * SE.paired
+CI.paired <- c(diff.means - ME.paired, diff.means + ME.paired)
+round(CI.paired, 3)
+@
+    \end{solution}
+		\part The dataset only contains 15 pairs, a fairly small sample. Since the CLT is a large sample approximation, it may not work well in this situation. Suppose we were willing to assume that the within-twin differences came from a normal population. Construct an \emph{exact} 95\% confidence interval for the difference of means (again treating the data as matched pairs) under this assumption.
+      \begin{solution}
+<<>>=
+ME.t <- qt(1 - 0.05/2, df = n.twins - 1) * SE.paired
+CI.paired.t <- c(diff.means - ME.t, diff.means + ME.t)
+round(CI.paired.t, 3)
+@
+      \end{solution}
+      \part Compare each of the intervals you have constructed. Why and how do they differ? What should we conclude?
+        \begin{solution}
+          The shortest interval is the one based on matched pairs using the CLT (\texttt{qnorm}). The widest is the one that assumes the samples are independent, which they are not. This interval is wider because the measurements are correlated across twins so that the sample variance of the differences is less than the sum of the sample variances of the affected and unaffected twins. 
+          
+          The interval based on the assumption that the differences come from a normal distribution is narrower than that based on assuming independent samples for the same reason, but wider than the equivalent interval based on the CLT. This is because each of them uses the same standard error estimate but \texttt{qt(0.975, df = 14)} is larger than \texttt{qnorm(0.975)}. 
+          
+          Although we may doubt that 15 is large enough for the approximation based on the CLT to work well, we may equally well doubt that the differences come from a normal population. Fortunately, both of the intervals based on differences give the same basic result: the twin with schizophrenia has, on average, a smaller left hippocampus. If we wanted to be conservative, we could report the wider of the two intervals.
+        \end{solution}
+	\end{parts}
+	
+	\section*{Lecture 19 - 20}
+	
+	 \question  Let $X_1, \hdots, X_n \sim \mbox{iid } N(\mu, \sigma^2)$ and suppose we know that $\sigma^2 = 1$.
+ 	\begin{parts}
+% 		\part[3] Write down the sampling distribution of $\bar{X}_n$.
+% 			\begin{solution}
+% 				$N(\mu, \sigma^2/n)$
+% 			\end{solution}
+ 		\part Write down the sampling distribution of $\sqrt{n}(\bar{X}_n - \mu)$.
+ 			\begin{solution}
+ 				$N(0,1)$
+ 			\end{solution}
+ 	%	\part Using your answer to (a), derive the sampling distribution of  $\sqrt{n}\bar{X}_n$.
+ 	%	\begin{solution}
+ 	%		$$\sqrt{n}(\bar{X}_n - \mu) = \sqrt{n}\bar{X}_n - \sqrt{n}\mu$$
+ 	%		Hence,
+ 	%		$$\sqrt{n}\bar{X}_n  = \sqrt{n}(\bar{X}_n - \mu) + \sqrt{n}\mu = N(0,1) + \sqrt{n}\mu \sim N(\sqrt{n}\mu, 1) $$
+ 	%	\end{solution}
+ 		\part Suppose we wanted to test the null hypothesis that $\mu = 0$ against the two-sided alternative at the 5\% level. What test statistic should we use and what should our decision rule be?
+ 			\begin{solution}
+ 			Under the null,
+ 				$$T = \sqrt{n}\bar{X}_n \sim N(0,1)$$
+ 				and we reject if $|T|\geq \texttt{qnorm(0.975)} \approx 2$.
+ 			\end{solution}
+ 		\part How would your answer to (b) change if we tested instead against the one-sided alternative that $\mu >0$?
+ 		\begin{solution}
+ 		We still examine the test statistic $T = \sqrt{n}\bar{X}_n$ except in this case the decision rule is: reject if $T\geq \texttt{qnorm}(0.95)$. This critical value is \emph{less} than 2.
+ 		\end{solution}
+ 	%	\part[10] Derive the power of the hypothesis test from (c) if $\sigma=1$, $n = 25$ and $\mu = 1$. Your answer should be given in terms of the relevant R commands.
+ 	%	\begin{solution}[3.5in]
+ 	%	Regardless of the true value of $\mu$, we know from the solution to part (c) that $\sqrt{n}\bar{X}_n \sim N(\sqrt{n}\mu,1)$. Power equals the probability of rejecting the null \emph{when it is false}. Here we are asked to suppose that the true mean is one rather than zero, as assumed under the null, and that the sample size is 25. Hence,
+ 	%		$$T = \sqrt{n}\bar{X}_n \sim N(5, 1)$$ 
+ 	%		The decision rule from above was: reject if $|T|\geq 2$, so we simply need to calculate the probability that a $N(5,1)$ random variable is greater than 2 or less than -2. Since these are mutually exclusive events, the probabilities sum. Hence, the R command to calculate the power are is follows:
+ 	%		$$\texttt{pnorm(-2, mean = 5, sd = 1) + (1 - pnorm(2, mean = 5, sd = 1))}$$
+ 	%	\end{solution}
+ 	 \end{parts} 
+
+
+\question (You will be able to solve this part after lecture 21) This problem uses the same dataset as in question 4. In the previous question you used this dataset to construct confidence intervals. In this question you will carry out hypothesis tests. For this question you may assume that the sample differences between the left hippocampus volume of the ``Affected'' and ``Unaffected'' twins are drawn from a normal population with unknown variance.
+	\begin{parts}
+	\part Carry out a one-sided test at the 5\% level of the null hypothesis of no difference against the alternative that the affected twin has a larger left hippocampus, on average. What is your test statistic? What is your critical value? What is your decision rule? What is your decision?
+  \begin{solution}
+  First load the data and calculate the quantities we'll need to carry out all of the tests below.
+<<>>=
+twin.diff <- twins$Unaffected - twins$Affected
+mean.diff <- mean(twin.diff)
+n.twins <- length(twin.diff)
+SE.paired <- sqrt(var(twin.diff)/n.twins)
+@
+Notice that we calculated the differences as Unaffected twin minus Affected twin. We need to be careful about the sign here to see when we should reject the null. In this part, we are testing against the one-sided alternative that the \emph{Affected} twin has a larger left hippocampus. Thus, we should reject when \texttt{twin.diff} is \emph{sufficiently negative}. Now we calculate the test statistic and critical value for the one-sided test:
+<<>>=
+test.stat <- mean.diff/SE.paired
+test.stat
+critical.value <- qt(0.05, df = n.twins - 1)
+critical.value
+test.stat <= critical.value
+@
+In this case, our decision rule is to reject the null if the test statistic is \emph{less than} \Sexpr{critical.value}. (Remember, we have to keep track of the sign.) We see that this is not the case, so we fail to reject the null. We have not found evidence that the Affected twin has a larger left hippocampus.
+  \end{solution}
+	\part Repeat part (a) for a test against the \emph{opposite} one-sided alternative.
+    \begin{solution}
+    The test statistic remains the same in this case, but our decision rule and critical value have changed. Again, note that we calculated the differences as Unaffected twin minus Affected twin. Thus, a large \emph{positive} value of \texttt{mean.diff} would provide evidence that we should reject the null in favor of the one-sided alternative that the Unaffected twin has the larger left hippocampus, on average. The critical value simply changes sign to reflect this:
+<<>>=
+critical.value <- qt(1 - 0.05, df = n.twins - 1)
+critical.value
+test.stat >= critical.value
+@
+  Our decision rule is to reject when the test statistic is greater than or equal to \Sexpr{critical.value}. Since this is the case, we reject the null hypothesis that the difference is zero at the 5\% significance level. We have found evidence that schizophrenia is associated with a smaller left hippocampus based on the twin data. 
+    \end{solution}
+	\part Repeat part (a) but test against the \emph{two-sided} alternative.
+    \begin{solution}
+      Again, the test statistic remains the same. Since we're testing against the two-sided alternative, however, we reject if it is too large \emph{or} two small. This is equivalent to asking whether the \emph{absolute value} of the test statistic is larger than the appropriate (positive) two-sided critical value:
+<<>>=
+critical.value  <- qt(1 - 0.05/2, df = n.twins - 1)
+critical.value
+abs(test.stat) >= critical.value
+@
+We see that this is indeed the case, so we would reject that null hypothesis that the difference is zero against the two-sided alternative at the 5\% significance level.
+    \end{solution}
+	\part Explain the differences between your results in parts (a), (b), and (c).
+    \begin{solution}
+    Both parts (b) and parts (c) give the same result: reject the null. Parts (a) and (b) are mutually exclusive: if we reject in favor of one of the one-sided alternatives, we can't reject in favor of the other. This is because the \texttt{mean.diff} is either positive or negative: if positive, it suggests that the Unaffected twin has a larger left hippocampus; if negative, that the Affected twin does. We saw in class that, in borderline cases, it is possible to reject against a one-sided alternative without rejecting against the two-sided alternative. We are not in such a situation here.
+    \end{solution}
+	\part Calculate the p-values corresponding to parts (b) and (c).
+    \begin{solution}
+<<>>=
+1 - pt(test.stat, df = n.twins - 1)
+2 * (1 - pt(abs(test.stat), df = n.twins - 1))
+@
+  We see that both the one-sided p-value for part (b) and the two-sided p-value for (c) are quite small: there is extremely strong evidence against the null hypothesis of no difference. From these values, for example, we see that we would have still rejected if we had carried out these two tests at the 1\% rather than the 5\% level.
+    \end{solution}
+	\end{parts}
+
+
+
+%\question (Optional -- Extra Credit) Suppose $X_1, \hdots, X_n \sim \mbox{iid } N(\mu_x, \sigma_X^2)$ independently of $Y_1, \hdots, Y_m \sim \mbox{iid } N(\mu_Y, \sigma_Y^2)$. Also, suppose $n = m = 10$ and you know that $\sigma_X^2 = \sigma_Y^2 = 10$. Express the power of a two-sided test of $H_0\colon \mu_X = \mu_Y$ at the 5\% level  in terms of the true, unknown difference of population means $\Delta = \mu_X - \mu_Y$.
+%			\begin{solution}
+%			Since the population variances are known and both populations are normal, the test statistic
+%				$$T = \frac{\bar{X}_n - \bar{Y_n}}{\sqrt{\sigma_X^2/n + \sigma_Y^2/m}} = \frac{\bar{X}_n - \bar{Y}_m}{\sqrt{2}}$$
+%			follows a standard normal distribution under the null. This is \emph{exact} because we know the population is normal. Under the alternative $H_1\colon \mu_X \neq \mu_Y$, however, the above test statistic does \emph{not} follow a standard normal distribution. Instead,
+%					$$\frac{(\bar{X}_n - \bar{Y}_m) - (\mu_X - \mu_Y)}{\sqrt{2}}  \sim N(0,1)$$
+%					Hence, 
+%					$$\frac{\bar{X}_n - \bar{Y}_m}{\sqrt{2}} = \frac{(\bar{X}_n - \bar{Y}_m) - (\mu_X - \mu_Y)}{\sqrt{2}}  + \frac{\mu_X - \mu_Y}{\sqrt{2}}  \sim N\left(\frac{\mu_X - \mu_Y}{\sqrt{2}} , 1\right)$$
+%					In other words $T \sim N(\Delta/\sqrt{2}, 1)$. This distribution is normal, but it is only \emph{standard normal} under the null hypothesis that $\mu_X = \mu_Y$, i.e.\ $\Delta = 0$. 
+%		Now, at the 5\% level we reject $H_0$ when $|T| > \texttt{qnorm(1 - 0.05/2)}\approx 2$.
+%					Combining this decision rule with the distribution of the test statistic under the alternative, we calculate power as follows:
+%					\begin{eqnarray*}
+%						\mbox{Power}(\Delta) &=& P(\mbox{Reject } H_0|H_0 \mbox{ False})= P(|T|>2)\\
+ %           &=& P(T < -2) + P(T > 2) \\
+  %          &=& P(Z + \Delta/\sqrt{2} < -2) +P(Z + \Delta/\sqrt{2} > 2)\\
+   %         &=& P(Z < -2 - \Delta/\sqrt{2}) +P(Z> 2 - \Delta/\sqrt{2})\\
+    %        &=& \texttt{pnorm}(-2 - \Delta/\sqrt{2}) + \left[1 - \texttt{pnorm}(2 - \Delta/\sqrt{2})\right]
+		%			\end{eqnarray*}
+	%		\end{solution}
+\end{questions}
+
+
+
+
+\end{document}

@@ -1,0 +1,440 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath, amssymb}
+\linespread{1.1}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{multirow}
+\boxedpoints
+\pointsinmargin
+
+\printanswers
+
+%\noprintanswers
+
+\pagestyle{headandfoot}
+\runningheadrule
+\runningheader{Econ 103}
+              {Final III, Page \thepage\ of \numpages}
+              {Summer 2017}
+
+%\runningfooter{Name: \rule{5cm}{0.4pt}}{}{Student ID \#: \rule{5cm}{0.4pt}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\large
+\sc{\Large Final Examination\\ \normalsize Econ 103, Statistics for Economists} %\\ \vspace{0.5em} May 9th, 2016}
+
+\vspace{1em}
+\vspace{0.2in}
+\normalsize
+\fbox{\begin{minipage}{0.51\textwidth}
+\textbf{\small Graphing calculators, notes, and textbooks are not permitted. }\end{minipage}}
+
+
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\vspace{2em}
+\begin{center}
+  \fbox{\fbox{\parbox{5.5in}{\centering
+        I pledge that, in taking and preparing for this exam, I have abided by the University of Pennsylvania's Code of Academic Integrity. I am aware that any violations of the code will result in a failing grade for this course.}}}
+\end{center}
+\vspace{0.2in}
+\makebox[\textwidth]{Name:\enspace\hrulefill}
+
+\vspace{0.2in}
+
+\noindent\makebox[\textwidth]{Signature:\enspace\hrulefill}
+
+\vspace{0.2in}
+
+%\noindent\makebox[0.47\textwidth]{Student ID \#:\enspace\hrulefill}
+%\hfill
+%\makebox[0.47\textwidth]{Recitation \#:\enspace\hrulefill}
+
+\vspace{2em}
+
+\begin{center}
+  \gradetable[h][questions]
+\end{center}
+
+\vspace{2em}
+
+\paragraph{Instructions:} Answer all questions in the space provided, continuing on the back of the page if you run out of space. Show your work for full credit but be aware that writing down irrelevant information will not gain you points. Be sure to sign the academic integrity statement above and to write your name. Make sure that you have all pages of the exam before starting.
+
+\paragraph{Warning:} If you continue writing after we call time, even if this is only to fill in your name, twenty-five points will be deducted from your final score. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{questions}
+
+
+\question For each statement, indicate whether it is TRUE or FALSE and briefly explain why.
+\begin{parts}
+	% \part[4] The sample standard deviation is easier to interpret than the sample variance because it is unitless.
+	% \begin{solution}
+	% 	FALSE. The sample standard deviation is not unitless: it has the same units as the data. This is why it is easier to interpret than the sample variance, which has the units of the data squared.
+	% \end{solution}
+	\part[4] For any two random variables $X$ and $Y$, $E[XY] = Cov(X,Y) - E[X]E[Y]$.
+	\begin{solution}[4cm]
+		FALSE. The shortcut rule for covariance is $Cov(X,Y) = E[XY] - E[X]E[Y]$. Rearranging gives $E[XY] = Cov(X,Y) + E[X]E[Y]$. The expression in the problem statement has the wrong sign on $E[X]E[Y]$.
+	\end{solution}
+%	\part[4] If $Z \sim N(0,1)$ then $P(Z=0) =  P(Z =5)$. 
+%	\begin{solution}[3cm]
+%		TRUE. The probability that a continuous random variable takes on \emph{any particular value} is always zero. Thus $P(Z=0) = P(Z = 5) = 0$.
+%	\end{solution}
+\part[4] Let $X_, \ldots, X_n \sim i.i.d.$ Bernoulli($p$) and define $\widehat{p} = \sum_{i=1}^n X_i/n$. If sample size $n$ is sufficiently large, the approximate sampling distribution of $\widehat{p}$ is chi-squared.
+\begin{solution}[4cm]
+FALSE. By the Central Limit Theorem, $\widehat{p}$ is approximately normally distributed.
+\end{solution} 
+	\part[4] Suppose we have i.i.d. random sample from a normal distribution with mean $\mu$ and variance $\sigma^2$.  A random variable $Y$ is defined to be $\frac{(n-1)S^2}{\sigma^2}$ where $n$ is sample size, and $S^2$ is sample variance. Then $Y$ is Student t-distributed with degrees of freedom $n-1$. 
+	\begin{solution}[4cm]
+		FALSE. $Y \sim \chi^2(n-1)$.
+	\end{solution}
+	% \part[4] No matter what value I choose for \texttt{a}, if I enter the command\\
+	%  $\texttt{pnorm(-a) + pnorm(a)}$\\
+	%   at the R console, I'll always get the same result.
+	%   \begin{solution}
+	%   	TRUE. Since the standard normal distribution is symmetric about zero, $\texttt{pnorm(-a) = 1 - pnorm(a)}$ so $\texttt{pnorm(-a) + pnorm(a)} = 1$ regardless of the value of \texttt{a}.
+	%   \end{solution}
+	\part[4] If [3, 8] is a 95\% CI for $\mu$, we do not reject $H_0: \mu = 1$ against $H_1: \mu \neq 1$ with 5\% significance level.	
+	\begin{solution}[4cm]
+	 	FALSE: we would reject $\mu = 1$ since 1 lies outside the CI.
+	 \end{solution} 
+	\part[4] The p-value for my test was 0.02. This means that if I had set $\alpha = 0.05$ I would have rejected the null hypothesis.
+	\begin{solution}[4cm]
+		TRUE. The p-value is the \emph{minimum} significance level at which we would reject the null. Since $0.05 > 0.02$ we would have rejected at the 5\% level.
+	\end{solution}
+\end{parts}
+
+
+
+
+\question Suppose I flip a fair coin and roll a single fair die at the same time. Define the events 
+\\ $A =$ the coin comes up tails 
+\\ $B =$ the die shows a 3 \emph{or} 5
+\\ $C =$ the die shows an \emph{odd} number 
+\vspace{0.3in}
+ 	\begin{parts} 
+    \part[3] Calculate $P(B|C)$.
+    \begin{solution}[1.5in]
+      \[P(B|C) = P(B\cap C)/P(C) =  (1/3)/(1/2) = 2/3\] 
+    \end{solution}
+    \part[3] Calculate $P(A \cap B)$.
+    \begin{solution}[1.5in]
+      Since the dice roll and coin flip are independent, we have $P(A \cap B) = P(A)P(B) = (1/2) \times (1/3) = 1/6$. You could also draw out the table with all 12 basic outcomes, all of which are equally likely, and count how many are in both $A$ and $B$. This will give you $2/12 = 1/6$
+    \end{solution}
+    
+    \part[4] Calculate $P(A \cup B)$.
+    \begin{solution}[1.25in]
+      $P(A \cup B) = P(A) + P(B) - P(A \cap B) = 1/2 + 1/3 -1/6 = 3/6 + 2/6 - 1/6 = 4/6 = 2/3$.  Again, you could also draw out the table with all 12 basic outcomes, all of which are equally likely, and count how many are in either $A$, $B$ or both $A$ and $B$. This will give you $8/12 = 2/3$
+    \end{solution}
+
+ 	\end{parts}
+ 	
+ 	\newpage
+ 	
+
+
+\question Suppose that $X$ is a continuous random variable with probability density function
+		$$f(x) = \left\{ \begin{array}{ll} 3x^2 & \mbox{for } 0 \leq x \leq 1\\ 0 & \mbox{elsewhere} \end{array}\right.$$
+		\vspace{0.3in}
+		\begin{parts}
+\part[2] What is the support of $X$?
+	\begin{solution}[0.5in]
+		The support is the interval from zero to one $[0,1]$ since the pdf is zero everywhere else. 
+	\end{solution}
+%\part[3] Given your answer to (a), why \emph{couldn't} the pdf be $4x^2$ in this example?
+%\begin{solution}[1in]
+%A pdf has to integrate to one. We have:
+%$\int_{-\infty}^\infty f(x) dx = \int_0^1 4x^2 dx = \left. 4(x^3/3)\right|_0^1 = 4/3$
+%which is \emph{greater than one}. 
+%\end{solution}
+			\part[5] Calculate the cumulative distribution function of $X$.
+				\begin{solution}[2in]
+					$\int_{-\infty}^{x_0} f(x) dx = \int_0^{x_0} 3x^2 dx = \left. x^3 \right|_{0}^{x_0} = x_0^3$. Hence,
+					$$F(x_0) = \left\{ \begin{array}{ll} 0 & \mbox{for } x_0 < 0\\ x_0^3& \mbox{for } 0\leq x_0 \leq 1 \\ 1 & \mbox{for }  x_0 > 1\end{array} \right.$$
+				\end{solution}
+	%		\part[3] Calculate $E[X]$.
+		%		\begin{solution}[1.2in]
+			%		\begin{eqnarray*}
+				%		E[X]&=& \int_{-\infty}^\infty xf(x) dx = \int_0^1 3x^3  dx = \left.\frac{3x^4}{4}\right|_0^1 =3/4
+					%\end{eqnarray*}
+			%	\end{solution}
+			\part[3] Calculate $E[X^2]$.
+				\begin{solution}[1.8in]
+				\begin{eqnarray*}
+				E[X^2] &=& \int_{-\infty}^\infty x^2f(x) dx = \int_0^1 3x^4 dx = \left.\frac{3x^5}{5}\right|_0^1 =3/5
+				\end{eqnarray*}
+				\end{solution}
+			\part[4] Calculate $Var(X)$.
+			\begin{solution}[1.8in]
+				$$Var(X) = E[X^2] - \left(E[X]\right)^2 = 3/5 - 9/16 = 3/80$$
+			\end{solution}
+		\end{parts}
+
+
+\newpage
+ \question For each part, write your answer in the space provided. No explanation is needed.
+ \vspace{0.3in}
+  	\begin{parts} 
+  	%	\part[3] What result will I get if I run \texttt{pnorm(10, mean = 10, sd = 5)} in R?
+     % \begin{solution}[0.55in]
+  		%	0.5
+  	%	\end{solution}
+ 		 \part[3] Write an R command to calculate the median of a $F(2,1)$ random variable. 
+     \begin{solution}[1in]
+ 			 \texttt{qf(0.5, df1 = 2, df2 = 1)}
+ 		 \end{solution}
+  	%	\part[3] Approximately what result will I get if I run \texttt{qnorm(0.16)} in R?
+     % \begin{solution}[0.5in]
+  		%	-1
+  	%	\end{solution}
+  		%\part[3] Given a dataframe called \texttt{grades} with columns \texttt{exam1} and \texttt{exam2}, write out the full R command to run a regression predicting \texttt{exam2} from \texttt{exam1}.
+     % \begin{solution}[0.55in]
+  		%	\texttt{lm(exam2 \~{} exam1, data = grades)}
+  	%	\end{solution}
+  		%\part[3] Write a single line of R code to display the 4th row of a dataframe called \texttt{studentdata}.
+     % \begin{solution}[0.55in]
+  		% 	\texttt{studentdata[4,]}
+  		 %\end{solution} 
+     %  \part[5] Given a dataframe called \texttt{studentdata} with a column called \texttt{exam1}, write a single line of R code to display data for all students who scored above 70 on \texttt{exam1}.
+      % \begin{solution}[0.55in]
+  		% 	\texttt{subset(studentdata, midterm1 > 70)}
+  		% \end{solution}
+ 		 \part[3] Write a single R command to draw five numbers at random from the digits 0--9 \emph{with replacement}.
+     \begin{solution}[1in]
+ 		 	\texttt{sample(0:9, size = 5, replace = TRUE)}
+ 		 \end{solution}
+  		\part[4] Write R code to plot the cdf of a standard normal random variable between -3 and 3 using a grid of $x$-values with a step size of 0.01.
+      \begin{solution}[1.75in]
+  			\begin{verbatim}
+ x <- seq(from = -3, to = 3, by = 0.01)
+ plot(x, pnorm(x), type = 'l')
+  			\end{verbatim}
+  		\end{solution}
+  		\part[4] Write an R function called \texttt{zscores2} that takes a vector \texttt{x} as its only input and generates the \underline{squared} z-scores of \texttt{x} as its output. You may use any R functions that you like in your answer and may assume that there are no missing values.
+      \begin{solution}[1.5in]
+  			\begin{verbatim}
+ zscores2 <- function(x){
+ 	return(((x - mean(x))/sd(x))^2)
+ }
+  			\end{verbatim}
+ 		 \end{solution}
+ 	 \end{parts}
+
+\newpage
+
+
+  \question Suppose that $X_1 \sim N(\mu, \sigma^2)$ \underline{independently} of $X_2 \sim N(\mu, 3\sigma^2)$. Let $\bar{X} = (X_1 + X_2)/2$.
+  \vspace{0.3in}
+	\begin{parts}
+		\part[4] Calculate the variance of $\bar{X}$.
+			\begin{solution}[1.5in]
+				In this example,
+				 $$Var(\bar{X}) = Var\left(\frac{X_1 + X_2}{2}\right)=\frac{1}{4}\left[ Var(X_1) + Var(X_2)\right] = \frac{1}{4}\left(\sigma^2 + 3\sigma^2\right)=\sigma^2 $$
+			\end{solution}
+		\part[4] Let $\tilde{\mu} = \frac{3}{4} X_1 + (1-\frac{3}{4}) X_2$. Is $\tilde{\mu}$ an unbiased estimator of $\mu$? Prove your answer.
+			\begin{solution}[1.5in]
+				Yes:
+				$$E[\tilde{\mu}] =E[\frac{3}{4} X_1 + (1-\frac{3}{4}) X_2]=\frac{3}{4} \mu + (1-\frac{3}{4})\mu = \mu$$
+			\end{solution}
+		\part[5] Define $\tilde{\mu}$ as in part (b). Calculate the variance of $\tilde{\mu}$.
+			\begin{solution}[1.9in]
+				$$Var(\tilde{\mu}) = Var[\frac{3}{4} X_1 + (1-\frac{3}{4}) X_2] = \frac{9}{16} \sigma^2 + \frac{3}{16} \sigma^2 = \frac{3}{4}\sigma^2$$
+			\end{solution}
+		\part[4] Is the sample mean $\bar{X}$ an efficient estimator of $\mu$ in this example? Explain.
+			\begin{solution}[1.5in]
+				Although $X_2$ gives us information about the mean $\mu$ this information is ``three times as noisy'' as the information contained in $X_1$. Hence, by giving $X_2$ a lower weight than $X_1$, we achieve an estimator with a lower variance. In this example the sample mean is NOT efficient because there is another unbiased estimator $\tilde{\mu}$ with a lower variance. 
+			\end{solution}
+	\end{parts}
+
+\newpage
+
+\question This question is based on a recent study that examines how ``organic'' labeling changes people's perceptions of different food products. Researchers recruited volunteers at a local mall in Brooklyn, New York and gave each two samples of yogurt to taste. Although both yogurts were in fact identical, the volunteers were \emph{told} that one of them was organic while the other was not. After tasting both, each volunteer was asked to estimate how many calories each of the samples of yogurt contained. (Since both samples contained exactly the same kind of yogurt, each contained the same number of calories. However, this was unknown to the volunteers.) To prevent confounding factors, the order in which a given volunteer tasted the two yogurts, i.e.\ ``organic'' first or ``organic'' second, was chosen at random. The results of this experiment are stored in an R dataframe called \texttt{yogurt}. Here are the first few rows:
+	\begin{verbatim}
+> head(yogurt)
+	  regular organic
+1      60      40
+2       5       0
+3     200     100
+4      60      40
+5     100     100
+6      90      90
+	\end{verbatim}
+Each row in this dataframe corresponds to a single individual's guess of the number of calories contained in each of the two yogurts. For example, the values 60 and 40 in row 1 mean that volunteer number one guessed that the regular yogurt sample contained 60 calories and the organic sample contained 40. Summary statistics for the two columns are as follows:
+	\begin{center}
+		\begin{tabular}{|lcc|}
+		\hline
+			& \texttt{regular} & \texttt{organic}\\
+			\hline
+		Sample Mean & 113 & 90\\
+		Sample Var & 3600 & 2916\\
+		Sample SD & 60 & 54\\ 
+		Sample Corr.\ &\multicolumn{2}{c|}{0.7} \\
+		Sample Size &\multicolumn{2}{c|}{115} \\
+		\hline
+		\end{tabular}
+	\end{center}
+	\vspace{1em}
+	\begin{parts}
+		\part[4] Give the units of each of the summary statistics from above:\\
+		
+			\begin{tabular}{lc}
+			Sample Mean &\underline{\makebox[1.5in][l]{}} \\
+			Sample Var.\ &\underline{\makebox[1.5in][l]{}}\\
+			Sample SD& \underline{\makebox[1.5in][l]{}}\\
+			Sample Corr. & \underline{\makebox[1.5in][l]{}}\\
+			\end{tabular}
+			\begin{solution}
+			calories, calories$^2$, calories, unitless.
+			\end{solution}
+		\part[4] Sara thinks this experiment should be analyzed as \underline{independent samples} data. Assume she is correct and construct an approximate 95\% CI for \underline{the difference of means} (\texttt{regular} - \texttt{organic}) based on the Central Limit Theorem (CLT).
+			\begin{solution}[2.25in]
+			The difference of means (regular minus organic) is 23 calories. Sara calculates her standard error assuming independent samples:
+			$$\sqrt{\sigma^2_r/n + \sigma^2_o/m} = \sqrt{3600/115 + 2916/115} = \sqrt{6516/115} \approx 7.5$$
+			so her confidence interval is approximately $23 \pm 15$, in other words $(8,38)$.
+			\end{solution}
+			\part[8] Sara conducts a hypothesis testing on the difference of means (\texttt{regular} - \texttt{organic}) with 5\% significance level, treating the data as independent samples. Derive the \underline{power of this test}. (\textit{Hint:} Consider the null $H_0: \mu_{r} = \mu_{o}$ against $H_1:\mu_{r} \neq \mu_{o}$ where $\mu_r$ is for $\texttt{regular}$ and $\mu_{o}$ is for $\texttt{organic}$. Denote the sample mean of each group to be $\bar{X}_r$ and $\bar{X}_o$ when constructing the test statistic. State the decision rule of hypothesis testing and how the test statistic is distributed under the alternative in order to express the power. The power expression will depend on $(\mu_r-\mu_o)$.)
+			\begin{solution}[4.3in]
+			The test statistic 
+			\[
+T_n = \frac{\bar{X}_{r} - \bar{X}_{o}}{\sqrt{\sigma_r^2 / n + \sigma_o^2/m}}  = \frac{\bar{X}_r - \bar{X}_o}{7.5}			
+			\]
+			follows a standard normal distribution under the null. The decision rule with 5\% significance level is to reject the null if $|T_n| \geq 2$. Under the alternative, however, the above test statistic does not follow a standard normal distribution. Instead,
+			\[
+\frac{(\bar{X}_r-\bar{X}_o) - (\mu_r-\mu_o)}{7.5} \sim N(0,1)			
+			\]
+			Therefore,
+			\[
+T_n = \frac{(\bar{X}_r-\bar{X}_o) - (\mu_r-\mu_o)}{7.5} + \frac{(\mu_r-\mu_o)}{7.5} \sim N(0,1)
+			\]
+That is, $T_n \sim N((\mu_r-\mu_o)/7.5, 1)$. Combining the decision rule with the distribution of the test statistic under the alternative, we calculate power as follows:
+\begin{align*}
+Power(\mu_r - \mu_o) &= P(\text{Reject\,\,} H_0 | \text{under\,\,} H_1)= P(|T_n| \geq 2) \\
+&= P(T_n < -2) + P(T_n >2)\\
+&= P(Z+(\mu_r-\mu_o)/7.5 < -2) + P(Z+(\mu_r-\mu_o)/7.5 > 2)\\
+&= P(Z < -2 - (\mu_r - \mu_o)/7.5) + P(Z > 2 - (\mu_r-\mu_o)/7.5)\\
+&= \texttt{pnorm}(-2-(\mu_r-\mu_o)/7.5) + \big(1-\texttt{pnorm}(2-(\mu_r-\mu_o)/7.5) \big)
+\end{align*}			
+			\end{solution}
+		\part[6] Kevin thinks that this experiment should be analyzed as \underline{matched pairs} data. Assume that he is correct and construct an approximate 95\% CI for the difference of means (\texttt{regular} - \texttt{organic}) based on the CLT.
+		\begin{solution}[3.0in]
+		Kevin takes into account the sample correlation between columns when calculating his standard error. He does this by using the sample statistics from the table to calculate the sample variance of the \emph{differences}: regular minus organic. In particular, he calculates:
+		$$s^2_D =  3600 + 2916 - 2 \cdot 0.7 \cdot 60 \cdot 54 = 1980$$
+		which gives a standard error of
+		$$\sqrt{s_D^2/n} = \sqrt{1980/115} \approx 4.1$$
+		This is the only difference between his procedure and Sara's. Hence, Kevin's confidence interval is approximately $23 \pm 8.2$, in other words $(14.8, 31.2)$.
+		\end{solution}
+		\part[4] How do the confidence intervals constructed by Sara and Kevin differ? Explain the source of the discrepancy. Which of them has constructed the appropriate confidence interval for this example? 
+		\begin{solution}[1.5in]
+		Kevin is right and Sara is wrong. This is matched pairs data because each row corresponds to a \emph{single individual}. Unsurprisingly, we find a high sample correlation between the two columns: individuals who overestimate caloric content for one yogurt sample tend to do so for the other, as do individuals who underestimate. The only difference between Kevin and Sara's confidence intervals comes from how they calculated their standard errors. Both intervals are correctly centered, but Sara's is \emph{too wide} because she calculated the standard error assuming independence between the two samples. When the sample correlation is positive this results in an \emph{overestimate} of the standard error. 
+		\end{solution}
+		\part[4] Suppose that Kevin wanted to carry out a two-sided test of the null hypothesis that organic labeling does not affect consumer's estimates of caloric content, on average. What is his \underline{test statistic}? What R command should he use to calculate the \underline{p-value} for his test? 
+		\begin{solution}[1.5in]
+		Kevin's test statistic is the difference of means divided by the standard error, namely $23/4.1 \approx 5.6$. To calculate the p-value in R, he should use the command:
+			$$\texttt{2 * (1 - pnorm(5.6))}$$
+			The result will be less than 0.05 since the test statistic is larger than 2. Another way to see this is that his confidence interval does not include zero.
+		\end{solution}
+	%	\part[4] Using what you know about experiments, observational studies, hypothesis testing, and confidence intervals, what conclusions can we draw from this study?
+	%	\begin{solution}[2.5in]
+	%	It appears that merely labeling a product ``organic'' causes consumers to assume that this product contains fewer calories. Because this is a randomized experiment (randomly assigning labels to identical samples of yogurt and randomizing the order in which subjects tasted), we don't have to worry about confounding. It is less clear, however, whether this result would generalize to foods other than yogurt. Further, people from Ithaca New York who visit the mall and volunteer for a taste test may not be representative of US consumers as a whole. Ideally we would repeat this experiment using different subject pools and different foods to see how robust the result is.
+	%	\end{solution}
+	\end{parts}
+	
+	
+	\newpage
+
+
+
+\question This question is based on an dataset containing observations on students in Econ 103: \texttt{male} takes the value 1 if a given student is male, zero otherwise; \texttt{midterm2} gives that student's score on the second midterm; and \texttt{midterm1} gives the student's score on the first midterm. Using this dataset, I estimated four regression models using R. (The results appear on the last page. You may want to tear the page out for convenience.)
+
+\vspace{0.3in}
+\begin{parts}
+	\part[5] Suppose I wanted to test the null hypothesis that men and women do just as well, on average, on the second midterm of Econ 103 against the \underline{two-sided alternative} with 5\% significance level. I can carry out this test directly from Regression 1. How should I carry out the test? In particular, what is the appropriate \underline{test statistic}, what is the appropriate \underline{critical value}, and what is the \underline{outcome of the test}? 
+		\begin{solution}[2.9in]
+			We should use the coefficient estimate for \texttt{male} since it is the difference of mean test scores between men and women (i.e. $\bar{x}_M - \bar{x}_W$). The test statistic is the absolute value of the ratio of this estimated coefficient divided by its estimated standard error: $|-0.22/2.91|\approx 0.08$. The approximate critical value for this test is 2, so we fail to reject the null hypothesis.
+		\end{solution}
+	\part[3] What is the sample correlation between students' scores on the two midterms?
+		\begin{solution}[0.8in]
+			For a simple linear regression, the $R^2$ is the square of the sample correlation between $x$ and $y$. Hence, $\sqrt{0.28}\approx 0.53$ is the sample correlation between scores on the first and second midterm.
+		\end{solution}
+	\part[5] Explain the \underline{meaning of the coefficient estimate} \texttt{midterm1} in Regression 2 and construct a 95\% \underline{confidence interval} for this parameter.
+		\begin{solution}[1.6in]
+			This estimate tells us the difference in score on midterm two that we would predict between two groups of students who differed by one point in their scores on midterm one: people who did one point better on the first exam do about 0.6 points better on the second exam. An approximate 95\% confidence for this parameter is $0.6 \pm 0.24$, in other words $(0.36, 0.84)$. This interval does not include zero and is bounded substantially away from it. Our data strongly suggest that people who did better on the first exam continue to do better on the second.
+		\end{solution}
+	\part[3] Instead of constructing a confidence interval, suppose I wanted to test the null hypothesis that the coefficient on \texttt{midterm1} in Regression 2 is zero against the two-sided alternative. Is this coefficient statistically significant at the 5\% significance level?
+		\begin{solution}[2.0in]
+			We know immediately that we can reject at the 5\% level since zero is not contained in the confidence interval from part (d). So the coefficient is statistically significant. 
+		\end{solution}
+	
+	\part[4] Based on Regression 3, what is the predicted score in \texttt{midterm2} of a male student who scored 70 in \texttt{midterm1}?
+\begin{solution}[2.0in]
+The predicted value is 34.79 -0.31*1 + 0.6*70 = 76.48.
+\end{solution}
+\part[5] Interpret the coefficients in Regression 4. (\textit{Hint}: Consider intercept and slope for male and female, respectively.)
+	% Explain the difference between the models used in Regression 2, versus 3 and 4. Do not comment on the results, only the \emph{models themselves}.
+		\begin{solution}[2.5in] Regression 4 allows both the intercept and the slope to vary across sex. The coefficient $\texttt{male}$ gives the difference of midterm2's mean between male and female holding everything else as fixed. The coefficient $\texttt{midterm1}$ gives the difference in midterm 2 score that we would predict between two females who differed by one point in midterm 1. The summation of coefficient $\texttt{midterm1}$ and coefficient $\texttt{male:midterm1}$ gives the difference in midterm 2 score that we would predict between two males who differed by one point in midterm 1.
+		\end{solution}
+%	\part[10] Suppose we want to predict a student's score on the second midterm. Based on the results given above, do you think we should take into account that student's sex? If so, how should we use this information? Explain your reasoning.
+	%	\begin{solution}
+		%	Based on the above results, it does not seem that a student's sex is helpful in predicting his or her score on the second midterm. In part (a), for example, we found no evidence that men and women score differently on average on the second midterm, using the results of Regression 1. In Regression 3 a 95\% confidence interval for \texttt{male} is approximately $-0.3 \pm 5$, so we find no evidence that we should allow a different intercept for men and women. In Regression 4, a 95\% confidence interval for \texttt{male} is about $27 \pm 38$ while a 95\% confidence interval for \texttt{male:midterm1} is about $-0.34 \pm 46$ so we find no strong evidence that we need to allow a different intercept \emph{or} slope for men versus women. Viewed from a predictive perspective, although the residual standard deviation is lowest in Regression 4,  the difference between this and the value for Regression 2, which does not even consider sex, is minuscule: 0.01 points. 
+		%	\end{solution}
+\end{parts}
+	\begin{table}
+\footnotesize
+\caption{Regression Results}
+\paragraph{Regression 1:}
+\begin{verbatim}
+lm(formula = midterm2 ~ male)
+            coef.est coef.se
+(Intercept) 81.82     2.12  
+male        -0.22     2.91  
+---
+n = 70, k = 2
+residual sd = 12.17, R-Squared = 0.00
+	\end{verbatim}
+	\paragraph{Regression 2:}
+	\begin{verbatim}
+lm(formula = midterm2 ~ midterm1)
+            coef.est coef.se
+(Intercept) 34.63     9.32  
+midterm1     0.60     0.12  
+---
+n = 70, k = 2
+residual sd = 10.35, R-Squared = 0.28
+	\end{verbatim}
+	\paragraph{Regression 3:}
+	\begin{verbatim}
+lm(formula = midterm2 ~ male + midterm1)
+            coef.est coef.se
+(Intercept) 34.79     9.47  
+male        -0.31     2.50  
+midterm1     0.60     0.12  
+---
+n = 70, k = 3
+residual sd = 10.43, R-Squared = 0.28
+	\end{verbatim}
+	\paragraph{Regression 4:}
+	\begin{verbatim}
+lm(formula = midterm2 ~ male + male:midterm1 + midterm1)
+              coef.est coef.se
+(Intercept)   19.31    14.22  
+male          26.76    18.82  
+midterm1       0.78     0.18  
+male:midterm1 -0.34     0.23  
+---
+n = 70, k = 4
+residual sd = 10.34, R-Squared = 0.30
+	\end{verbatim}
+	\label{tab:reg}
+\end{table}
+
+\end{questions}
+
+\end{document}

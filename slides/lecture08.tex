@@ -167,12 +167,14 @@ $\mu = E[X] = \displaystyle \sum_{x \in \{0,1\}} p(x) \cdot x = (1-p) \cdot 0 + 
 \begin{frame}
 \frametitle{Variance of Bernoulli RV -- Without Shortcut}
 
-\alert{You will fill in the missing steps on Problem Set 5.}
-
+\vspace{-0.2in}
 \begin{eqnarray*}
 	\sigma^2 &=& Var(X) = \sum_{x \in \{0,1\}} (x - \mu)^2 p(x)\\
 	 &=& \sum_{x \in \{0,1\}} (x - p)^2 p(x)\\
-	 &\vdots &\\ 
+	 & =& \sum_{x \in \{0,1\}} (x^2-2xp+p^2)p(x) \\ 
+	 &= & \sum_{x \in \{0,1\}} x^2 p(x) - 2p \sum_{x \in \{0,1\}} xp(x) + p^2\sum_{x \in \{0,1\}} p(x)\\
+	 &=& E[X^2] - 2p E[X] + p^2\\
+	 &=& p - 2p^2 + p^2\\
 	 &=&p(1-p)
 \end{eqnarray*}
 

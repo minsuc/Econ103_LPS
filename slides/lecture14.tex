@@ -106,7 +106,7 @@ $$E[S^2] =E\left[ \frac{1}{n-1} \sum_{i=1}^n \left(X_i - \bar{X}\right)^2\right]
 		&=& \pause (n-1)\sigma^2
 	\end{eqnarray*}
 \end{block}
-\alert{Since we showed earlier today that  $E[\bar{X}]=\mu$ and $Var(\bar{X})=\sigma^2/n$ under this random sampling assumption.}
+\alert{Since we previously showed that  $E[\bar{X}]=\mu$ and $Var(\bar{X})=\sigma^2/n$ under this random sampling assumption.}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -163,8 +163,11 @@ Biased Sample!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{Candy Weighing: 49 Estimates, Each With $n=5$}
+\frametitle{Candy Weighing: Ask 49 Students}
 
+\vspace{0.1in}
+"Estimate total weight of candies by weighing a random sample of size 5 and multiplying the result by 20."
+\vspace{-0.2in}
 \begin{columns} 
 \begin{column}[c]{5cm} 
 \small
@@ -215,12 +218,12 @@ $$\widehat{\theta} = 20 \times (X_1 + \hdots + X_5)$$
 	\item 30 Reese's Miniatures (medium) 
 	\item 50 Tootsie Roll ``Midgees'' (small)
 \end{itemize}
+\vspace{0.2in}
 \begin{block}{So What Happened?}
 	\pause Not a random sample! The Snickers bars were \emph{oversampled}.
 \end{block}
-\begin{block}{Could we have avoided this? How?}
-
-\end{block}
+%\begin{block}{Could we have avoided this? How?}
+%\end{block}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -374,7 +377,7 @@ If an estimator $\widehat{\theta}_n$ (which is a RV) \emph{converges} to $\theta
 \begin{alertblock}{What does it mean for a \emph{RV} to converge to a \emph{constant?}}
 For this course we'll use \emph{MSE Consistency}:
 	$$\lim_{n \rightarrow \infty}\mbox{MSE}(\widehat{\theta}_n) = 0$$
-This makes sense since MSE$(\widehat{\theta}_n)$ is a \emph{constant}, so this is just an ordinary limit from calculus.
+%This makes sense since MSE$(\widehat{\theta}_n)$ is a \emph{constant}, so this is just an ordinary limit from calculus.
 \end{alertblock}
 
 \end{frame}
@@ -406,20 +409,16 @@ Let $X_1, X_2, \hdots X_n \sim iid$ mean $\mu$, variance $\sigma^2$.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\frametitle{Important! }
+%\begin{frame}
+%\frametitle{Important! }
 
-An estimator \emph{can} be biased but still consistent, as long as the bias disappears as $n \rightarrow \infty$
-$$\widehat{\sigma}^2 = \frac{1}{n}\sum_{i=1}^n \left(X_i - \bar{X}\right)^2$$
-
-
-\begin{block}{Bias of $\widehat{\sigma}^2$}
-\vspace{0.75em}
-$\displaystyle E[\widehat{\sigma}^2 ] - \sigma^2 = \pause \frac{(n-1)\sigma^2}{n}  - \sigma^2 =  \pause -\sigma^2/n \pause \rightarrow 0$
-\end{block}
-
-
-\end{frame}
+%An estimator \emph{can} be biased but still consistent, as long as the bias disappears as $n \rightarrow \infty$
+%$$\widehat{\sigma}^2 = \frac{1}{n}\sum_{i=1}^n \left(X_i - \bar{X}\right)^2$$
+%\begin{block}{Bias of $\widehat{\sigma}^2$}
+%\vspace{0.75em}
+%$\displaystyle E[\widehat{\sigma}^2 ] - \sigma^2 = \pause \frac{(n-1)\sigma^2}{n}  - \sigma^2 =  \pause -\sigma^2/n \pause \rightarrow 0$
+%\end{block}
+%\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -440,9 +439,9 @@ Suppose $X_1, X_2, \hdots, X_n \sim \mbox{iid } N(\mu,\sigma^2)$. What is the sa
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
-\huge\begin{center} But still, how can something random converge to something constant? \end{center}
-\end{frame}
+%\begin{frame}
+%\huge\begin{center} But still, how can something random converge to something constant? \end{center}
+%\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}

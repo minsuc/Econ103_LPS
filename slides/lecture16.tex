@@ -194,9 +194,9 @@ From the sample data, $s^2 = 4.3$
 		UCL &=& (n-1)s^2/a = \pause 99 \times 4.3/73 \pause \approx  5.8
 	\end{eqnarray*}
 	\pause
-	\alert{95\% CI for $\sigma^2$ is $[3.3, 5.8]$. What values are plausible?}\\
-	\pause
-	The actual population variance in this case was 4
+	\alert{95\% CI for $\sigma^2$ is $[3.3, 5.8]$.}% What values are plausible?}\\
+%	\pause
+%	The actual population variance in this case was 4
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
@@ -431,77 +431,6 @@ $$\bar{X}_n \pm \; \texttt{qt}(1-\alpha/2, \texttt{df} = n-1) \; \alert{\widehat
 \end{block}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\frametitle{Comparison of Normal and $t$ CIs}
-\begin{table}
-\caption{Values of \texttt{qt}$(1-\alpha/2, \texttt{df}=n-1)$ for various choices of $n$ and $\alpha$. }
-\begin{tabular}{r|rrrrr|r}
-\hline
-$n$& 1& 5& 10& 30& 100 & $\infty$\\
-\hline
-$\alpha = 0.10$&  6.31& 2.02 & 1.81 & 1.70  & 1.66 &1.64\\
-$\alpha = 0.05$ & 12.71& 2.57 & 2.23 & 2.04  & 1.98 &1.96\\
-$\alpha = 0.01$ & 63.66& 4.03 & 3.17 & 2.75  & 2.63 &2.58\\
-\hline
-\end{tabular}
-\end{table}
-\alert{Recall that as $n\rightarrow \infty$, $t(n-1) \rightarrow N(0,1)$}
-\vspace{1em}
 
-
-In a sense, using the $t$-distribution involves making a ``small-sample correction.'' In other words, it is only when $n$ is fairly small that this makes a practical difference for our confidence intervals.
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\begin{frame}
-\frametitle{Am I Taller Than The Average American Male?}
-\framesubtitle{\href{http://www.cdc.gov/nchs/data/series/sr_11/sr11_252.pdf}{\fbox{Source: Centers for Disease Control (pg.\ 16)}}}
-
-
-\begin{columns}
-\column{0.4\textwidth}
-\footnotesize
-		\begin{tabular}{|lr|}
-		\hline
-			Sample Mean & 69 inches\\
-			Sample Std.\ Dev.\ & 6 inches\\
-			Sample Size & 5647 \\
-			\hline
-			My Height & 73 inches\\
-			\hline
-		\end{tabular}
-
-\begin{eqnarray*}
-\widehat{SE}(\bar{X}_n) &=& s/\sqrt{n}\\
-	& =& 6/\sqrt{5647}\\ 
-	&\approx& 0.08
-\end{eqnarray*}
-
-
-\column{0.6\textwidth}
-Assuming the population is normal,\\
-$\boxed{\bar{X}_n \pm \; \texttt{qt}(1-\alpha/2, \texttt{df} = n-1) \; \widehat{SE}(\bar{X}_n)}$
-	
-
-\vspace{1em}
-\alert{What is the approximate value of \texttt{qt(1-0.05/2, df = 5646)}?} \pause
-
-
-\vspace{1em}
-For large $n$, $t(n-1) \approx N(0,1)$, so the answer is approximately 2
-\pause
-
- \vspace{1em}
-\alert{What is the ME for the 95\% CI?} 
-
-\pause $ME \approx 0.16 \implies69 \pm 0.16$
-
-\end{columns}
- 
-
-
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}

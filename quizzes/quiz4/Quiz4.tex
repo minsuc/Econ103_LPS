@@ -68,7 +68,7 @@
 \noindent
 \makebox[0.45\textwidth]{Name:\enspace\hrulefill}\hfill 
 
-\paragraph{Instructions: } This is closed-book, closed-notes quiz. Please write your answers in the blanks provided. Each question is worth one point but no partial credit will be awarded. Non-programmable calculators are permitted.
+\paragraph{Instructions: } This is closed-book, closed-notes quiz. Please write your answers in the blanks provided. Non-programmable calculators are permitted.
 
 \vspace{5pt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -77,10 +77,12 @@
 
 \setlength\answerlinelength{6in}
 
+\vspace{0.2in}
+
 \begin{questions}
 
 %%%%%%%%%%%%%%%% Question 1: easy intro question
-\showto{201}{\question Suppose you have $X_1,...X_{n} \sim iid\, N(\mu_x,\sigma^2_x)$ independently of $Y_1,...Y_{m}\sim iid\, N(\mu_y,\sigma^2_y)$. \\[0.1in]What is the sampling distribution of the difference of sample means? 
+\showto{201}{\question (2 points) Suppose you have $X_1,...X_{n} \sim iid\, N(\mu_x,\sigma^2_x)$ independently of $Y_1,...Y_{m}\sim iid\, N(\mu_y,\sigma^2_y)$. \\[0.1in]What is the sampling distribution of the difference of sample means? 
 \\[0.1in]
 a. Normal distribution\\[0.1in]
 b. t-Distribution\\[0.1in]
@@ -91,38 +93,41 @@ d. F-distribution
 
 
 %%%%%%%%%%%%%%%% Question 2
-\showto{201}{\question True or false? The central limit theorem says that sample means are approximately normally distributed if the sample size is large enough, even if the population is distributed chi-squared.\answerline[]}
+\showto{201}{\question (1 points) True or false? The central limit theorem says that sample means are approximately normally distributed if the sample size is large enough, even if the population is distributed chi-squared.\answerline[]}
 
 
-\showto{203}{\question True or false? The central limit theorem says that sample means are approximately normally distributed only when the sample size is very small. \answerline[]}
+\showto{203}{\question (1 points) True or false? The central limit theorem says that sample means are approximately normally distributed only when the sample size is very small. \answerline[]}
 
 
 
 
 %%%%%%%%%%%%%%%% Question 2
 
-\showto{201}{\question Suppose you have $W_1,...W_{12} \sim iid\, N(2,\sigma_w^2)$   independently of $V_1,...V_{6}\sim iid\, N(1,\sigma_v^2)$. \\[0.1in] You don't know $\sigma_w^2$ and $\sigma_v^2$ . You can be sure that the random variable $\frac{\left(\bar W_{12}-\bar V_{6}-(2-1) \right)}{\sqrt{\frac{S_w^2}{12}+\frac{S_v^2}{6}}}$ follows a: 
+\showto{201}{\question (2 points) Suppose you have $W_1,...W_{12} \sim iid\, N(2,\sigma_w^2)$   independently of $V_1,...V_{6}\sim iid\, N(1,\sigma_v^2)$. \\[0.1in] You don't know $\sigma_w^2$ and $\sigma_v^2$ . You can be sure that the random variable $\frac{\left(\bar W_{12}-\bar V_{6}-(2-1) \right)}{\sqrt{\frac{S_w^2}{12}+\frac{S_v^2}{6}}}$ follows a: 
 \\
 a. Normal distribution\\[0.1in]
 b. t-Distribution\\[0.1in]
 c. $\chi^2$ distribution\\[0.1in]
 d. F-distribution
+\vspace{0.35in}
 \answerline[]}
 
 
 
-\showto{204}{\question Suppose you have $W_1,...W_{12} \sim iid\, N(3,1)$   independently of $V_1,...V_{6}\sim iid\, N(2,1)$. \\[0.1in] The random variable $\frac{\left(\bar W_{12}-\bar V_{6}-(3-2) \right)}{\sqrt{\frac{1}{12}+\frac{1}{6}}}$ follows a: 
+\showto{204}{\question (2 points) Suppose you have $W_1,...W_{12} \sim iid\, N(3,1)$   independently of $V_1,...V_{6}\sim iid\, N(2,1)$. \\[0.1in] The random variable $\frac{\left(\bar W_{12}-\bar V_{6}-(3-2) \right)}{\sqrt{\frac{1}{12}+\frac{1}{6}}}$ follows a: 
 \\
 a. Standard Normal distribution\\[0.1in]
 b. Normal distribution $N(\mu=1,\sigma^2=1)$\\[0.1in]
 c. $\chi^2$ distribution\\[0.1in]
 d. F-distribution
+\vspace{0.35in}
 \answerline[]}
 
 %%%%%%%%%%%%%%%% Question 3
 
 
-\showto{202}{\question The results of a recent survey suggests that 25\% of Americans  are able to hold a conversation in a second language. For this survey 1,000 people were polled. Use the Central Limit Theorem to construct an approximate 95\% confidence interval for the actual proportion of Americans that are able to hold a conversation in a second language. \\ \\ \\ \\ 
+\showto{202}{\question (3 points) The results of a recent survey suggests that 25\% of Americans  are able to hold a conversation in a second language. For this survey 1,000 people were polled. Use the Central Limit Theorem to construct an approximate 95\% confidence interval for the actual proportion of Americans that are able to hold a conversation in a second language. \\ \\ \\ \\ 
+\vspace{0.5in}
 \answerline[]}
 
 
@@ -141,36 +146,40 @@ d. F-distribution
 %\showto{204}{\question The Central Limit Theorem states that if $X_1,...X_n$ are a random sample from a population with unknown mean $\mu$ then, for $n$ large $\frac{\bar X_n-\mu}{\hat{SE}(\bar X_n)}$ Is an unbiased estimator of $\mu$  True or false?
 %\answerline[False]}
 %%%%%%%%%%%%%%%% Question 5
-\showto{201}{\question True or false: Suppose we have two individual samples $X_1,...,X_n \sim iid$ with mean $\mu_X$ and variance $\sigma^2_X$ and $Y_1,...,Y_m \sim iid$ with mean $\mu_Y$ and variance $\sigma^2_Y$, where $corr(X,Y) = 0.5$. Then a 68\% confidence interval of the difference of population means is given by $(\bar{X}_n-\bar{Y}_m) \pm \sqrt{\frac{S^2_x}{n} + \frac{S^2_y}{m}} $\answerline[]}
+
+
+%\showto{201}{\question True or false: Suppose we have two individual samples $X_1,...,X_n \sim iid$ with mean $\mu_X$ and variance $\sigma^2_X$ and $Y_1,...,Y_m \sim iid$ with mean $\mu_Y$ and variance $\sigma^2_Y$, where $corr(X,Y) = 0.5$. Then a 68\% confidence interval of the difference of population means is given by $(\bar{X}_n-\bar{Y}_m) \pm \sqrt{\frac{S^2_x}{n} + \frac{S^2_y}{m}} $
+%\vspace{0.3in}
+%\answerline[]}
 
 
 %%%%%%%%%%%%%%%% Question 6
-\showto{204}{\question True or false: Suppose we take the mean of a random sample. The 95\% confidence interval for the population mean is roughly $\frac{1}{2}$ as wide as the 68\% confidence interval \answerline[]}
+%\showto{204}{\question True or false: Suppose we take the mean of a random sample. The 95\% confidence interval for the population mean is roughly $\frac{1}{2}$ as wide as the 68\% confidence interval \answerline[]}
 
 
 %%%%%%%%%%%%%%%% Question 7 & 8
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
-\begin{table}[htbp]
-  \centering
-  \caption{Fictional summary statistics for midterms this semester}
-    \begin{tabular}{rrrr}
+%\begin{table}[htbp]
+ % \centering
+ % \caption{Fictional summary statistics for midterms this semester}
+ %   \begin{tabular}{rrrr}
    % \toprule
-        & \textbf{Midterm 1} & \textbf{Midterm 2} & \textbf{Difference} \\
+  %      & \textbf{Midterm 1} & \textbf{Midterm 2} & \textbf{Difference} \\
    % \midrule
-    Sample size & 100 & 100 & 100 \\
-    Sample mean & 110 & 100 & 10 \\
-    Sample standard deviation & 20  & 25  &  \\
-    Sample variance & 400 & 625 &  \\
-    Sample correlation & \multicolumn{2}{c}{0.5} &  \\
+  %  Sample size & 100 & 100 & 100 \\
+   % Sample mean & 110 & 100 & 10 \\
+    %Sample standard deviation & 20  & 25  &  \\
+  %  Sample variance & 400 & 625 &  \\
+   % Sample correlation & \multicolumn{2}{c}{0.5} &  \\
    % \bottomrule
-    \end{tabular}%
-  \label{tab:addlabel}%
-\end{table}%
+   % \end{tabular}%
+%  \label{tab:addlabel}%
+%\end{table}%
 
 
-\showto{201}{\question Calculate the variance of differences between midterm 1 and midterm 2 scores \\ \\ \answerline[]}
+%\showto{201}{\question Calculate the variance of differences between midterm 1 and midterm 2 scores \\ \\ \answerline[]}
 
-\showto{201}{\question Suppose we want to know whether midterm 2 was `harder' than midterm 1. Using your answer to the previous question, and the numbers in the table, write down an expression for the 95\% confidence interval for the difference between scores on the midterm. (Note - you can leave your answer in terms of a square root) \\ \\ \answerline[]}
+%\showto{201}{\question Suppose we want to know whether midterm 2 was `harder' than midterm 1. Using your answer to the previous question, and the numbers in the table, write down an expression for the 95\% confidence interval for the difference between scores on the midterm. (Note - you can leave your answer in terms of a square root) \\ \\ \answerline[]}
 
 
 

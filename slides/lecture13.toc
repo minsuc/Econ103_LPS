@@ -1,7 +1,6 @@
-\beamer@endinputifotherversion {3.36pt}
-\beamer@sectionintoc {1}{Candy Weighing Experiment}{3}{0}{1}
-\beamer@sectionintoc {2}{Random Sampling Redux}{5}{0}{2}
-\beamer@sectionintoc {3}{Sampling Distributions}{17}{0}{3}
-\beamer@sectionintoc {4}{Estimator versus Estimate}{27}{0}{4}
-\beamer@sectionintoc {5}{Unbiasedness of Sample Mean}{31}{0}{5}
-\beamer@sectionintoc {6}{Standard Error of the Mean}{36}{0}{6}
+\beamer@endinputifotherversion {3.33pt}
+\beamer@sectionintoc {1}{Random Sampling Redux}{3}{0}{1}
+\beamer@sectionintoc {2}{Sampling Distributions}{15}{0}{2}
+\beamer@sectionintoc {3}{Estimator versus Estimate}{25}{0}{3}
+\beamer@sectionintoc {4}{Unbiasedness of Sample Mean}{29}{0}{4}
+\beamer@sectionintoc {5}{Standard Error of the Mean}{34}{0}{5}

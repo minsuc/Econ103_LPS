@@ -102,7 +102,7 @@ And so it was that summer afternoon in Cambridge. The man with the Vandyke beard
 \begin{frame}
 \begin{center}
 \Huge The Pepsi Challenge \\
-	\large (Volunteers: 1 ``Expert,'' 1 Skeptic)
+	\large (1 ``Expert,'' 1 Skeptic)
 \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -518,5 +518,159 @@ $T_n\colon$ \# of Cokes correctly identified. Has following sampling under the n
 %\end{frame}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\begin{block}{So far}
+Simple Example of Hypothesis Testing: the Pepsi Challenge
+\end{block}
+
+\begin{block}{What's next?}
+Hypothesis Testing More Generally
+\end{block}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Hypothesis: Assertion about Population(s)}
+	\begin{itemize}
+	\item A Big Mac contains, on average, 550 kcal: \alert{$\mu = 550$}
+	\item Midterm 2 was harder than Midterm 1: \alert{$\mu_{1} >\mu_2$}
+	\item Equal proportions of Republicans and Democrats know that John Roberts is the chief justice of SCOTUS: \alert{$p = q$}
+	\item Google stock is riskier than IBM stock: \alert{$\sigma^2_{X} > \sigma^2_{Y}$}
+	\item There is no correlation between height and income: \alert{$\rho = 0$} 
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Hypothesis Testing: Try to 
+	Find Evidence \emph{Against} $H_0$}
+\begin{block}
+	{Null Hypothesis: $H_0$}
+	\begin{itemize}
+		\item Start off assuming $H_0$ is true --
+		 ``innocent until proven guilty''
+		\item ``Under the Null'' = Assuming the null is true
+		\item $H_0$ $\Rightarrow$ know something about population, can calculate probs.
+	\end{itemize}
+\end{block}
+\begin{alertblock}
+	{This Course: \emph{Simple} Null Hypotheses}
+	$H_0\colon f(\mbox{Parameters}) = \mbox{Known Constant}$, for example
+	\begin{itemize}
+		\item $\mu_1 - \mu_2 = 0$
+		\item $p = 0.5$
+		\item $\mu = 0$
+		\item $\sigma^2_X/\sigma^2_Y = 1$
+	\end{itemize}
+\end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{How do I know what my null hypothesis is?}
+	There is no rule I can give you for this: it depends on the problem. Here are some guidelines:
+	\begin{itemize}
+		\item It will take the form $f(\mbox{Parameters}) = \mbox{Known Constant}$
+		\item Nulls are typically things like ``there is no effect,'' ``these two groups are not different,'' i.e.\ the \emph{status quo}. 
+		\item Nulls are \emph{very specific}: we need to be able to do probability calculations under the null -- c.f.\ the Pepsi Challenge.
+	\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]
+	\frametitle{Example: How many calories in a Big Mac? \hfill \includegraphics[scale = 0.05]{./images/clicker}}
+\begin{itemize}
+	\item According to McDonald's: 550 kcal on average
+	\item Measure calories in random sample of $9$ Big Macs: $X_1, \hdots, X_{9} \sim \mbox{iid } N(\mu, \sigma^2)$
+\end{itemize}
+
+\vspace{1em}
+
+\alert{If we wanted to test McDonald's claim, what would be $H_0$?}
+\begin{enumerate}[(a)]
+	\item $\sigma^2 = 1$
+	\item $\mu = 0$
+	\item $\mu > 550$ 
+	\item $\mu = 550$
+	\item $\mu \neq 550$
+\end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]
+	\frametitle{Example: How many calories in a Big Mac? \hfill \includegraphics[scale = 0.05]{./images/clicker}}
+\begin{itemize}
+	\item According to McDonald's: 550 kcal on average
+	\item Measure calories in random sample of $9$ Big Macs: $X_1, \hdots, X_{9} \sim \mbox{iid } N(\mu, \sigma^2)$
+\end{itemize}
+
+\vspace{1em}
+
+\alert{If McDonald's is telling the truth, approximately what value should we get for the sample mean caloric content of the $9$ Big Macs?} 
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]
+	\frametitle{Example: How many calories in a Big Mac? \hfill \includegraphics[scale = 0.05]{./images/clicker}}
+\begin{itemize}
+	\item According to McDonald's: 550 kcal on average
+	\item Measure calories in random sample of $9$ Big Macs: $X_1, \hdots, X_{9} \sim \mbox{iid } N(\mu, \sigma^2)$
+\end{itemize}
+
+\vspace{1em}
+
+\alert{If the sample mean does not equal 550, does this prove that McDonald's is lying?}
+\begin{enumerate}[(a)]
+	\item Yes
+	\item No
+	\item Not Sure
+\end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{How to find evidence against $H_0$? Test Statistic!}
+	\begin{block}
+		{Test Statistic: $T_n$}
+		A statistic that gives us information about the parameter we are testing and has a \emph{known} sampling distribution \emph{under $H_0$}.
+	\end{block}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[t]
+%	\frametitle{Example: How many calories in a Big Mac? \hfill \includegraphics[scale = 0.05]{./images/clicker}}
+%\begin{itemize}
+%	\item Measure calories in random sample of $n$ Big Macs: $X_1, \hdots, X_9 \sim \mbox{iid } N(\mu, \sigma^2)$
+%	\item $H_0\colon \mu = 550$
+%\end{itemize}
+%
+%\vspace{1em}
+%
+%\alert{Which of these should we use as our test statistic?}
+%\begin{enumerate}[(a)]
+%	\item $S^2$
+%	\item $\bar{X} - 550$
+%	\item $\bar{X}$
+%	\item $\bar{X} / S$ 
+%	\item $(\bar{X} - 550)/(S/3)$
+%\end{enumerate}
+%\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]
+	\frametitle{Example: How many calories in a Big Mac? \hfill \includegraphics[scale = 0.05]{./images/clicker}}
+\begin{itemize}
+	\item Measure calories in random sample of $n$ Big Macs: $X_1, \hdots, X_9 \sim \mbox{iid } N (\mu, \sigma^2)$
+	\item $H_0\colon \mu = 550$
+\end{itemize}
+
+\vspace{1em}
+
+\alert{If McDonald's is telling the truth, i.e.\ under the null, what is \emph{exact}  sampling distribution of $(\bar{X} - 550)/(S/3)$?}
+\begin{enumerate}[(a)]
+	\item $\chi^2_{9}$
+	\item $N(550, 1)$
+	\item $F(9, 1)$
+	\item $N(0,1)$ 
+	\item $t_{8}$
+\end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \end{document}

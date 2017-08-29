@@ -36,6 +36,94 @@
 \end{frame}
 
 
+\begin{frame}
+\frametitle{Writing the CIs in terms of Actual and Estimated SE}
+\framesubtitle{$100\times(1-\alpha)\%$ Confidence Level}
+$$\boxed{X_1, \hdots, X_n \sim \mbox{iid } N(\mu, \sigma^2)}$$
+
+\begin{block}{Known Population Std.\ Dev.\ ($\sigma$)}
+	$$\bar{X}_n \pm \; \texttt{qnorm}(1-\alpha/2) \; \alert{SE(\bar{X}_n)}$$
+\end{block}
+
+\begin{block}{Unknown Population Std.\ Dev.\ ($\sigma$)}
+$$\bar{X}_n \pm \; \texttt{qt}(1-\alpha/2, \texttt{df} = n-1) \; \alert{\widehat{SE}(\bar{X}_n)}$$
+\end{block}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Comparison of Normal and $t$ CIs}
+\begin{table}
+\caption{Values of \texttt{qt}$(1-\alpha/2, \texttt{df}=n-1)$ for various choices of $n$ and $\alpha$. }
+\begin{tabular}{r|rrrrr|r}
+\hline
+$n$& 1& 5& 10& 30& 100 & $\infty$\\
+\hline
+$\alpha = 0.10$&  6.31& 2.02 & 1.81 & 1.70  & 1.66 &1.64\\
+$\alpha = 0.05$ & 12.71& 2.57 & 2.23 & 2.04  & 1.98 &1.96\\
+$\alpha = 0.01$ & 63.66& 4.03 & 3.17 & 2.75  & 2.63 &2.58\\
+\hline
+\end{tabular}
+\end{table}
+\alert{Recall that as $n\rightarrow \infty$, $t(n-1) \rightarrow N(0,1)$}
+\vspace{1em}
+
+
+In a sense, using the $t$-distribution involves making a ``small-sample correction.'' In other words, it is only when $n$ is fairly small that this makes a practical difference for our confidence intervals.
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}
+\frametitle{Am I Taller Than The Average American Male?}
+\framesubtitle{\href{http://www.cdc.gov/nchs/data/series/sr_11/sr11_252.pdf}{\fbox{Source: Centers for Disease Control (pg.\ 16)}}}
+
+
+\begin{columns}
+\column{0.4\textwidth}
+\footnotesize
+		\begin{tabular}{|lr|}
+		\hline
+			Sample Mean & 69 inches\\
+			Sample Std.\ Dev.\ & 6 inches\\
+			Sample Size & 5647 \\
+			\hline
+			My Height & 73 inches\\
+			\hline
+		\end{tabular}
+
+\pause 
+\begin{eqnarray*}
+\widehat{SE}(\bar{X}_n) &=& s/\sqrt{n}\\
+	& =& 6/\sqrt{5647}\\ 
+	&\approx& 0.08
+\end{eqnarray*}
+
+
+\column{0.6\textwidth}
+Assuming the population is normal,\\
+$\boxed{\bar{X}_n \pm \; \texttt{qt}(1-\alpha/2, \texttt{df} = n-1) \; \widehat{SE}(\bar{X}_n)}$
+	
+
+\vspace{1em}
+\alert{What is the approximate value of \texttt{qt(1-0.05/2, df = 5646)}?} \pause
+
+
+\vspace{1em}
+For large $n$, $t(n-1) \approx N(0,1)$, so the answer is approximately 2
+\pause
+
+ \vspace{1em}
+\alert{What is the ME for the 95\% CI?} 
+
+\pause $ME \approx 0.16 \implies69 \pm 0.16$
+
+\end{columns}
+ 
+
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
@@ -404,117 +492,6 @@ $$\alert{\boxed{\mbox{Approximate 95\% CI: } \; (0.35, 0.43)}}$$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-\begin{frame}
-\frametitle{Are Republicans Better Informed Than Democrats?}
-\framesubtitle{\fbox{\href{http://www.people-press.org/files/2012/08/8-10-12-Knowledge-release.pdf}{Pew: ``What Voters Know About Campaign 2012''}}}
-Of the 239 Republicans surveyed, 47\% correctly identified John Roberts as the current chief justice. Only 31\% of the 238 Democrats surveyed correctly identified him. Is this difference meaningful or just sampling variation?
-
-\vspace{2em}
-\alert{Again, assume random sampling.}
-
-
-%Might be better to make a confidence interval for the proportion MINUS 0.25 to account for random guessing.
-
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\frametitle{Confidence Interval for a Difference of Proportions}
-	\begin{block}{What is the appropriate probability model for the sample?} 
-$X_1, \hdots, X_n \sim \mbox{ iid Bernoulli}(p)$ independently  of $Y_1, \hdots, Y_m \sim \mbox{ iid Bernoulli}(q)$
-\end{block}
-	\begin{block}{What is the parameter of interest?}
-The difference of population proportions $p - q$
-\end{block}
-
-\begin{block}{What is our estimator?}
-The difference of sample proportions: $\widehat{p} - \widehat{q}$ where:
-	$$\widehat{p} = \frac{1}{n}\sum_{i=1}^n X_i \quad \quad \quad	\widehat{q} = \frac{1}{m}\sum_{i=1}^m Y_i$$
-\end{block}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\begin{frame}
-\frametitle{Difference of Sample Proportions $\widehat{p}-\widehat{q}$ and the CLT}
-\begin{block}{What We Have}
-Approx.\ sampling dist.\ for \emph{individual} sample proportions from CLT:
-\alert{$\widehat{p} \approx N\left(p, \widehat{SE}(\widehat{p})^2\right), \quad \widehat{q} \approx N\left(q, \widehat{SE}(\widehat{q})^2\right)$}
-\end{block}\pause
-
-\begin{block}{What We Want}
-Sampling Distribution of the \emph{difference} $\widehat{p} - \widehat{q}$
-\end{block}\pause
-
-\begin{block}{Use Independence of the Two Samples}
-\alert{$\widehat{p} - \widehat{q} \approx N\left( p - q, \widehat{SE}(\widehat{p})^2 +\widehat{SE}(\widehat{q})^2\right)$} \pause
-$$\implies \widehat{SE}(\widehat{p} - \widehat{q}) = \pause \sqrt{\widehat{SE}(\widehat{p})^2 +\widehat{SE}(\widehat{q})^2}  = \pause  \sqrt{\frac{\widehat{p}(1-\widehat{p})}{n} + \frac{\widehat{q}(1-\widehat{q})}{m}}$$
-\end{block}
-
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\frametitle{Approx.\ 95\% CI for Difference of Population Proportions}
-
-
-$$\frac{(\widehat{p} - \widehat{q}) - (p - q)}{\sqrt{\frac{\widehat{p}(1-\widehat{p})}{n} + \frac{\widehat{q}(1-\widehat{q})}{m}}} \approx N(0,1)$$
- 
-
- 
-
-\begin{eqnarray*}
-	P\left( -2 \leq  \frac{(\widehat{p} - \widehat{q}) - (p - q)}{\sqrt{\frac{\widehat{p}(1-\widehat{p})}{n} + \frac{\widehat{q}(1-\widehat{q})}{m}}}\leq 2\right) \approx 0.95 \\ \\ \\ 
-	(\widehat{p} - \widehat{q}) \pm \texttt{qnorm}(1-\alpha/2) \sqrt{\frac{\widehat{p}(1-\widehat{p})}{n} + \frac{\widehat{q}(1-\widehat{q})}{m}}
-\end{eqnarray*}
-
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\frametitle{$100\times(1-\alpha)$ CI for Diff.\ of Popn.\ Proportions $(p-q)$}
-$X_1, \hdots, X_n \sim \mbox{iid Bernoulli}(p)$ indep.\ $Y_1, \hdots, Y_n \sim \mbox{iid Bernoulli}(q)$
-	$$(\widehat{p} - \widehat{q}) \pm \texttt{qnorm}(1-\alpha/2) \sqrt{\frac{\widehat{p}(1-\widehat{p})}{n} + \frac{\widehat{q}(1-\widehat{q})}{m}}$$
-	\alert{Approximation based on the CLT. Works well provided $n,m$ large and $p,q$ aren't too close to zero or one.}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\begin{frame}
-\frametitle{ME for approx.\ 95\% for Difference of Proportions}
-
-\footnotesize
-\fbox{47\% of 239 Republicans vs.\ 31\% of 238 Democrats identified Roberts}
-\singlespacing
-\begin{columns} 
-	\column{0.5\textwidth}
-	\begin{block}{Republicans}
-		\begin{eqnarray*}
-			\widehat{p} &=& 0.47\\
-			n &=& 239\\  \pause
-			\widehat{SE}(\widehat{p}) &=&\sqrt{ \frac{\widehat{p}(1-\widehat{p})}{n}} \approx 0.032 \\ \pause
-		\end{eqnarray*}
-	\end{block}
-	
-	\column{0.5\textwidth}
-		\begin{block}{Democrats}
-		\begin{eqnarray*}
-			\widehat{q} &=& 0.31\\
-			m &=& 238\\  \pause
-			\widehat{SE}(\widehat{q}) &=& \sqrt{\frac{\widehat{q}(1-\widehat{q})}{m}} \approx 0.030\\ \pause
-		\end{eqnarray*}
-	\end{block}
-\end{columns}
-
-\begin{block}{Difference: (Republicans - Democrats)}
-	\begin{eqnarray*}
-		\widehat{p} - \widehat{q} &=& 0.47 - 0.31 = 0.16\\ \pause
-		\widehat{SE}(\widehat{p} - \widehat{q}) &=& \sqrt{\widehat{SE}(\widehat{p})^2 + \widehat{SE}(\widehat{q})^2} \approx 0.044  \pause \implies ME \approx 0.09 \pause 
-	\end{eqnarray*}
-	$$\alert{\boxed{\mbox{Approximate 95\% CI} \quad (0.07, 0.25)}} \quad \mbox{What can we conclude?}$$
-\end{block}
-
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 

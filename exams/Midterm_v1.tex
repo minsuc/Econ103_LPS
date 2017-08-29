@@ -1,0 +1,346 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath, amssymb}
+\linespread{1.1}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\boxedpoints
+\pointsinmargin
+
+\printanswers
+
+\pagestyle{headandfoot}
+\runningheadrule
+\runningheader{Econ 103}
+              {Midterm, Page \thepage\ of \numpages}
+              {June 5th, 2017}
+
+%\runningfooter{Name: \rule{5cm}{0.4pt}}{}{Student ID \#: \rule{5cm}{0.4pt}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\textsc{\Large Midterm Examination\\ \vspace{0.2in} \normalsize Econ 103, Statistics for Economists \\ \vspace{0.5em} June 5th, 2017}
+
+\vspace{2em}
+
+\fbox{\begin{minipage}{0.5\textwidth}
+\normalsize\textbf{You will have 90 minutes to complete this exam.
+Graphing calculators, notes, and textbooks are not permitted. }\end{minipage}}
+
+
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{2em}
+\begin{center}
+  \fbox{\fbox{\parbox{5.5in}{\centering
+        I pledge that, in taking and preparing for this exam, I have abided by the University of Pennsylvania's Code of Academic Integrity. I am aware that any violations of the code will result in a failing grade for this course.}}}
+\end{center}
+\vspace{0.2in}
+\makebox[\textwidth]{Name:\enspace\hrulefill}
+
+\vspace{0.2in}
+
+\noindent\makebox[\textwidth]{Signature:\enspace\hrulefill}
+
+\vspace{0.2in}
+
+
+\vspace{2em}
+
+\begin{center}
+  \gradetable[h][questions]
+\end{center}
+
+\vspace{2em}
+
+\paragraph{Instructions:} Answer all questions in the space provided, continuing on the back of the page if you run out of space. Show your work for full credit but be aware that writing down irrelevant information will not gain you points. Be sure to sign the academic integrity statement above and to write your name on \emph{each page} in the space provided. Make sure that you have all pages of the exam before starting.
+
+\paragraph{Warning:} If you continue writing after we call time, even if this is only to fill in your name, twenty points will be deducted from your final score.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{questions}
+
+
+
+
+\question
+	This question refers to the following dataset, containing 13 observations:
+		$$\begin{array}{ccccccccccccc} -3 \quad& -3\quad & -2\quad & -1\quad & -1 \quad& -1 \quad& -1\quad & 0 \quad& 0\quad& 1 \quad& 4 \quad& 7 \quad& 13 \end{array}$$
+			\begin{parts}
+				\part[3] Calculate the median of this dataset.
+					\begin{solution}[1in]
+						Since this dataset contains an odd number of observations, the median is simply the middle observation when the data are listed in rank order (as they are here). Thus, the median is $-1$.
+					\end{solution}
+				\part[3] Calculate the mean of this dataset.
+					\begin{solution}[1in]
+						The sum of the observations is $\sum_{i=1}^n x_i = 13$ so the sample mean is $\frac{1}{n} \sum_{i=1}^n x_i  = 13/13 = 1$.
+					\end{solution}
+				\part[4] Suppose that it turned out there was a mistake recording the dataset: the observation listed as $13$ should actually be $130$. How would the mean and median change?
+					\begin{solution}[1.65in]
+						The median is unchanged since $-1$ is still the middle observation. The sum of the observations, however, has changed from $13$ to $130$, so the new mean is $130/13 = 10$.
+					\end{solution}
+				\part[5] Let $f$ be a strictly increasing function, that is $x_1 < x_2 \Rightarrow f(x_1) < f(x_2)$. Suppose I apply $f$ to the \emph{original dataset} so that instead of $-3, -3, \hdots, 7, 13$ the data become $f(-3), f(-3), \hdots, f(7), f(13)$. What is the median of the transformed data? Explain your answer.
+					\begin{solution}[1.65in]
+					The key point here is that the function $f$ \emph{preserves rank orderings}. Thus, 
+					$$f(-3) < f(-2) < f(-1) < f(0) < f(1) < f(4) < f(7) < f(13)$$
+					After the transformation, the order of the observations stays the same: only the \emph{values} change. It follows that, since the median of the un-transformed data was $-1$, the median of the transformed data is $f(-1)$.
+					\end{solution}
+			\end{parts}
+
+\newpage
+
+\question Mark each statement as True or False, and provide a brief explanation. If you do not justify your answer, you will only get partial points.
+ 	\begin{parts} 
+    \part[4] In large populations that are approximately bell-shaped, roughly 95\% of observations will lie within one standard deviation of the mean.
+      \begin{solution}[1.6in]
+        FALSE: roughly 68\% of observations will lie within one standard deviation of the mean. Another way to correct this is to say that roughly 95\% of observations will lie within \emph{two} standard deviations of the mean.
+      \end{solution}
+    %\part[4] The average deviation of a data set from its mean is always zero.
+     % \begin{solution}[1.3in]
+      %  TRUE. We showed in class that $\frac{1}{n}\sum_{i=1}^{n} (x_i - \bar{x}) = 0$
+      %\end{solution}
+    \part[4] If the correlation between $x$ and $y$ is positive, then it must be smaller than the covariance between $x$ and $y$.
+      \begin{solution}[1.6in]
+        FALSE: $r_{xy} = s_{xy}/(s_x s_y)$ so if, for example, $s_x$ and $s_y$ are both less than one, the correlation will be \emph{larger} than the covariance.
+      \end{solution}
+    \part[4] If a variable has a positive skewness, then we would generally expect its mean to be \textit{greater than} its median.
+    \begin{solution}[1.6in]
+      TRUE, as the mean is influenced by outliers in the (positive) tail.
+    \end{solution}
+    \part[4] For any events $A$ and $B$, $P(B) = P(A \cap B)/P(B|A)$.
+    \begin{solution}[1.6in]
+    FALSE: this gives $P(A)$ rather than $P(B)$. To correct the equality, replace $P(B|A)$ by $P(A|B)$.
+    \end{solution}
+    \part[4] Out of a sample of 100 active astronauts, the NASA needs to choose 5 for the Mars mission. The total possible number of different teams that we can have is $P_5^{100}$.
+\begin{solution}[1.6in]
+FALSE: The order doesn't matter. So the correct answer is $C_5^{100}$.
+\end{solution}
+    \part[4] If $X$ is a random variable, the CDF $F(x_0)$ of $X$ gives the probability that $X$ exceeds a specified threshold $x_0$.
+      \begin{solution}[1.3in]
+        FALSE: it gives the probability that $X$ \emph{does not} exceed $x_0$, namely $P(X \leq x_0)$.
+      \end{solution}
+      
+    \end{parts}
+
+
+\newpage
+
+\question Let $X$ be a random variable with support set $\left\{ -1, 1 \right\}$, $p(1) = q$, and $p(-1) = 1-q$.
+\begin{parts}
+  \part[5] Write down the CDF of $X$.
+  \begin{solution}[1.75in]
+    \[
+      F(x_0) = \left\{
+        \begin{array}{lr}
+          0,& x_0 < -1\\
+          1-q,& -1\leq x_0 < 1\\
+          1,& x_0 \geq 1\\
+        \end{array}\right.
+    \]
+  \end{solution}
+  \part[3] Calculate $E[X]$.
+  \begin{solution}[1in]
+    $E[X] = -1 \times (1 - q) + 1 \times q = 2q - 1$
+  \end{solution}
+  \part[3] Calculate $E[X^2]$.
+  \begin{solution}[1in]
+    $E[X^2] = (1 - q)\times (-1)^2 + q \times 1^2 = (1 - q) + q = 1$
+  \end{solution}
+  \part[4] Calculate $Var(X)$.
+  \begin{solution}[1in]
+    By the shortcut rule: 
+    \begin{align*}
+    Var(X) &= E[X^2] - E[X]^2 = 1 - (2q - 1)^2 \\
+    &= 1 - (4q^2 - 4q + 1)\\
+    &= 4q(1-q)
+    \end{align*}
+    Another way to solve this is to notice that we can write $X$ as a linear transformation of a Bernoulli RV. 
+    In particular if $Z \sim \mbox{Bernoulli}(q)$ then $X = 2Z - 1$ and hence $Var(X) = 4 Var(Z) = 4q(1-q)$ as we calculated directly.
+  \end{solution}
+  \part[5] Let $X_1$ and  $X_2$ be independent RVs both of which have the same pmf as $X$, defined in the problem statement.
+  Write out \underline{the support set} and \underline{pmf} of $Y = 2(X_1 + X_2)$.
+  \begin{solution}[2.25in]
+    The support set is $\left\{ -4, 0, 4 \right\}$ and the pmf is
+    \begin{align*}
+      p(-4) &= P(X_1 = -1 \cap X_2 = -1) = (1-q)^2\\
+      p(0) &= P(X_1 = -1 \cap X_2 = 1) + P(X_1 = 1 \cap X_2 = -1) = 2q(1-q)\\
+      p(4) &= P(X_1 = 1 \cap X_2 = 1) = q^2
+    \end{align*}
+
+  \end{solution}
+\end{parts}
+
+\newpage
+
+ 
+\question Three percent of \emph{Tropicana} brand oranges are already rotten when they arrive at the supermarket. In contrast, six percent of \emph{Sunkist} brand oranges arrive rotten. A local supermarket buys  forty percent of its oranges from \emph{Tropicana} and the rest from \emph{Sunkist}. Let $R$ be the event that an orange is rotten and $T$ be the event than it is a \emph{Tropicana}.
+	\begin{parts} 
+		\part[4] What is the probability that a randomly chosen orange in the supermarket is a \emph{Tropicana} \underline{and} is rotten? 
+			\begin{solution}[1.5in]
+			By the multiplication rule:
+			$$P(R\cap T) = P(R|T)P(T) = 0.03 \times 0.4 = 0.012$$
+			\end{solution}
+		\part[4] What is the probability that a randomly chosen orange is rotten?
+			\begin{solution}[1.5in]
+			By the law of total probability:
+				\begin{eqnarray*}
+				P(R) &=& P(R|T)P(T) + P(R|T^c)P(T^c)\\
+					&=& 0.03 \times 0.4 + 0.06 \times 0.6\\
+					&=& 0.012 + 0.036 \\
+					&=& 0.048
+				\end{eqnarray*}
+			\end{solution}
+		\part[4] Suppose we randomly choose an orange from the supermarket and see that it is rotten. What is the probability that it is a \emph{Tropicana}?
+		\begin{solution}[2in]
+		By Bayes' Rule:
+			\begin{eqnarray*}
+			P(T|R) &=& \frac{P(R|T)P(T)}{P(R)}\\
+					&=& \frac{0.012}{0.048} = 1/4 = 0.25
+			\end{eqnarray*}
+		\end{solution}
+	\end{parts}
+
+
+\newpage
+
+  \question Let $Y$ and $Z$ be discrete RVs with the following joint pmf:
+			\begin{center}
+\begin{tabular}{|cc|ccc|}
+\hline
+&&\multicolumn{3}{c|}{$Z$}\\
+&&0 & 1 & 2\\
+\hline
+%\multirow{2}{*}{$Y$}
+Y&0& \multicolumn{0}{|c}{$1/4$} & $3/8$ & $1/8$ \\
+&1& \multicolumn{1}{|c}{0} & $1/8$ & $1/8$\\
+\hline
+\end{tabular}
+\end{center}
+\vspace{0.5in}
+\begin{parts}
+  \part[3] Write down the support set and marginal pmf of $Y$.
+  \begin{solution}[2.0in]
+    $p_Y(0) = 3/4$, $p_Y(1) = 1/4$ with support set $\left\{ 0,1 \right\}$
+  \end{solution}
+  %\part[3] Write down the support set and marginal pmf of $Z$.
+  %\begin{solution}[2.1in]
+   % $p_Z(0) = 1/4$, $p_Z(1)=1/2$, $p_Z(2) = 1/4$ with support set $\left\{ 0,1,2 \right\}$
+  %\end{solution}
+  \part[5] Calculate $E(YZ)$.
+  \begin{solution}[2.1in]
+    $E[YZ] = 1 \times 1 \times 1/8 + 1 \times 2 \times 1/8 = 3/8$.
+  \end{solution}
+  \part[5] Is Y and Z independent? (State yes/no and \underline{justify} your answer.)
+  \begin{solution}[1.8in]
+  No. $p_{YZ}(0,0) = 1/4.$ However, $p_Y(0)\times p_Z(0) = 3/4 \times 1/4 = 3/16$.
+  \end{solution}
+  \part[5] Write down the conditional pmf of $Y$ given that $Z=1$.
+  \begin{solution}[2.2in]
+    $p_{Y|Z}(0|1) = (3/8) / (4/8) = 3/4$ and $p_{Y|Z}(1|1)= (1/8) / (4/8) = 1/4$.
+  \end{solution}
+  \part[5] Calculate $E[4Y+5|Z=1]$.
+  \begin{solution}[2.2in]
+  $E[4Y+5|Z=1] = 4 E[Y|Z=1]+5 = 4(0\times 3/4 + 1 \times 1/4)+5 = 6.$
+  \end{solution}
+  \part[5] Calculate $E[E[Y|Z]]$. (\textit{Hint: the law of iterated expectations})
+  \begin{solution}
+  By the law of iterated expectation, $E[E[Y|Z]] = E[Y] = 0 \times 3/4 + 1 \times 1/4 = 1/4.$
+  \end{solution}
+\end{parts}
+
+
+\newpage
+
+\question Let $X$ and $Y$ be two random variables with covariance $\sigma_{XY}$ and variances $\sigma_{X}^2$ and $\sigma_{Y}^2$ where $E[X]=E[Y]=0$.
+  Define $\beta = \sigma_{XY}/\sigma_{X}^2$ and $Z = Y - \beta X$.
+  \vspace{0.5in}
+  \begin{parts}
+    \part[3] Is $\beta$ a random variable or a constant? Explain briefly.
+    \begin{solution}[1.25in]
+      A constant: it's a function of parameters, which are constants.
+    \end{solution}
+    %\part[3] Is $Z$ a random variable or a constant? Explain briefly.
+    %\begin{solution}[1.5in]
+     % A random variable: it's a function of the RVs $Y$ and $X$.
+    %\end{solution}
+    \part[5] Calculate $E[Z]$.
+    \begin{solution}[1.75in]
+      $E[Z] = E[Y - \beta X] = E[Y] - \beta E[X] = 0$
+    \end{solution}
+    \part[6] Calculate $Cov(X,Z)$.
+    \begin{solution}[2.75in]
+      Since both $X$ and $Z$ have zero mean,
+      \begin{eqnarray*}
+        Cov(X,Z) &=& E[XZ] = E\left[ X\left( Y - \beta X \right) \right]\\
+        &=& E[XY] - \beta E[X^2] = Cov(X,Y) - \beta Var(X) \\
+        &=& \sigma_{XY} - \frac{\sigma_{XY}}{\sigma_{X}^2} \cdot \sigma_X^2 = 0
+      \end{eqnarray*}
+      using the fact that $E[X]=E[Y]=0$ and the definition of $\beta$.
+    \end{solution}
+    %\part[12] Which is larger: $Var(Z)$ or $Var(Y)$? Prove your answer.
+    %\begin{solution}
+      %\begin{eqnarray*}
+        %Var(Z) &=& E[Z^2] = E\left[ (Y - \beta X)^2 \right]\\
+      %&=& E\left[ Y^2 \right] - 2\beta E\left[ XY \right] + \beta^2 E[X^2]\\
+      %&=&  \sigma_{Y}^2- 2 \frac{\sigma_{XY}}{\sigma_X^2} \cdot \sigma_{XY} + \left( \frac{\sigma_{XY}}{\sigma^2_X} \right)^2 \sigma_X^2\\
+        %&=& \sigma_{Y}^2- 2 \frac{\sigma_{XY}^2}{\sigma_X^2} +  \frac{\sigma_{XY}^2}{\sigma^2_X}  \\
+        %&=& \sigma_Y^2 - \frac{\sigma_{XY}^2}{\sigma_X^2}
+      %\end{eqnarray*}
+      %The covariance $\sigma_{XY}$ can be positive, negative, or zero. 
+      %the \emph{squared covariance} $\sigma_{XY}^2$, however, can only be positive or zero. 
+      %Since $\sigma^2_X > 0$ we see that $Var(Z) \leq Var(Y)$ with equality if and only if $\sigma_{XY}=0$. 
+    %\end{solution}
+  \end{parts}
+
+\newpage
+
+  \question This question concerns an R dataframe called \texttt{tips} containing data collected by a waiter. This data includes the amount of money he received as tips and the characteristics of the tables he served at the restaurant. 
+  Here are the first few rows of the dataframe:
+  \begin{verbatim}
+  total_bill  tip    sex smoker day   time size
+1      16.99 1.01 Female     No Sun Dinner    2
+2      10.34 1.66   Male     No Sun Dinner    3
+3      21.01 3.50   Male     No Sun Dinner    3
+4      23.68 3.31   Male     No Sun Dinner    2
+5      24.59 3.61 Female     No Sun Dinner    4
+6      25.29 4.71   Male     No Sun Dinner    4
+  \end{verbatim}
+  Each row corresponds to a particular table that this waiter served and there are no missing values.
+  The first two columns are measured in US dollars: \texttt{total\_bill} gives the total bill while \texttt{tip} gives the amount of the tip.
+  To be clear: \texttt{total\_bill} \emph{does not include the tip}.
+  The next four columns are categorical: \texttt{sex} is either \texttt{Female} or \texttt{Male} indicating the sex of the person in the party who paid the bill, \texttt{smoker} is either \texttt{Yes} or \texttt{No} indicating whether there were any smokers in the party, \texttt{day} indicates the day of the week when this party came to the restaurant (\texttt{Thurs}, \texttt{Fri}, \texttt{Sat}, or \texttt{Sun}), and \texttt{time} indicates whether the meal served was \texttt{Lunch} or \texttt{Dinner}.
+  The final column, \texttt{size}, is a count of the number of diners in the party.
+  \begin{parts}
+    \part[3] What R command did I use to display the first few rows of the \texttt{tips} dataframe above?
+    \begin{solution}[1.6in]
+      \texttt{head(tips)}
+    \end{solution}
+    \part[3] Write a line of R code to make a scatterplot with \texttt{total\_bill} on the $x$-axis and \texttt{tip} on the $y$-axis.
+    \begin{solution}[1.6in]
+      \texttt{plot(tip \~{} total\_bill, tips)}
+    \end{solution}
+    \part[3] Write a line of R code that will create a column called \texttt{percent} containing the tips left by each table in \texttt{tips} as a \emph{percentage} of the total bill.
+    Express the values as percentage points rather than decimals.
+    For example, if a table left a tip of \$10 on a \$50 bill, the corresponding element of \texttt{percent} should be 20. 
+    \begin{solution}[1.6in]
+    \texttt{percent <- 100 * tips\$tip / tips\$total\_bill}
+  \end{solution}
+  \part[3] Write a line of R code that will create a new dataframe called \texttt{smokers} containing only those rows of \texttt{tips} corresponding to tables with smokers.
+  \begin{solution}[1.6in]
+    \texttt{smokers <- subset(tips, smoker == "Yes")}
+  \end{solution}
+  \part[5] Write R code to calculate the mean of \texttt{percent} broken down by \texttt{sex} and \texttt{smoker}. You can do this in one command or several: either is fine.
+  \begin{solution}[1.5in]
+    \texttt{as.table(by(percent, tips[,c("sex", "smoker")], mean))}
+  \end{solution}
+ 
+  \end{parts}
+
+\end{questions}
+
+\end{document}

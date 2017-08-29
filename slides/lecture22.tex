@@ -316,14 +316,14 @@
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{\href{https://fditraglia.shinyapps.io/power_oneside}{https://fditraglia.shinyapps.io/power\_oneside}}
+%\begin{frame}
+%	\frametitle{\href{https://fditraglia.shinyapps.io/power_oneside}{https://fditraglia.shinyapps.io/power\_oneside}}
 
-\begin{figure}
-	\fbox{\includegraphics[scale = 0.3]{./images/power_oneside_screenshot}}
-\end{figure}
+%\begin{figure}
+%	\fbox{\includegraphics[scale = 0.3]{./images/power_oneside_screenshot}}
+%\end{figure}
 
-\end{frame}
+%\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Power of Two-Sided Test}
@@ -334,11 +334,12 @@
 \end{block}
 \begin{block}
 	{Decision Rule}
-	Reject $H_0\colon \mu = 0$ if $|T_n|> \texttt{qnorm}(1- \alpha)$  
+	Reject $H_0\colon \mu = 0$ if $|T_n|> \texttt{qnorm}(1- \alpha/2)$  
 \end{block}
 \begin{eqnarray*}
 	1 - \beta &=& P(\mbox{Reject } H_0|H_0 \mbox{ false}) \pause = P(|T_n| >\texttt{qnorm}(1- \alpha/2))\\ \pause
-		&=&\underbrace{P(T_n < -\texttt{qnorm}(1- \alpha/2)}_{\text{\alert{Lower}}} + \underbrace{P(T_n >\texttt{qnorm}(1- \alpha/2)}_{\text{\alert{Upper}}}\\ \\ \pause
+		&=&\underbrace{P(T_n < -\texttt{qnorm}(1- \alpha/2)
+	)}_{\text{\alert{Lower}}} + \underbrace{P(T_n >\texttt{qnorm}(1- \alpha/2))}_{\text{\alert{Upper}}}\\ \\ \pause
 	\mbox{\alert{Upper}} &=& (\mbox{Power of One-Sided Test with } \alpha/2 \mbox{ instead of } \alpha)\\ \pause
 		&=& 1 - \texttt{pnorm}\left( \texttt{qnorm}(1 - \alpha/2) - \sqrt{n}(\mu/\sigma) \right) \\ \\ \pause
 	\mbox{\alert{Lower}} &=& \texttt{pnorm}\left(-\texttt{qnorm}(1 - \alpha/2) - \sqrt{n}(\mu/\sigma) \right) \\
@@ -346,14 +347,14 @@
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{\href{https://fditraglia.shinyapps.io/power_twoside}{https://fditraglia.shinyapps.io/power\_twoside}}
+%\begin{frame}
+%	\frametitle{\href{https://fditraglia.shinyapps.io/power_twoside}{https://fditraglia.shinyapps.io/power\_twoside}}
 
-\begin{figure}
-	\fbox{\includegraphics[scale = 0.3]{./images/power_twoside_screenshot}}
-\end{figure}
+%\begin{figure}
+%	\fbox{\includegraphics[scale = 0.3]{./images/power_twoside_screenshot}}
+%\end{figure}
 
-\end{frame}
+%\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{What Determines Power?}
@@ -384,10 +385,10 @@ Chance of detecting an effect given that one exists.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\frametitle{Study Tip}
-		Compare determinants of \emph{width} of $(1- \alpha)\times100\%$ CI to determinants of \emph{power} of corresponding two-sided test.
-\end{frame}
+%\begin{frame}
+%\frametitle{Study Tip}
+%		Compare determinants of \emph{width} of $(1- \alpha)\times100\%$ CI to determinants of \emph{power} of corresponding two-sided test.
+%\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \begin{center}
@@ -457,10 +458,10 @@ $$T = \displaystyle \frac{\widehat{p} - 0.5}{\sqrt{0.5(1-0.5)/n}} \approx -5.9  
 \end{block}
 
 %\footnotesize (Such a huge sample size that refined vs.\ textbook CI makes no difference)
-\large
-\vspace{1em}
+%\large
+%\vspace{1em}
 
-\alert{\fbox{Actual $p$ was 0.499}}
+%\alert{\fbox{Actual $p$ was 0.499}}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
