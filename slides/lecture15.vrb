@@ -1,3 +1,0 @@
-\frametitle{Candy Weighing: \Sexpr{length(candy)} Estimates, Each With $n=5$}
-
-
